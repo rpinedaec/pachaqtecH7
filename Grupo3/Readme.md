@@ -1,4 +1,4 @@
-Integrantes:
+Integrantes Grupo 3:
 
 Bryan Miguel Arias 
 Ricardo Cornejo 
