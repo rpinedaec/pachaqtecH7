@@ -1,6 +1,7 @@
 Integrantes:
 
-Bryan Miguel Arias Ricardo Cornejo 
+Bryan Miguel Arias 
+Ricardo Cornejo 
 Ricardo Avellaneda 
 Erin Santiago Madrid
 
