@@ -1,0 +1,71 @@
+2020-07-11 17:38:21,786 - Principal - INFO - Inicio del sistema
+2020-07-11 17:39:15,433 - Principal - INFO - Inicio del sistema
+2020-07-11 17:39:20,733 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 17:39:41,684 - Principal - INFO - Inicio del sistema
+2020-07-11 17:39:42,857 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 17:39:42,857 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 17:39:47,009 - Menu - DEBUG - La opcion 2 es valida del menu Menu Inicio
+2020-07-11 17:39:47,009 - Principal - DEBUG - Mostramos el Menu Alumno
+2020-07-11 17:39:49,296 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-11 17:39:49,296 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-11 17:39:52,180 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-11 17:39:52,181 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-11 17:40:25,450 - Principal - INFO - Inicio del sistema
+2020-07-11 17:40:29,921 - Menu - INFO - La opcion 5 no es valida del menu Menu Inicio
+2020-07-11 17:40:33,942 - Menu - ERROR - invalid literal for int() with base 10: 't'
+2020-07-11 17:40:38,083 - Menu - INFO - La opcion 9 no es valida del menu Menu Inicio
+2020-07-11 17:40:41,112 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 17:40:41,112 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 17:40:53,489 - Menu - DEBUG - La opcion 2 es valida del menu Menu Inicio
+2020-07-11 17:40:53,489 - Principal - DEBUG - Mostramos el Menu Alumno
+2020-07-11 17:40:57,184 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-11 17:40:57,184 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-11 17:41:02,545 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-11 17:41:02,545 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-11 18:07:50,651 - Principal - INFO - Inicio del sistema
+2020-07-11 18:07:52,569 - Menu - ERROR - invalid literal for int() with base 10: 'C:/Users/BRYAN/AppData/Local/Programs/Python/Python37/python.exe c:/Users/BRYAN/Documents/repositorioprofe/Hackaton7/Grupo3/app/init.py'
+2020-07-11 18:07:55,931 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 18:07:55,931 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 18:07:58,353 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 18:07:58,353 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 18:07:59,084 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 18:07:59,084 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 18:08:23,673 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-11 18:08:23,673 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-11 18:08:26,093 - Principal - INFO - Inicio del sistema
+2020-07-11 18:08:27,814 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 18:08:27,814 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 18:08:37,832 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-11 18:08:37,832 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-11 18:08:46,780 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-11 18:11:23,451 - Principal - INFO - Inicio del sistema
+2020-07-11 18:11:24,883 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 18:11:24,883 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 18:11:25,991 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-11 18:11:25,991 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-11 18:27:38,173 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-11 18:27:43,421 - Principal - INFO - Inicio del sistema
+2020-07-11 18:27:45,334 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 18:27:45,334 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 18:27:46,678 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-11 18:27:46,678 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-11 18:27:48,367 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-11 18:35:47,103 - Menu - DEBUG - La opcion 0 es valida del menu Menu Alumno
+2020-07-11 18:35:50,788 - Principal - INFO - Inicio del sistema
+2020-07-11 18:35:52,106 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 18:35:52,106 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 18:35:52,961 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-11 18:35:52,961 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-11 18:35:54,124 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-11 18:37:58,121 - Principal - INFO - Inicio del sistema
+2020-07-11 18:37:59,625 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 18:37:59,625 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 18:38:00,424 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-11 18:38:00,424 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-11 18:38:01,410 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-11 18:39:10,805 - Principal - INFO - Inicio del sistema
+2020-07-11 18:39:12,048 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-11 18:39:12,048 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-11 18:39:12,529 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-11 18:39:12,529 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-11 18:39:13,608 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
