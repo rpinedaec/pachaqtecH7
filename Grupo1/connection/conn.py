@@ -5,7 +5,7 @@ from pprint import PrettyPrinter
 class Connection:
     def __init__(self, uri, database):
         self.client = MongoClient(uri)
-        self.db = self.client.get_database('pachaqtec')
+        self.db = self.client.pachaqtec
         print("Conexion Exitosa")
 
     # Metodo insertar un registro
@@ -16,13 +16,13 @@ class Connection:
         print(f"Se ingreso el registro : {result.inserted_id} ")
 
     # Metodo obtener registros
-    def obtenerRegistros(self, collection, condition={}):
+    def obtenerRegistros(self, collection, condition=None):
         collection = self.db[collection]
-        data = collection.find()
+        data = collection.find(condition)
         return list(data)
 
     # Metodo obtener un solo registro
-    def obtenerRegistro(self, collection, condition={}):
+    def obtenerRegistro(self, collection, condition=None):
         collection = self.db[collection]
         data = collection.find_one(condition)
         return data
@@ -31,3 +31,16 @@ class Connection:
     def cerrarConexion(self):
         self.db.close()
         return True
+
+    # change seria lo que vamos a actualizar
+    def actualizarRegistro(self, collection, condition, change):
+        collection = self.db[collection]
+        collection.update_one[condition, {
+            '$set': change
+        }]
+        print("Se actualizo un registro")
+
+    def eliminarRegistro(self, collection, condition=None):
+        collection = self.db[collection]
+        collection.delete_one(condition)
+        print(f"Delete Row")
