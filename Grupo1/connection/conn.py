@@ -5,7 +5,7 @@ from pprint import PrettyPrinter
 class Connection:
     def __init__(self, uri, database):
         self.client = MongoClient(uri)
-        self.db = self.client.get_database('student_db')
+        self.db = self.client.get_database('pachaqtec')
         print("Conexion Exitosa")
 
     # Metodo insertar un registro
@@ -18,7 +18,7 @@ class Connection:
     # Metodo obtener registros
     def obtenerRegistros(self, collection, condition={}):
         collection = self.db[collection]
-        data = collection.find(condition)
+        data = collection.find()
         return list(data)
 
     # Metodo obtener un solo registro
