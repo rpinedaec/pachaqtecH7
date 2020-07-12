@@ -1,14 +1,16 @@
-import conn
+from connection.conn import Connection
 
 class salones:
+    connection = Connection('mongodb+srv://paola:pachaqtec@pachaqtec.sdvq7.mongodb.net/test', 'pachacteq')
+    collection = 'salones'
+    
     def mantenimiento_salones():
     dicM_Salones = {"Ver todos los salones": 1, "Buscar por No. de Salón": 2, "Modificar Salón por No. de Salón": 3, "Crear Salón": 4,"Borrar Salón": 5}
     menuM_Salones = Menu("Mantenimiento de Salones", dicM_Salones)
     resM_Salones = menuM_Salones.mostrarMenu()
 
     if(resM_Salones == 1):
-        conn.Connection.obtenerRegistros.collection = self.db[salones]
-        listar_salones = conn.Connection.obtenerRegistros()
+        listar_salones = Connection.obtenerRegistros()
         print("\tNo.\t\tNombre\t\t\tID Alumno\t\t\tID Profesor")
         print(listar_salones)
         print("")
