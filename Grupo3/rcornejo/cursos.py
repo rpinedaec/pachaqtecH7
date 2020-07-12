@@ -1,4 +1,4 @@
-#clase cursoss
+#clase cursos
 class cursos:
       __log = utils.log("cursos")
   def __init__(self, idcursos, nombrecurso):
