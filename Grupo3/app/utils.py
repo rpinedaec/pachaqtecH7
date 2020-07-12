@@ -80,7 +80,8 @@ class Menu:
                 print("\nDigite un número entre 0 - 9\n\a")
                 sleep(2)
         return opcion
-
+        
+#Metodo para salir del sistema
 def Salir():
     print("►►►►►► Gracias por usar el Sistema ◄◄◄◄◄◄")
     exit()
