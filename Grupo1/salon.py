@@ -3,8 +3,8 @@ import conn
 class salones:
     def mantenimiento_salones():
     dicM_Salones = {"Ver todos los salones": 1, "Buscar por No. de Salón": 2, "Modificar Salón por No. de Salón": 3, "Crear Salón": 4,"Borrar Salón": 5}
-    # menuM_Salones = Menu("Mantenimiento de Salones", dicM_Salones)
-    # resM_Salones = menuM_Salones.mostrarMenu()
+    menuM_Salones = Menu("Mantenimiento de Salones", dicM_Salones)
+    resM_Salones = menuM_Salones.mostrarMenu()
 
     if(resM_Salones == 1):
         conn.Connection.obtenerRegistros.collection = self.db[salones]
