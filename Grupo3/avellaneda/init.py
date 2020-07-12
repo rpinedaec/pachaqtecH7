@@ -5,6 +5,7 @@ from time import sleep
 __log = utils.log("Principal")
 __log.info("Inicio del sistema")
 
+#menu empleado
 def mantenimientoEmpleado():
     tplEmpleado = ("1. Alumno", "2. Docente", "3. Cursos", "4. Salones", 
                     "5. Periodo Escolar", "6. Matricula", "7. Regresar")
@@ -17,42 +18,36 @@ def mantenimientoEmpleado():
             __log.info("Menu Empleado --> Alumno")
             stopMenuAlumno = True
             while stopMenuAlumno:
-                tplAlumno = ("1. Agregar Alumno", "2.")
+                tplAlumno = ("1. Agregar Alumno", "2. Listar Alumnos", "3. Modificar Alumno", "4. Eliminar Alumno")
                 menuAlumno = utils.Menu("Menu Alumno", tplAlumno)
                 resmenuAlumno = menuAlumno.MostrarMenu()
+                #Agregar Alumno
                 if resmenuAlumno == 1:
                     cruds.ingresarAlumno()
+                    sleep(2)
+                    __log.debug("Se ingresaron los datos del alumno")
+                #Listar Alumno
                 elif resmenuAlumno == 2:
-                    pass               
+                    cruds.listarAlumnos()
+                    sleep(2)
+                #Modificar Alumno
+                elif resmenuAlumno == 3:                    
+                    cruds.listarAlumnos()                        
+                    idAlumno = cruds.buscarAlumno()
+                    cruds.modificarAlumno(idAlumno)
+                    sleep(2)
+                    __log.debug("Se modificaron los datos del alumno")
+                #Elimar Alumno
+                elif resmenuAlumno == 4:                    
+                    cruds.listarAlumnos()                        
+                    idAlumno = cruds.buscarAlumno()
+                    cruds.eliminarAlumno(idAlumno)
+                    sleep(2)
+                    __log.debug("Se eliminaron los datos del alumno")
+                elif resmenuAlumno == 0:
+                    utils.Salir()
                 else:
                     pass
-        elif resmenuEmpleado == 2:
-             __log.info("Menu Empleado --> Docente")
-             stopMenuDocente = True
-             while stopMenuDocente:
-                #Sub Menu CRUD Docente 
-                tplDocente = ("1. Agregar Docente", "2. Listar Docente", "3. Actualizar Docente", "4. Eliminar Docente", "5. Regresar")
-                menuDocente = utils.Menu("Menu Docente", tplDocente)
-                resmenuDocente = menuDocente.MostrarMenu()
-                if resmenuDocente == 1:
-                    cruds.ingresarDocente()
-                elif resmenuDocente == 2:
-                    cruds.listarDocente()    
-                    sleep(5)
-                elif resmenuDocente == 3:
-                    cruds.listarDocente()
-                    idDocente = cruds.buscarDocente()
-                    cruds.modificarDocente(idDocente)
-                    sleep(5)
-                elif resmenuDocente == 4:
-                    __log.error("Menu eliminar")
-                    cruds.listarDocente()
-                    idDocente = cruds.buscarDocente()
-                    #sleep(5)
-                    cruds.eliminaDocente(idDocente)
-                    sleep(5)
-                else:
-                    pass           
         else:
             pass
             
