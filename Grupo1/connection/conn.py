@@ -1,3 +1,4 @@
+import pymongo
 from pymongo import MongoClient, errors
 from pprint import PrettyPrinter
 
