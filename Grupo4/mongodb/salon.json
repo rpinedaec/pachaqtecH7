@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "5f0bb14aee99fb3488c2d20e"
+  },
+  "idsalon": "1",
+  "nombreSalon": "salon 1"
+},{
+  "_id": {
+    "$oid": "5f0bb14aee99fb3488c2d20f"
+  },
+  "idsalon": "2",
+  "nombreSalon": "Salon 2"
+}]

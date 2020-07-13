@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "5f0bb0cfee99fb3488c2d20a"
+  },
+  "idperiodo": "1",
+  "descperiodo": "1er bimestre"
+},{
+  "_id": {
+    "$oid": "5f0bb0cfee99fb3488c2d20b"
+  },
+  "idperiodo": "2",
+  "descperiodo": "2do bimestre"
+},{
+  "_id": {
+    "$oid": "5f0bb0cfee99fb3488c2d20c"
+  },
+  "idperiodo": "3",
+  "descperiodo": "3er bimestre"
+},{
+  "_id": {
+    "$oid": "5f0bb0cfee99fb3488c2d20d"
+  },
+  "idperiodo": "4",
+  "descperiodo": "4to bimestre"
+}]

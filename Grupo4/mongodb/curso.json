@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "5f0bb9eaee99fb3488c2d219"
+  },
+  "idcurso": "1",
+  "nombreCurso": "historia",
+  "idsalon": "1",
+  "nombreSalon": "salon 1"
+},{
+  "_id": {
+    "$oid": "5f0bb9eaee99fb3488c2d21a"
+  },
+  "idcurso": "2",
+  "nombreCurso": "geografia",
+  "idsalon": "1",
+  "nombreSalon": "salon 1"
+},{
+  "_id": {
+    "$oid": "5f0bb9eaee99fb3488c2d21b"
+  },
+  "idcurso": "3",
+  "nombreCurso": "lenguaje",
+  "idsalon": "1",
+  "nombreSalon": "salon 1"
+},{
+  "_id": {
+    "$oid": "5f0bb9eaee99fb3488c2d21c"
+  },
+  "idcurso": "4",
+  "nombreCurso": "matematica",
+  "idsalon": "1",
+  "nombreSalon": "salon 1"
+},{
+  "_id": {
+    "$oid": "5f0bb9eaee99fb3488c2d21d"
+  },
+  "idcurso": "5",
+  "nombreCurso": "quimica",
+  "idsalon": "1",
+  "nombreSalon": "salon 1"
+},{
+  "_id": {
+    "$oid": "5f0bb9eaee99fb3488c2d21e"
+  },
+  "idcurso": "9",
+  "nombreCurso": "Computacion",
+  "idsalon": "1",
+  "nombreSalon": "salon 1"
+},{
+  "_id": {
+    "$oid": "5f0bb9eaee99fb3488c2d21f"
+  },
+  "idcurso": "7",
+  "nombreCurso": "Computacion",
+  "idsalon": "2",
+  "nombreSalon": "Salon 2"
+},{
+  "_id": {
+    "$oid": "5f0bb9eaee99fb3488c2d220"
+  },
+  "idcurso": "8",
+  "nombreCurso": "ingles",
+  "idsalon": "2",
+  "nombreSalon": "Salon 2"
+}]
