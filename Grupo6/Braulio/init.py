@@ -22,24 +22,28 @@ profesor_menu=Menu("Profesor",profesor_lst_opciones,profesor_lst_num)
 
 print("Ingrese para su base de datos")
 nombre_db=input("Respuesta:")
-conn=conexion.Mongo_DB(nombre_db)
-conn.conecc()
+prof_conn=conexion.Mongo_DB(nombre_db,"profesor")
+
+# set_up profesor
+query=profesor.set_up_profesor()
+prof_conn.insert_many(query)
 ans=profesor_menu.show_menu()
 
-if(ans=='1'):
+#profesor
+if(ans=='1'): #read
     print("Ingrese el DNI del profesor:")
     DNI_profesor=input()
     query=profesor.find_profesor(DNI_profesor)
-    record=conn.find(query)
+    record=prof_conn.find(query)
     print(record)
-elif(ans=='2'):
+elif(ans=='2'): #create
     print("Ingrese los datos del porfesor: ")
     DNI=input("DNI: ")
     Nombre_profesor=input("Nombre: ")
     Apellido_profesor=input("Apellido: ")
     query=profesor.insert_profesor(DNI,Nombre_profesor,Apellido_profesor)
-    conn.insert(query)
-elif(ans=='3'):
+    prof_conn.insert(query)
+elif(ans=='3'): #update
     print("Ingrese el DNI del prosor:")
     DNI_profesor=input("Respuesta: ")
     print("Ingrese el campo que desea modificar:")
@@ -55,9 +59,11 @@ elif(ans=='3'):
     New_value=input("Respuesta: ")
     query=profesor.update_profesor_DNI(DNI_profesor)
     my_dict=profesor.update_profesor(New_value,field)
-    conn.update(query,my_dict)
-
-elif(ans=='4'):
-    pass
+    prof_conn.update(query,my_dict)
+elif(ans=='4'): #delete
+    print("Ingrese el DNI del profesor")
+    DNI_profesor=input("")
+    query=profesor.delete_profesor(DNI_profesor)
+    prof_conn.delete(query)
 elif(ans=='5'):
     pass
