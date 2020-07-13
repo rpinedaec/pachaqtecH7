@@ -20,7 +20,7 @@ class Conexion:
         data = collection.find(condition)
         return list(data)
     
-    def obtener_registro(self, collection, codition={}):
+    def obtener_registro(self, collection, condition={}):
         collection = self.db[collection]
         data = collection.find_one(condition)
         return data
@@ -33,7 +33,7 @@ class Conexion:
         })
 
     #DELETE
-    def eliminar_registro(self, collection, codition={}):
+    def eliminar_registro(self, collection, condition={}):
         collection = self.db[collection]
         collection.delete(condition)
         print('Se elimino registro')
