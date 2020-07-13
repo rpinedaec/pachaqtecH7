@@ -23,7 +23,7 @@
 2020-07-11 17:41:02,545 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
 2020-07-11 17:41:02,545 - Principal - DEBUG - Volvemos a mostrar menu
 2020-07-11 18:07:50,651 - Principal - INFO - Inicio del sistema
-2020-07-11 18:07:52,569 - Menu - ERROR - invalid literal for int() with base 10: 'C:/Users/BRYAN/AppData/Local/Programs/Python/Python37/python.exe c:/Users/BRYAN/Documents/repositorioprofe/Hackaton7/Grupo3/app/init.py'
+2020-07-11 18:07:52,569 - Menu - ERROR - invalid literal for int() with base 10: 
 2020-07-11 18:07:55,931 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
 2020-07-11 18:07:55,931 - Principal - DEBUG - Mostramos el Menu Empleado
 2020-07-11 18:07:58,353 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
