@@ -13,6 +13,11 @@ class Querys:
         query = "INSERT INTO alumnos (nombrealumno, apellidoalumno, correoalumno, nacalumno) VALUES ('"+Nombre+"', '"+Apellido+"', '"+Correo+"', '"+Fechanac+"');"
         return query
 
+    #Query Busca Alumno por ID
+    def BuscarAlumno(self, Id):
+        query = f"SELECT * FROM alumnos where idalumnos = '{Id}'"
+        return query
+
     ####INICIO CRUD DOCENTE####
     #Query Ingresar Nuevo Docente
     def InsertDocente (self, Nombre, Dni, Correo, Fechanac):
@@ -39,3 +44,36 @@ class Querys:
         query = "DELETE FROM docentes WHERE iddocentes = '"+str(IdDocente)+"';"
         return query
     ####FIN CRUD DOCENTE####
+
+    ####INICIO CRUD PERIODO ESCOLAR####
+    #Query Ingresar Periodo Escolar
+    def InsertPeriodoEscolar (self, Nombre):
+        query = "INSERT INTO periodoescolar (desperiodo) VALUES ('"+Nombre+"');"
+        return query
+    
+    #Query Listar Todos los Periodos Escolares Registrados
+    def ListarAllPeriodoEscolar(self):
+        query = "SELECT * FROM periodoescolar;"
+        return query
+    
+    #Query Actualizar Periodo Escolar
+    def ModificarPeriodoEscolar (self,  Nombre, IdPeriodoEscolar):
+        query = "UPDATE periodoescolar SET desperiodo = '"+Nombre+"' WHERE idperiodoEscolar = '"+str(IdPeriodoEscolar)+"';"
+        return query
+    
+    #Query Busca Periodo Escolar por ID
+    def BuscarPeriodoEscolar(self, Id):
+        query = f"SELECT * FROM periodoescolar where idperiodoEscolar = '{Id}'"
+        return query
+
+    #Query Elimina Periodo Escolar Seleccionando el ID del Docente
+    def EliminarPeriodoEscolar(self, IdPeriodoEscolar):
+        query = "DELETE FROM periodoescolar WHERE idperiodoEscolar = '"+str(IdPeriodoEscolar)+"';"
+        return query
+    ####FIN CRUD DOCENTE####
+
+    ####INICIO CRUD MATRICULA####
+    #Query Ingresar Nueva Matricula
+    def InsertMatricula (self, idAlumno, IdPeriodoEscolar):
+        query = "INSERT INTO matricula (alumnos_idalumnos, periodoEscolar_idperiodoEscolar) VALUES ('"+idAlumno+"','"+IdPeriodoEscolar+"');"
+        return query
