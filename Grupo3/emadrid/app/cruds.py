@@ -18,7 +18,35 @@ def ingresarAlumno():
         print("Fallaste")
     input("Desea continuar")
 
-#####EMPLEADOR -- DOCENTE####
+#Metodo Listar Alumnos
+def listarAlumno():
+    conn = conexion.conexionBDD(1)
+    query = querys.Querys()
+    consulta = query.ListarAllAlumno()
+    resconn = conn.consultarBDD(consulta)
+    #Imprime Cabecera
+    print("ID\t", "Nombres\t\t", "Apellidos\t\t\t", "Correo\t\t\t", "Fecha Nacimiento""\t")
+    #Mostrar Lista de Alumnos
+    for tplAlumno in resconn:
+        print(tplAlumno[0],"\t", tplAlumno[1],"\t\t", tplAlumno[2],"\t\t\t", tplAlumno[3],"t\t\t", tplAlumno[4])
+
+#Metodo Buscar Alumno por ID
+def buscarAlumno():
+    try:
+        idAlumno = int(input("Ingrese el ID del Alumno que desea modificar:\n"))
+        conn = conexion.conexionBDD(1)
+        query = querys.Querys()
+        consulta = query.BuscarAlumno(idAlumno)
+        resconn = conn.consultarBDD(consulta)
+        for tplAlumno in resconn:
+            print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])
+        return idAlumno
+    except Exception as e:
+        print("Debe ingresar un numero")
+        print(e)
+        sleep(2)
+
+####INICIO METODOS DOCENTE####
 #Metodo Ingresar Nuevo Docente
 def ingresarDocente():
     nombre = input("Ingrese Nombre del Docente:\n")
@@ -35,7 +63,6 @@ def ingresarDocente():
         print("Fallaste")
     input("Desea continuar")
 
-####INICIO METODOS DOCENTE####
 #Metodo Listar Docentes
 def listarDocente():
     conn = conexion.conexionBDD(1)
@@ -93,3 +120,91 @@ def eliminaDocente(idDocente):
         print("No fue posible eliminar al Docente")
     input("Desea continuar")
 ####FIN METODOS DOCENTE####
+
+####INICIO METODOS PERIODO ESCOLAR####
+#Metodo Ingresar Nuevo Periodo Escolar
+def ingresarPeriodoEscolar():
+    nombre = input("Ingrese Nombre del Periodo Escolar:\n")
+    conn = conexion.conexionBDD(1)
+    query = querys.Querys()
+    consulta = query.InsertPeriodoEscolar(nombre)
+    resconn = conn.ejecutarBDD(consulta)
+    if resconn:
+        print("Añadido")
+    else:
+        print("Fallaste")
+    input("Desea continuar")
+
+#Metodo Listar Docentes
+def listarPeriodoEscolar():
+    conn = conexion.conexionBDD(1)
+    query = querys.Querys()
+    consulta = query.ListarAllPeriodoEscolar()
+    resconn = conn.consultarBDD(consulta)
+    #Imprime Cabecera
+    print("ID\t", "Nombre\t")
+    #Mostrar Lista de Periodo Escolar
+    for tplPeriodoEscolar in resconn:
+        print(tplPeriodoEscolar[0],"\t", tplPeriodoEscolar[1])
+
+#Metodo Buscar PeriodoEscolar por ID
+def buscarPeriodoEscolar():
+    try:
+        idPeriodoEscolar = int(input("Ingrese el ID del PeriodoEscolar que desea Modificar/Eliminar:\n"))
+        conn = conexion.conexionBDD(1)
+        query = querys.Querys()
+        consulta = query.BuscarPeriodoEscolar(idPeriodoEscolar)
+        resconn = conn.consultarBDD(consulta)
+        for tplPeriodoEscolar in resconn:
+            print(tplPeriodoEscolar[0], tplPeriodoEscolar[1])
+        return idPeriodoEscolar
+    except Exception as e:
+        print("Debe ingresar un numero")
+        print(e)
+        sleep(2)
+
+#Metodo Modifica Periodo Escolar
+def modificarPeriodoEscolar(idPeriodoEscolar):
+    Nombre = input("Ingrese el nuevo nombre del Docente:\n")
+    conn = conexion.conexionBDD(1)
+    query = querys.Querys()
+    consulta = query.ModificarPeriodoEscolar(Nombre, idPeriodoEscolar)
+    resconn = conn.ejecutarBDD(consulta)
+    if resconn:
+       print("Se modifico correctamente")
+    else:
+       print("No fue posible modificar al Docente")
+       input("Desea continuar")
+
+#Metodo Elimina Periodo Escolar
+def eliminaPeriodoEscolar(idPeriodoEscolar):
+    conn = conexion.conexionBDD(1)
+    query = querys.Querys()
+    connsulta = query.EliminarPeriodoEscolar(str(idPeriodoEscolar))
+    resconn = conn.ejecutarBDD(connsulta)
+    if resconn:
+        print(f"Se elimino Periodo Escolar {idPeriodoEscolar}")
+    else:
+        print("Fallaste")
+        print("No fue posible eliminar al Periodo Escolar")
+    input("Desea continuar")
+####FIN METODOS PERIODO ESCOLAR####
+
+####INICIO METODOS MATRICULA####
+#Metodo Ingresar Nueva Matricula
+def ingresarMatricula():
+    listarAlumno()
+    idAlumno = input("Ingrese ID del Alumno a Matricular:\n")
+    listarPeriodoEscolar()
+    idPeriodoEscolar = input("Ingrese ID del Periodo Escolar a Matricular:\n")
+    conn = conexion.conexionBDD(1)
+    query = querys.Querys()
+    consulta = query.InsertMatricula(idAlumno, idPeriodoEscolar)
+    resconn = conn.ejecutarBDD(consulta)
+    if resconn:
+        print("Alumno Matriculado")
+    else:
+        print("Fallaste")
+    input("Desea continuar")
+
+####FIN METODOS MATRICULA####
