@@ -1,4 +1,4 @@
-#Clase alumnoss
+#Clase alumnos
 class alumnos:
   def __init__(self, idalumnos, nombrealumno, apellidoalumno, correoalumno, nacalumno):
     self.idalumnos = idalumnos

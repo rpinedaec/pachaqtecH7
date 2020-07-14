@@ -1,4 +1,4 @@
-#clase salones
+#clase saloness
 class salones:
   def __init__(self, idsalones, nombresalon):
     self.idsalones = idsalones
