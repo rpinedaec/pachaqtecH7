@@ -44,7 +44,7 @@ def mantenimientoEmpleado():
                     cruds.eliminarAlumno(idAlumno)
                     sleep(2)
                     __log.debug("Se eliminaron los datos del alumno")
-                elif resmenuSalones == 5:
+                elif resmenuAlumno == 5:
                     mantenimientoEmpleado()
                 elif resmenuAlumno == 0:
                     utils.Salir()
@@ -81,7 +81,7 @@ def mantenimientoEmpleado():
                     cruds.eliminarDocente(idDocente)
                     sleep(2)
                     __log.debug("Se eliminaron los datos del docente")
-                elif resmenuSalones == 5:
+                elif resmenuDocente == 5:
                     mantenimientoEmpleado()
                 elif resmenuDocente == 0:
                     utils.Salir()
@@ -118,7 +118,7 @@ def mantenimientoEmpleado():
                     cruds.eliminarCurso(idCursos)
                     sleep(2)
                     __log.debug("Se eliminaron los datos del Cursos")
-                elif resmenuSalones == 5:
+                elif resmenuCursos == 5:
                     mantenimientoEmpleado()
                 elif resmenuCursos == 0:
                     utils.Salir()
@@ -209,20 +209,23 @@ def mantenimientoEmpleado():
                 #Agregar Matricula
                 if resmenuMatricula == 1:
                     cruds.ingresarMatricula()
-
-                    input("Continuar")
+                #Lista todas las Matriculas
                 elif resmenuMatricula == 2:
-                    pass  
+                    cruds.listarMatricula()  
+                #Asignar Docente a Curso
                 elif resmenuMatricula == 3:
-                    pass    
+                    cruds.docenteCurso()
                 elif resmenuMatricula == 4:
-                    pass              
-                elif resmenuPeriodo == 5:
+                    cruds.alumnoCurso()              
+                elif resmenuMatricula == 5:
                     mantenimientoEmpleado()
-                elif resmenuPeriodo == 0:
+                elif resmenuMatricula == 0:
                     utils.Salir()
+        #Regresar al menu anterior
         elif resmenuEmpleado == 7:
             break
+        elif resmenuEmpleado == 0:
+            utils.Salir()
         else:
             pass
             

@@ -166,7 +166,24 @@ class Querys:
         query = ""
         return query
 
+    #Matricula
 
-    def InsertMatricula(IdAlumno, IdPeriodo):
-         query = ""
+    def InsertMatricula(self, IdAlumno, IdPeriodo):
+        query = "INSERT INTO matricula (alumnos_idalumnos, periodoEscolar_idperiodoEscolar) VALUES ('"+str(IdAlumno)+"', '"+str(IdPeriodo)+"')"
+        return query
+
+    def ListarAllMatricula(self):
+        query = "SELECT m.idmatricula, a.nombrealumno, a.apellidoalumno, pe.desperiodo FROM matricula m INNER JOIN alumnos a ON m.alumnos_idalumnos = a.idalumnos INNER JOIN periodoescolar pe ON pe.idperiodoEscolar = m.periodoescolar_idperiodoEscolar"
+        return query   
+
+    def BuscarMatricula(self, IdMatricula):
+        query = "SELECT m.idmatricula, a.nombrealumno, a.apellidoalumno, pe.desperiodo FROM matricula m INNER JOIN alumnos a ON m.alumnos_idalumnos = a.idalumnos INNER JOIN periodoescolar pe ON pe.idperiodoEscolar = m.periodoescolar_idperiodoEscolar WHERE m.idmatricula = '"+str(IdMatricula)+"'"
+        return query
+    
+    def InsertDocenteCurso(self, IdDocente, IdCurso, IdSalon, Nota):
+        query = "INSERT INTO docentes_has_cursos (docentes_iddocentes, cursos_idcursos, salones_idsalones, nota) VALUES ('"+str(IdDocente)+"', '"+str(IdCurso)+"', '"+str(IdSalon)+"', '"+str(Nota)+"')"
+        return query
+
+    def InsertAlumnoCurso(self, IdMatricula, IdCurso):
+        query = "INSERT INTO cursos_has_matricula (cursos_idcursos, matricula_idmatricula) VALUES ('"+str(IdCurso)+"', '"+str(IdMatricula)+"')"
         return query
