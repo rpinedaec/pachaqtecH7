@@ -2,6 +2,8 @@ from connection.conn import Connection
 
 connection = Connection('mongodb+srv://paola:pachaqtec@pachaqtec.sdvq7.mongodb.net/test', 'pachacteq')
 
+lstSalon=[]
+
 class salones:
 
     collection = 'salones'
@@ -11,14 +13,12 @@ class salones:
         self.idAlumno = Alumno
         self.idProfesor = Profesor
     
-    def mantenimiento_salones():
+def mantenimiento_salones():
         dicM_Salones = {"Ver todos los salones": 1, "Buscar por No. de Salón": 2, "Modificar Salón por No. de Salón": 3, "Crear Salón": 4,"Borrar Salón": 5}
-        menuM_Salones = Menu("Mantenimiento de Salones", dicM_Salones)
+        menuM_Salones = menu.Menu("Mantenimiento de Salones", dicM_Salones)
         resM_Salones = menuM_Salones.mostrarMenu()
 
-mantenimiento_salones()
-
-if(resM_Salones == 1):
+if (resM_Salones == 1):
     listar_salones = Connection.obtenerRegistros()
     print(listar_salones)
     print("")
@@ -31,10 +31,10 @@ if(resM_Salones == 1):
     else:
         return listar_salones
 
-elif(resM_Salones == 2):
+elif (resM_Salones == 2):
     buscador_numero = input("Escribe el No. de salón a ubicar: ")
-    listar_salon = Connection.obtenerRegistro({buscador_numero})
-    print(listar_salon)
+    listar_porsalon = Connection.obtenerRegistro(f'{buscador_numero}')
+    print(listar_porsalon)
     print("")
     print ("-\t¿Desea volver al menu?"+
                 "-\tVolver al menu: S-\t"+
@@ -45,7 +45,7 @@ elif(resM_Salones == 2):
     else:
         return buscador_numero
 
-elif(resM_Salones == 3):
+elif (resM_Salones == 3):
     listar_salones = Connection.obtenerRegistros()
     print("Escoja el ID del cliente que desea modificar")
     print(listar_salones)
@@ -71,7 +71,7 @@ elif(resM_Salones == 3):
             print("Hubo un error. Intente nuevamente.")
             return listar_salones
     
-elif(resM_Salones == 4):
+elif (resM_Salones == 4):
     nuevoingreso = True
     while (nuevoingreso):
         print("Para crear un nuevo registro, ingrese los siguientes datos:")
@@ -98,7 +98,7 @@ elif(resM_Salones == 4):
             print("Hubo un error. Intente nuevamente")
             return nuevoingreso
                
-elif(resMenuCliente == 5):
+elif (resMenuCliente == 5):
     eliminarsalon = True
     while (eliminarsalon):
         print("Escoja el ID del cliente que desea eliminar")
