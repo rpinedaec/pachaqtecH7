@@ -1,10 +1,12 @@
 #clase docentes
-class alumnos:
-      __log = utils.log("alumnos")
-  def __init__(self, idalumnos, nombrealumno, apellidoalumno, correoalumno, nacalumno):
-    self.idalumnos = idalumnos
-    self.nombrealumno = nombrealumno
-    self.apellidoalumno = apellidoalumno
-    self.correoalumno = correoalumno
-    self.nacalumno = nacalumno
+class docentes:
+  __log = utils.log("docentes")
+  def __init__(self, iddocentes, nombredocente, dnidocente, correodocente, nacdocente):
+    self.iddocentes = iddocentes
+    self.nombredocente = nombredocente
+    self.dnidocente = dnidocente
+    self.correodocente = correodocente
+    self.nacdocente = nacdocente
+    
+    
     
