@@ -414,11 +414,12 @@ def eliminarNota(Nota):
 
 #Matricula
 def ingresarMatricula():
+    #Datos alumno
     listarAlumnos()
     IdAlumno = buscarAlumno()
+    #Datos Periodo
     listarPeriodo()
     IdPeriodo = buscarPeriodo()
-    #Datos de la Matricula
     try:
         consulta = query.InsertMatricula(IdAlumno, IdPeriodo)
         resconn = conn.ejecutarBDD(consulta)
@@ -427,5 +428,65 @@ def ingresarMatricula():
         else:
             print("No fue posible agregar la matricula")
         input("Desea continuar")
-    except ValueError as e:
+    except Exception as e:
+        print(e)
+
+def listarMatricula():
+    try:
+        consulta = query.ListarAllMatricula()
+        resconn = conn.consultarBDD(consulta)   
+        for tplMatricula in resconn:
+            print(tplMatricula[0], tplMatricula[1], tplMatricula[2], tplMatricula[3])
+        sleep(2)
+    except Exception as e:
+        print(e)
+
+def buscarMatricula():
+    try:
+        idMatricula = input("Ingrese id de matricula:\n")
+        consulta = query.BuscarMatricula(idMatricula)
+        resconn = conn.consultarBDD(consulta)   
+        for tplMatricula in resconn:
+            print(tplMatricula[0], tplMatricula[1], tplMatricula[2], tplMatricula[3])
+        return idMatricula
+    except Exception as e:
+        print(e)
+
+def docenteCurso():
+    #Datos docente
+    listarDocente()
+    IdDocente = buscarDocente()
+    #Datos Curso
+    listarCurso()
+    IdCurso = buscarCurso()
+    #Datos Salon
+    listarSalon()
+    IdSalon = buscarSalon()
+    try:
+        consulta = query.InsertDocenteCurso(IdDocente, IdCurso, IdSalon, Nota=0)
+        resconn = conn.ejecutarBDD(consulta)
+        if resconn:
+            print("Se agrego correctamente")
+        else:
+            print("No fue posible asignar al docente")
+        input("Desea continuar")
+    except Exception as e:
+        print(e)
+
+def alumnoCurso():
+    #Datos alumno matriculado
+    listarMatricula()
+    IdMatricula = buscarMatricula()
+    #Datos Cursos
+    listarCurso()
+    IdCurso = buscarCurso()
+    try:
+        consulta = query.InsertAlumnoCurso(IdMatricula, IdCurso)
+        resconn = conn.ejecutarBDD(consulta)
+        if resconn:
+            print("Se agrego correctamente")
+        else:
+            print("No fue posible asignar al alumno")
+        input("Desea continuar")
+    except Exception as e:
         print(e)
