@@ -2,6 +2,7 @@ from connection.conn import Connection
 from bson.json_util import dumps
 from bson import ObjectId
 from tabulate import tabulate
+
 # Nivel avanzado
 # Listar a los profesores con su respectiva curso, salon y alumnos
 
@@ -96,48 +97,28 @@ def listarAlumnos(nombreAlumno):
                                    "Nombre Salon", "Nombre Profesor", "Nombre del Curso"]))
 
 
-# print(listarAlumnos("juan"))
-
-# Una de las funcionalidades del sistema es enviarnos un reporte por periodo ecolar, escogiendo els alon y nos des beria indicar por cada curso se tiene el promedio
-# def reporte():
-#     collection = connection.returnCollections('semestres')
-#     semestres = collection.obtenerRegistros('semestres')
-#     for i in range(semestres):
-
-#         _id = semestres[i]['_id']
-#         cursos = collection.obtenerRegistros('semestres',{'idPeriodo' = _id})
-#         #apilamos los cursos a nuestro obejeto semestres[i]
-#         semestre[i]["cursos"] = cursos
-
-
-#     for semestre in semestres:
-#         _id = semestre['_id']
-#         #Obtener curso by semestre _id
-#         cursos = collection.obtenerRegistros('semestres',{'idPeriodo' = _id})
-
-
 def reporte2(nombreSalon):
     dict = {}
 
     dataSalones = connection.obtenerRegistros(
         'salones', {'nombreSalon': nombreSalon})
-    print(dataSalones)
+    # print(dataSalones)
     dataAlumnos = connection.obtenerRegistros(
         'alumnos', {'idSalon': list(dataSalones)[0]['_id']})  # Lista
-    print(dataAlumnos)
+    # print(dataAlumnos)
     # al especificar nuestro _id tendremos un solo resultado en la lista [0]
     dataSalones = list(dataSalones)[0]
 
     nombreSalon = dataSalones["nombreSalon"]
-    print(nombreSalon)
+    # print(nombreSalon)
 
     dict[nombreSalon] = {}
 
     for dataAlumno in list(dataAlumnos):
         # Accediendo a las notas de cada alumno,
         # dataAlumnos son los alumnos que pertenecen al salon idsalon
-        print("Un Alumno")
-        print(dataAlumno)
+        #print("Un Alumno")
+        # print(dataAlumno)
         dataNotas = connection.obtenerRegistros(
             'notas', {'idAlumno': dataAlumno['_id']})
         # Al hacer list, casteamos del objeto cursor a un objeto lista
@@ -159,8 +140,8 @@ def reporte2(nombreSalon):
             # nuestro nombre del Periodo
             nombrePeriodo = periodo['desSemestre']
             # listaPeriodoSalonCursoNotas['Semestre'] = nombrePeriodo
-            print("Imprimir Nota")
-            print(nota)
+            #print("Imprimir Nota")
+            # print(nota)
             listaNotas.append(nota['nota'])  # Lista de notas por
 
             # Verificamos si el objeto nombrePeriodo tiene un valor inicial, sino agregarle uno.
@@ -174,20 +155,33 @@ def reporte2(nombreSalon):
             try:
                 a = dict[nombreSalon][nombrePeriodo][nombreCurso]
             except:
-                print("Except")
+                # print("Except")
                 dict[nombreSalon][nombrePeriodo][nombreCurso] = []
 
             dict[nombreSalon][nombrePeriodo][nombreCurso].append(
                 nota['nota'])
 
-    print(dumps(dict, indent=2))
+    #print(dumps(dict, indent=2))
+    table = []  # Preparamos la tabla para pretty table
 
     # average from the notes
     for clase in dict:
-        print(clase)
-        for periodo in dict(clase):
-            print(periodo)
-            for p
+        # print(clase)
+        for periodo in dict[clase]:
+            # print(periodo)
+            for curso in dict[clase][periodo]:
+                # print(curso)
+                suma = 0
+                for nota in dict[clase][periodo][curso]:
+                    suma = suma + nota
+
+                average = float(suma / len(dict[clase][periodo][curso]))
+                table.append([clase, periodo, curso, average])
+                # print(average)
+                dict[clase][periodo][curso].append(average)
+
+    print(tabulate(table, headers=[
+          "Nombre de la Clase", "Periodo", "Nombre Curso", "Promedio"]))
 
 
 reporte2("backend")
