@@ -1,11 +1,9 @@
 import utils
 import cruds
-from time import sleep
 
 __log = utils.log("Principal")
 __log.info("Inicio del sistema")
 
-#menu empleado
 def mantenimientoEmpleado():
     tplEmpleado = ("1. Alumno", "2. Docente", "3. Cursos", "4. Salones", 
                     "5. Periodo Escolar", "6. Matricula", "7. Regresar")
@@ -18,34 +16,13 @@ def mantenimientoEmpleado():
             __log.info("Menu Empleado --> Alumno")
             stopMenuAlumno = True
             while stopMenuAlumno:
-                tplAlumno = ("1. Agregar Alumno", "2. Listar Alumnos", "3. Modificar Alumno", "4. Eliminar Alumno")
+                tplAlumno = ("1. Agregar Alumno", "2.")
                 menuAlumno = utils.Menu("Menu Alumno", tplAlumno)
                 resmenuAlumno = menuAlumno.MostrarMenu()
-                #Agregar Alumno
                 if resmenuAlumno == 1:
                     cruds.ingresarAlumno()
-                    sleep(2)
-                    __log.debug("Se ingresaron los datos del alumno")
-                #Listar Alumno
                 elif resmenuAlumno == 2:
-                    cruds.listarAlumnos()
-                    sleep(2)
-                #Modificar Alumno
-                elif resmenuAlumno == 3:                    
-                    cruds.listarAlumnos()                        
-                    idAlumno = cruds.buscarAlumno()
-                    cruds.modificarAlumno(idAlumno)
-                    sleep(2)
-                    __log.debug("Se modificaron los datos del alumno")
-                #Elimar Alumno
-                elif resmenuAlumno == 4:                    
-                    cruds.listarAlumnos()                        
-                    idAlumno = cruds.buscarAlumno()
-                    cruds.eliminarAlumno(idAlumno)
-                    sleep(2)
-                    __log.debug("Se eliminaron los datos del alumno")
-                elif resmenuAlumno == 0:
-                    utils.Salir()
+                    pass               
                 else:
                     pass
         else:
