@@ -49,6 +49,8 @@ class conexionBDD:
                 return conn
             except Exception as error:
                 return False
+
+                
         elif(self.intBDD == 4):
             uri = 'mongodb://localhost:27017'
             database = 'rpineda'
