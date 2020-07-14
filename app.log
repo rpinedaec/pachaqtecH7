@@ -335,3 +335,10 @@
 2020-07-14 12:14:12,940 - Menu - DEBUG - La opcion 0 es valida del menu Menu Salones
 2020-07-14 12:14:31,474 - Principal - INFO - Inicio del sistema
 2020-07-14 13:18:29,428 - Menu - ERROR - invalid literal for int() with base 10: 'C:/Users/BRYAN/AppData/Local/Programs/Python/Python37/python.exe c:/Users/BRYAN/Documents/repositorioprofe/Hackaton7/Grupo3/app/init.py'
+2020-07-14 13:18:34,890 - Principal - INFO - Inicio del sistema
+2020-07-14 13:18:38,850 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 13:18:38,850 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 13:18:40,412 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 13:18:40,413 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 13:18:45,862 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 13:19:06,810 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
