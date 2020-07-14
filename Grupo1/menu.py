@@ -12,13 +12,13 @@ class Menu:
         opSalir = True
         while(opSalir):
             self.limpiarPantalla()
-            print("             COLEGIO E-SCHOOL                 ")
+            print("------------------ COLEGIO E-SCHOOL -------------------")
             print(" ----------------" +self.nombreMenu + "----------------")
             
             for (key, value) in self.listaOpciones.items():
-                print(key, "\t: ", value)
+                print(key, ": ", value)
             opcion = 100
-            print("\t- Salir \t\t::  9")
+            print("Salir :  9")
             try:
                 print("Escoge tu opcion")
                 opcion = int(input())
