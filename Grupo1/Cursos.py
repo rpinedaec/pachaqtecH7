@@ -38,10 +38,19 @@ class Cursos:
         print("Se actualizó Curso")
 
     @staticmethod
-    def elliminarCurso(connection, condition):
+    def eliminarCurso(connection, condition):
         connection.eliminarRegistro(Cursos.collection, condition)
         print("Se eliminó Curso")
 
     @staticmethod
     def transformToObject(**kwargs):
         return kwargs
+
+ 
+
+transformToObject(a="4",b="a")
+{
+    'a': '4'
+    'b': 'a'
+
+}
