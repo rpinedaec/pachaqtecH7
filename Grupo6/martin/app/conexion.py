@@ -1,29 +1,30 @@
- 
 import utils
-
 log = utils.log("INIT")
-
 # mongoDB
 #import pymongo
+import pymongo
 from pymongo import MongoClient, errors
 
 
-
-
 class conexionBDD:
- 
-    def conexion(self):
-            url = 'mongodb://localhost:27017'
-            database = 'Hackaton7'
-            try:
-                conn = MongoClient(url)
-                db = conn[str(f"{database}")]
-                return db
-            except Exception as error:
-                log.error(error)
-                return False 
+
+    def conexion(self): 
+        url = 'mongodb://localhost:27017'
+        try:
+            conn = pymongo.MongoClient(url) 
+            #db = conn[str(f"{database}")]
+            db = conn["Hackaton7Grupo6"]
+            db["curso"]
+            db["alumno"]
+            db["nota"]
+            return db
+        except Exception as error:
+            log.error(error)
+            return error 
              
-    
+
+
+
     def insertarRegistro(self, collection, data):
         conexion = self.conexion()
         doc = conexion[str(f"{collection}")]

@@ -13,7 +13,8 @@ lstCurso = []
 log = utils.log("INIT")
 MsjContinuar = "Enter para continuar..."
 conn = conexion.conexionBDD()
- 
+
+
 
 def cargarAlumnos():
     lstAlumno.clear()
@@ -25,21 +26,17 @@ def cargarAlumnos():
 
 def cargarNota():
     lstNota.clear()
-    coll = conn.leerRegistrosTotal("nota")
-    for obj in coll: 
+    coll1 = conn.leerRegistrosTotal("nota")
+    for obj in coll1: 
         DataRestor = nota.nota(obj['_id'],obj['descripcionNota'],obj['idCurso'],obj['idAlumno'])
-    lstNota.append(DataRestor) 
+        lstNota.append(DataRestor) 
 
 def cargarCurso():
     lstCurso.clear()
     coll = conn.leerRegistrosTotal("curso")
     for obj in coll: 
         DataRestor = curso.curso(obj['_id'],obj['nombreCurso'])
-    lstCurso.append(DataRestor) 
-
-
-
-
+        lstCurso.append(DataRestor)
 
 def MostrarAlumnos():
     cargarAlumnos() 
@@ -123,9 +120,6 @@ def MostrarAlumnos():
         else:
             log.debug("volvemos a mostrar menu")
 
-
-
-
 def MostrarNotas(): 
     stopMenu = True
     while stopMenu:
@@ -133,9 +127,26 @@ def MostrarNotas():
         menuInicio = utils.Menu("Menu NOTAS", dicMenu)
         resMenu = menuInicio.mostrarMenu()
         if(resMenu == 1):
-            log.debug("Listar")
-            cargarNota() 
-            utils.listaSimple(lstNota,2,1) 
+            log.debug("Listar") 
+            lstNotasTemp1 = []
+            lstNotasTemp1.clear()
+            collt = conn.leerRegistrosTotal("nota")
+            for obj2 in collt: 
+                idAlumnoT = obj2['idAlumno'] 
+                FiltroAlumnoId = {"_id": ObjectId(f"{idAlumnoT}")}
+                colltAlumno = conn.leerRegistro("alumno", FiltroAlumnoId)
+                nombreAlumnoDes=colltAlumno['nombreAlumno']
+                
+                idCursoT = obj2['idCurso'] 
+                FiltroCursoId = {"_id": ObjectId(f"{idCursoT}")}
+                colltCurso = conn.leerRegistro("curso", FiltroCursoId)
+                nombreCursoDes=colltCurso['nombreCurso']
+
+                DataRestor2 = nota.notaDescripcion(obj2['_id'],obj2['descripcionNota'],nombreCursoDes
+                                            ,nombreAlumnoDes)
+                lstNotasTemp1.append(DataRestor2)
+            utils.listaSimple(lstNotasTemp1,2,1)
+
         elif(resMenu == 2):
             log.debug("Buscar por Alumno")
             cargarAlumnos()
@@ -159,19 +170,41 @@ def MostrarNotas():
                 lstNotasTemp.append(DataRestor2)
             utils.listaSimple(lstNotasTemp,2,1)
         elif(resMenu == 3):
-            log.debug("Insertar")
-            pass
+            log.debug("Insertar Notas")
+
+            cargarAlumnos()
+            utils.listaSimple(lstAlumno,1,0) 
+            nombrebuscar = input("Nombre del Alumno: ")
+            fitro = {"nombreAlumno":f"{nombrebuscar}"} 
+            colltAlum = conn.leerRegistro("alumno", fitro)
+            idAlumno=colltAlum['_id']
+
+            cargarCurso()
+            utils.listaSimple(lstCurso,3,0) 
+            cursobuscar = input("Nombre del Curso: ")
+            fitroCurso = {"nombreCurso":f"{cursobuscar}"} 
+            colltCurs = conn.leerRegistro("curso", fitroCurso)
+            idCurso=colltCurs['_id']
+
+            Numnota = utils.validarEntero("Nota: ")
+            data = { "descripcionNota":f"{Numnota}"
+                    ,"idCurso":f"{idCurso}"
+                    ,"idAlumno":f"{idAlumno}" }
+            insertado = conn.insertarRegistro("nota", data)
+            if insertado:
+                cargarNota()
+                print("Insertado correctamente.") 
+            else:
+                print("Error al insertar.") 
+            input(MsjContinuar)
         elif(resMenu == 4):
-            log.debug("Insertar")
-            pass
+            log.debug("Eliminar")
+            
+
         elif(resMenu == 9):
             stopMenu = False 
         else:
             log.debug("volvemos a mostrar menu")
-
-
-
-
 
 def MostrarCursos(): 
     stopMenu = True
@@ -188,17 +221,23 @@ def MostrarCursos():
             cargarCurso() 
             utils.listaSimple(lstCurso,3,1)
         elif(resMenu == 3):
-            log.debug("Insertar")
-            pass
+            log.debug("Insertar Cursos")
+            nombre = input("Nombre del Curso: ")
+            data = { "nombreCurso":f"{nombre}" }
+            insertado = conn.insertarRegistro("curso", data)
+            if insertado:
+                cargarCurso()
+                print("Insertado correctamente.") 
+            else:
+                print("Error al insertar.") 
+            input(MsjContinuar)
         elif(resMenu == 4):
-            log.debug("Insertar")
+            log.debug("Actualizar")
             pass
         elif(resMenu == 9):
             stopMenu = False 
         else:
             log.debug("volvemos a mostrar menu")
-
-
 
 stopMenuInicio = True
 while stopMenuInicio:
