@@ -36,9 +36,9 @@ class Connection:
     # change seria lo que vamos a actualizar
     def actualizarRegistro(self, collection, condition, change):
         collection = self.db[collection]
-        collection.update_one[condition, {
+        collection.update(condition, {
             '$set': change
-        }]
+        })
         print("Se actualizo un registro")
 
     def eliminarRegistro(self, collection, condition=None):

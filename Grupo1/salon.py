@@ -1,5 +1,8 @@
 from connection.conn import Connection
 import menu
+from bson.json_util import dumps
+from pymongo import MongoClient, errors
+from tabulate import tabulate
 
 Connection = Connection('mongodb+srv://paola:pachaqtec@pachaqtec.sdvq7.mongodb.net/test', 'pachacteq')
 
@@ -15,13 +18,17 @@ class salones:
         self.idProfesor = idProfesor
     
 def mantenimiento_salones():
-        dicM_Salones = {"Ver todos los salones": 1, "Buscar por No. de Salón": 2, "Modificar Salón por No. de Salón": 3, "Crear Salón": 4,"Borrar Salón": 5}
+        dicM_Salones = {"Ver todos los salones": 1, "Modificar Salón por No. de Salón": 2, "Crear Salón": 3,"Borrar Salón": 4}
         menuM_Salones = menu.Menu("Mantenimiento de Salones", dicM_Salones)
         resM_Salones = menuM_Salones.mostrarMenu()
         if (resM_Salones == 1):
             listar_salones = Connection.obtenerRegistros(salones.collection)
-            print(listar_salones)
-            print("")
+            table = []
+            listar_salones = list(listar_salones)
+            for i in range(len(listar_salones)):
+                table.append([listar_salones[i]['_id'],listar_salones[i]['nombreSalon']])
+            
+            print(tabulate(table,headers=["Id Salon", "Nombre Salon"],tablefmt='fancy_grid'))
             print ("-\t¿Desea volver al menu?"+
                         "-\tVolver al menu: S-\t"+
                         "-\tVolver a consultar: N")
@@ -32,103 +39,91 @@ def mantenimiento_salones():
                 return listar_salones
 
         elif (resM_Salones == 2):
-            buscador_numero = input("Escribe el No. de salón a ubicar: ")
-            listar_porsalon = Connection.obtenerRegistro(salones.collection, {'nombreSalon': buscador_numero})
-            print(listar_porsalon)
-            print("")
-            print ("-\t¿Desea volver al menu?"+
-                        "-\tVolver al menu: S-\t"+
-                        "-\tVolver a consultar: N")
-            ver_salones = input("S/N: ")
-            if (ver_salones=="S"):
-                mantenimiento_salones()
-            else:
-                return buscador_numero
+            ingresado = True
+            while ingresado :
+                listar_salones = Connection.obtenerRegistros(salones.collection)
+                table = []
+                listar_salones = list(listar_salones)
+                for i in range(len(listar_salones)):
+                    table.append([listar_salones[i]['_id'],listar_salones[i]['nombreSalon']])
+                print(tabulate(table,headers=["Id Salon", "Nombre Salon"],tablefmt='fancy_grid'))
+                print("Seleccion Nombre de Salon a modificar")
+                nombreSalon = input()
+                idSalon = Connection.obtenerRegistro("salones",{'nombreSalon': nombreSalon})
+                
+                if idSalon == None:
+                    print ("Intente de nuevo. Nombre Salon no existe oye")
+                
+                else: 
+                    id_ = idSalon['_id']
+                    print("Con que valor desea cambiar el nombre")
+                    valorActualizar = input()
+                    Connection.actualizarRegistro("salones",{'_id': id_ },{'nombreSalon' : valorActualizar})
+                    print("Valor actualizado")
+                    ingresado = False 
+
 
         elif (resM_Salones == 3):
-            listar_salones = Connection.obtenerRegistros(salones.collection)
-            listar_salones = list(listar_salones)
-            print("Escoja el ID del cliente que desea modificar")
-            print(listar_salones)
-            print("")
-            print("Ahora escriba el nuevo valor el No. de Salón")
-            nombreSalon = input()
+
+            #print(dumps(listar_salones,indent=2))
+            print("Tabla Profesores")
             mostrar_profesor = Connection.obtenerRegistros('profesores')
             mostrar_profesor = list(mostrar_profesor)
-            print("Ahora escriba el nombre del Profesor")
-            print(mostrar_profesor)
-            idProfesor= input()
-            resM_Cambio = Connection.actualizarRegistro(salones.collection, {
+            table = []
+
+            for i in range(len(mostrar_profesor)):
+                table.append([mostrar_profesor[i]["_id"],mostrar_profesor[i]["nombreProfesor"]])
+
+            ingresar = True
+            while ingresar:
+                print(tabulate(table,headers=["Id Profesor", "Nombre Profesor"],tablefmt='fancy_grid'))
+                print("Ahora escriba el nombre del Profesor")
+                
+                nombreProfesor= input()
+
+                idProfesor = Connection.obtenerRegistro('profesores',{'nombreProfesor' : nombreProfesor})
+
+                print(type(idProfesor))
+                #print(idProfesor)
+
+                if idProfesor == None:
+                    print(idProfesor)
+                    print("Intente de nuevo oye")
+                else: 
+                    ingresar = False
+
+            print("Ingrese el nombre del Salon")
+            nombreSalon = input()
+            Connection.insertRegistro('salones', {
                                         'nombreSalon': nombreSalon,
-                                        'idAlumno': idAlumno,
-                                        'idProfesor': idProfesor
+                                        'idProfesor': idProfesor['_id']
                                         })
-            while(resM_Cambio):
-                print("Éxito. Se actualizó el contacto")
-                print ("-\t¿Desea volver al menu?"+
-                        "-\tVolver al menu: S-\t"+
-                        "-\tVolver a consultar: N")
-                modificar_salones = input("S/N: ")
-                if (modificar_salones=="S"):
-                    mantenimiento_salones()
-                elif (modificar_salones != "S"):
-                    return listar_salones
-                else:
-                    print("Hubo un error. Intente nuevamente.")
-                    return listar_salones
+            print("Ingresado")
+
+
             
-        elif (resM_Salones == 4):
-            nuevoingreso = True
-            while (nuevoingreso):
-                print("Para crear un nuevo registro, ingrese los siguientes datos:")
-                salones.Salon = input("Nombre del salón: ")
-                salones.Alumno = None
-                salones.Profesor = None
-                resM_NuevoSalon = Connection.insertRegistro(salones.collection, {
-                                            'nombreSalon': salones.Salon,
-                                            'idAlumno': salones.Alumno,
-                                            'idProfesor': salones.Profesor
-                                            })
-                print("Exito. Se creo el nuevo resgitro")
-                print("")
-                print ("-\t¿Desea volver al menu?"+
-                            "-\tVolver al menu: S-\t"+
-                            "-\tIngresar nuevo registro: N")
-                opcion_nuevosalon = input("S/N: ")
-                if (opcion_nuevosalon=="S"):
-                    mantenimiento_salones()
-                elif (opcion_nuevosalon !="S"):
-                    return nuevoingreso
-                else:
-                    nuevoingreso = False
-                    print("Hubo un error. Intente nuevamente")
-                    return nuevoingreso
+
                     
-        elif (resM_Salones == 5):
-            eliminarsalon = True
-            while (eliminarsalon):
-                print("Escoja el ID del cliente que desea eliminar")
+        elif (resM_Salones == 4):
+            ingresado = True
+            while ingresado :
                 listar_salones = Connection.obtenerRegistros(salones.collection)
-                print(listar_salones)
-                print("")
-                print("Ahora scriba el No. Salon que desea eliminar")
-                salones.Salon = input("Escribe el No.: ")
-                resM_Borrar = connection.eliminarRegistro(salones.collection, {
-                                        'nombreSalon': salones.Salon,
-                                        })
-                if(resM_Borrar):
-                    print("Éxito. Se borró el salón")
-                    print("")
-                    print ("-\t¿Desea volver al menu?"+
-                            "-\tVolver al menu: S-\t"+
-                            "-\tIngresar nuevo registro: N")
-                    opcion_borrar = input("S/N: ")
-                    if (opcion_borrar=="S"):
-                        mantenimiento_salones()
-                    elif (opcion_nuevosalon !="S"):
-                        return eliminarsalon
-                else:
-                    print("Hubo un error. Intente nuevamente")
-                    return eliminarsalon
+                table = []
+                listar_salones = list(listar_salones)
+                for i in range(len(listar_salones)):
+                    table.append([listar_salones[i]['_id'],listar_salones[i]['nombreSalon']])
+                print(tabulate(table,headers=["Id Salon", "Nombre Salon"],tablefmt='fancy_grid'))
+                print("Seleccion Nombre de Salon a borrar")
+                nombreSalon = input()
+                idSalon = Connection.obtenerRegistro("salones",{'nombreSalon': nombreSalon})
+                
+                if idSalon == None:
+                    print ("Intente de nuevo. Nombre Salon no existe oye")
+                
+                else: 
+                    id_ = idSalon['_id']
+                    Connection.eliminarRegistro("salones",{'_id': id_ })
+                    print("Registro Eliminado")
+                    ingresado = False 
 
 mantenimiento_salones()
