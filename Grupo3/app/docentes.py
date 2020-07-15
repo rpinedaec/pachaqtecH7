@@ -1,3 +1,4 @@
+import utils
 #clase docentes
 class docentes:
   __log = utils.log("docentes")
@@ -10,11 +11,11 @@ class docentes:
     
   def toDic(self):
     d = {
-      "idAlumno": self.idalumnos,
-      "nombrealumno": self.nombrealumno,
-      "apellidoalumno": self.apellidoalumno,
-      "correoalumno": self.correoalumno,
-      "nacalumno": self.nacalumno
+      "iddocentes": self.iddocentes,
+      "nombredocente": self.nombredocente,
+      "dnidocente": self.dnidocente,
+      "correodocente": self.correodocente,
+      "nacdocente": self.nacdocente
     }
     return d
     
