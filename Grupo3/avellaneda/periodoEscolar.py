@@ -1,3 +1,4 @@
+import utils
 #Clase Periodo Escolar
 class periodoEscolar:
   __log = utils.log("periodo escolar")
