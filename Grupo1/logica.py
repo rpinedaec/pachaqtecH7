@@ -6,11 +6,11 @@ from tabulate import tabulate
 # Nivel avanzado
 # Listar a los profesores con su respectiva curso, salon y alumnos
 
-connection = Connection(
-    'mongodb+srv://reyner:pachaqtec@pachaqtec.sdvq7.mongodb.net/pachaqtec?retryWrites=true&w=majority', 'pachacteq')
+# connection = Connection(
+#     'mongodb+srv://reyner:pachaqtec@pachaqtec.sdvq7.mongodb.net/pachaqtec?retryWrites=true&w=majority', 'pachacteq')
 
 
-def listarProfesores(nombreProfesor):
+def listarProfesores(nombreProfesor, connection):
     collection = connection.returnCollection('profesores')
     # empezaremos a buscar por salones
     data = collection.aggregate(
@@ -60,10 +60,10 @@ def listarProfesores(nombreProfesor):
                           salon['nombreSalon'], alumno['nombreAlumno'], alumno['correoAlumno']])
 
     print(tabulate(table, headers=[
-          "Nombre Profesor", "Curso", "Nombre Salon", "Nombre Alumno", "Correo Alumno"]))
+          "Nombre Profesor", "Curso", "Nombre Salon", "Nombre Alumno", "Correo Alumno"], tablefmt='fancy_grid'))
 
 
-def listarAlumnos(nombreAlumno):
+def listarAlumnos(nombreAlumno, connection):
 
     collection = connection.returnCollection('alumnos')
     data = collection.aggregate([
@@ -94,17 +94,21 @@ def listarAlumnos(nombreAlumno):
     table = [[data['nombreAlumno'], data['correoAlumno'], data['salones'][0]
               ['nombreSalon'], objetoProfesor['nombreProfesor'], obtenerCursoNombre]]
     print(tabulate(table, headers=["Nombre Alumno", "Correo Alumno",
-                                   "Nombre Salon", "Nombre Profesor", "Nombre del Curso"]))
+                                   "Nombre Salon", "Nombre Profesor", "Nombre del Curso"], tablefmt='fancy_grid'))
 
 
-def reporte2(nombreSalon):
+def reporte2(nombreSalon, connection):
     dict = {}
 
     dataSalones = connection.obtenerRegistros(
         'salones', {'nombreSalon': nombreSalon})
     # print(dataSalones)
-    dataAlumnos = connection.obtenerRegistros(
-        'alumnos', {'idSalon': list(dataSalones)[0]['_id']})  # Lista
+    try:
+        dataAlumnos = connection.obtenerRegistros(
+            'alumnos', {'idSalon': list(dataSalones)[0]['_id']})  # Lista
+    except:
+        print("Nombre de Salon no Valido")
+        return None
     # print(dataAlumnos)
     # al especificar nuestro _id tendremos un solo resultado en la lista [0]
     dataSalones = list(dataSalones)[0]
@@ -181,7 +185,7 @@ def reporte2(nombreSalon):
                 dict[clase][periodo][curso].append(average)
 
     print(tabulate(table, headers=[
-          "Nombre de la Clase", "Periodo", "Nombre Curso", "Promedio"]))
+          "Nombre de la Clase", "Periodo", "Nombre Curso", "Promedio"], tablefmt='fancy_grid'))
 
 
-reporte2("backend")
+#reporte2("4to Secundaria")
