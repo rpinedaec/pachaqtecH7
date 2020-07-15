@@ -21,8 +21,6 @@ menuMantPeriodo = Menu({1: "Crear Periodo",    2: "Modificar Periodo", 3: "Elimi
                    "Colegio Perez de Cuellar", "Menú mantenimiento Periodo")
 menuMantGrados = Menu({1: "Crear Grados",    2: "Modificar Grados", 3: "Eliminar Grados"},
                    "Colegio Perez de Cuellar", "Menú mantenimiento Grados")
-menuModProfesor = Menu({1: "Modificar datos personales",    2: "Agregar un curso", 3: "Eliminar un curso"},
-                   "Colegio Perez de Cuellar", "Menú modificar Profesor")
 # Menu de navegación
 while True:
     intOptionSelect = menuPrincipal.show()
@@ -43,9 +41,9 @@ while True:
                     if intOptionSelect == 1: #Crear alumno
                         crearAlumno()
                     elif intOptionSelect == 2: #modificar alumno
-                        pass
+                        modificarAlumno()
                     elif intOptionSelect == 3: #Eliminar alumno
-                        pass
+                        eliminarAlumno()
                     else:
                         break
             elif intOptionSelect == 2:  # Mantenimiento Docente 
@@ -54,16 +52,7 @@ while True:
                     if intOptionSelect == 1: #Crear Docente99
                         crearProfesor()
                     elif intOptionSelect == 2: #Modificar Docente
-                        while True:
-                            intOptionSelect = menuModProfesor.show()
-                            if intOptionSelect == 1: # Modificar datos personales
-                                modDataProfesor()
-                            elif intOptionSelect == 2: # Asignarle mas curso
-                                modAddCursoProfesor()
-                            elif intOptionSelect == 3: # Elimnar un curso
-                                modDelCursoProfesor()
-                            else:
-                                break
+                        modificarProfesor()
                     elif intOptionSelect == 3: #Eliminar Docente
                         eliminarProfesor()
                     else:

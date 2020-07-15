@@ -310,91 +310,67 @@ def crearProfesor():
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     my_db = myclient["Hackaton_S7_G5"]
     colec = my_db["profesores"]
-    codigoprofesor = int(input("Ingrese el codigo del profesor: "))
+    print("cod_profesor\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_profesor"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
+    while True: 
+        try:
+            codigoprofesor = int(input("Ingrese el codigo del nuevo profesor: "))
+            if 0 < codigoprofesor :
+                break
+            else:
+                print("Error!: Ingrese un número entero positivo")
+        except:
+            print("Error!: Ingrese un número entero positivo")
     nombreprofesor = input("Ingrese el nombre del profesor: ")
     apellidoprofesor = input("Ingresde el apellido del profesor: ")
-    #Muestra cursos que se le puede asignar al profesor
-    colec = my_db["cursos"]
-    for x in colec.find({},{"cod_curso": 1, "nombre": 1, "cod_grado": 1, "numero_notas": 1}):
-        print(x)
-    #Trae el curso que se le va a asignar al profesor, por el id del curso
-    codcurso = int(input("Ingrese el codigo del curso que asignará al profesor: "))    
-    colec = my_db["cursos"]
-    diccurso = colec.find_one({"cod_curso":codcurso},{"cod_curso": 1, "nombre": 1, "cod_grado": 1, "numero_notas": 1})
-    #Pongo en la base de datos el profesor (curso en blanco - inicialmente)
-    colec = my_db["profesores"]
-    lstcursos = []
-    dicProfesor = {"cod_profesor":codigoprofesor, "nombre":nombreprofesor, "apellido":apellidoprofesor,"cursos":lstcursos}
+    dicProfesor = {"cod_profesor":codigoprofesor, "nombre":nombreprofesor, "apellido":apellidoprofesor}
     colec.insert_one(dicProfesor)
-    colec.update({'cod_profesor': codigoprofesor},{'$push': {'cursos':diccurso}})
-    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1, "cursos": 1}):
-        print(x)
-        time.sleep(2)
-def modDataProfesor():
+    print("cod_profesor\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_profesor"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
+    time.sleep(2)
+def modificarProfesor():
     os.system("cls")
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     my_db = myclient["Hackaton_S7_G5"]
     colec = my_db["profesores"]
-    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1, "cursos": 1}):
-        print(x)
-    codProfesor = int(input("Ingrese el codigo del profesor a modificar: "))
+    print("cod_profesor\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_profesor"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
+    while True:
+        try:
+            codProfesor = int(input("Ingrese el codigo del profesor a modificar: "))
+            break
+        except:
+            print("Error!: Ingrese un número entero positivo")
     nuevoNombre = input("Ingrese el nuevo nombre para el profesor: ")
     nuevoApellido = input("Ingrese en nuevo apellido para el profesor: ")
     colec.update_one({ "cod_profesor": codProfesor },{ "$set": { "nombre": f"{nuevoNombre}","apellido": f"{nuevoApellido}"} })
-    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1, "cursos": 1}):
-        print(x)
+    print("cod_profesor\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_profesor"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
     print("Se modifico correctamente")
-    time.sleep(2)
-def modAddCursoProfesor():
-    os.system("cls")
-    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-    my_db = myclient["Hackaton_S7_G5"]
-    colec = my_db["profesores"]
-    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1, "cursos": 1}):
-        print(x)
-    codProfesor = int(input("Ingrese el codigo del profesor a modificar: "))   
-    colec = my_db["cursos"]
-    for x in colec.find({},{"cod_curso": 1, "nombre": 1, "cod_grado": 1, "numero_notas": 1}):
-        print(x)
-    codCurso = int(input("Ingrese el codigo del nuevo curso: "))
-    diccurso = colec.find_one({"cod_curso":codCurso},{"cod_curso": 1, "nombre": 1, "cod_grado": 1, "numero_notas": 1})
-    colec = my_db["profesores"]
-    colec.update({'cod_profesor': codProfesor},{'$addToSet': {'cursos':diccurso}})
-    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1, "cursos": 1}):
-        print(x)
-    print("Se agrego correctamente")
-    time.sleep(2)
-def modDelCursoProfesor():
-    os.system("cls")
-    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-    my_db = myclient["Hackaton_S7_G5"]
-    colec = my_db["profesores"]
-    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1, "cursos": 1}):
-        print(x)
-    codProfesor = int(input("Ingrese el codigo del profesor a modificar: "))   
-    for x in colec.find({"cod_profesor": codProfesor},{"cursos": 1}):
-        print(x)
-    colec = my_db["cursos"]
-    codCurso = int(input("Ingrese el codigo del curso a eliminar: "))
-    diccurso = colec.find_one({"cod_curso":codCurso})  
-    colec = my_db["profesores"]
-    colec.update({'cod_profesor': codProfesor},{'$pull': {'cursos':diccurso}})
-    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1, "cursos": 1}):
-        print(x)
-    print("Se elimino correctamente")
     time.sleep(2)
 def eliminarProfesor():
     os.system("cls")
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     my_db = myclient["Hackaton_S7_G5"]
     colec = my_db["profesores"]
-    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1, "cursos": 1}):
-        print(x)
-    codProfesor= int(input("Ingresa el codigo del PROFESOR que desea eliminar: "))
+    print("cod_profesor\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_profesor"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
+    while True:
+        try:
+            codProfesor = int(input("Ingrese el codigo del profesor a eliminar: "))
+            break
+        except:
+            print("Error!: Ingrese un número entero positivo")
     resConn = colec.delete_one({"cod_profesor": codProfesor})
     os.system("cls")
-    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1, "cursos": 1}):
-        print(x)
+    print("cod_profesor\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_profesor"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
     print("Se eliminó correctamente")
     time.sleep(2)
     
@@ -403,41 +379,72 @@ def crearAlumno():
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     my_db = myclient["Hackaton_S7_G5"]
     colec = my_db["alumnos"]
-    codigoAlumno = int(input("Ingrese el codigo del alumno: "))
+    print("cod_alumno\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_alumno": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_alumno"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
+    while True: 
+        try:
+            codigoAlumno = int(input("Ingrese el codigo del nuevo alumno: "))
+            if 0 < codigoAlumno :
+                break
+            else:
+                print("Error!: Ingrese un número entero positivo")
+                pass
+        except:
+            print("Error!: Ingrese un número entero positivo")
     nombreAlumno = input("Ingrese el nombre del alumno: ")
     apellidoAlumno = input ("Ingrese el apellido del alumno: ")
-    colec = my_db["salones"]
-    for x in colec.find({},{"cod_salon": 1, "desc": 1, "cod_grado": 1}):
-        print(x)
-    codSalon = int(input("Ingrese el codigo del salón segun el grado escolar: "))
-    dicSalon = colec.find_one({"cod_salon": codSalon})
-    codGrado = dicSalon.get("cod_grado")
-    colec = my_db["cursos"]
-    diccursos = colec.find({"cod_grado":codGrado})
-    colec = my_db["periodos"]
-    lstperiodos=[]
-    for c in diccursos:
-        lstperiodos.append(c)
-    n = 0
-    for x in colec.find({},{"cod_periodo": 1, "desc": 1}):    
-        colec = my_db["alumnos"]  
-        n += 1
-        if n==1:
-            periodo = x.get("desc")
-            dicAlumno = {"cod_alumno":codigoAlumno, "nombre":nombreAlumno, "apellido":apellidoAlumno,f"{codGrado} Grado":[]}
-            colec.insert_one(dicAlumno)   
-            colec.update_many({'cod_alumno': codigoAlumno},{'$push': {f"{codGrado} Grado":{f"{periodo}": lstperiodos }}})                 
-        else:
-            periodo = x.get("desc")
-            colec.update_many({'cod_alumno': codigoAlumno},{'$push': {f"{codGrado} Grado":{f"{periodo}": lstperiodos }}})         
-def crearNota()
+    dicAlumno = {"cod_alumno":codigoAlumno, "nombre":nombreAlumno, "apellido":apellidoAlumno}
+    colec.insert_one(dicAlumno)
+    print("cod_alumno\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_alumno": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_alumno"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
+    time.sleep(2)
+def modificarAlumno():
+    os.system("cls")
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     my_db = myclient["Hackaton_S7_G5"]
     colec = my_db["alumnos"]
+    print("cod_alumno\tnombre\t\tapellido")
     for x in colec.find({},{"cod_alumno": 1, "nombre": 1, "apellido": 1}):
-        print(x)
-    codAlumno = int(input("Ingrese el codigo del Alumno: "))
-    
+        print (str(x["cod_alumno"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
+    while True:
+        try:
+            codAlumno = int(input("Ingrese el codigo del profesor a modificar: "))
+            break
+        except:
+            print("Error!: Ingrese un número entero positivo")
+    nuevoNombre = input("Ingrese el nuevo nombre para el profesor: ")
+    nuevoApellido = input("Ingrese en nuevo apellido para el profesor: ")
+    colec.update_one({ "cod_alumno": codAlumno },{ "$set": { "nombre": f"{nuevoNombre}","apellido": f"{nuevoApellido}"} })
+    print("cod_alumno\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_alumno": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_alumno"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
+    print("Se modifico correctamente")
+    time.sleep(2)
+def eliminarAlumno():  
+    os.system("cls")
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    my_db = myclient["Hackaton_S7_G5"]
+    colec = my_db["alumnos"]
+    print("cod_alumno\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_alumno": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_alumno"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
+    while True:
+        try:
+            codAlumno = int(input("Ingrese el codigo del profesor a eliminar: "))
+            break
+        except:
+            print("Error!: Ingrese un número entero positivo")
+    resConn = colec.delete_one({"cod_alumno": codAlumno})
+    os.system("cls")
+    print("cod_alumno\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_alumno": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_alumno"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])
+    print("Se eliminó correctamente")
+    time.sleep(2)
+
+
 
 
 
