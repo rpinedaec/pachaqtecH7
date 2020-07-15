@@ -12,7 +12,7 @@ def crearSalon():
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
         my_db = myclient["Hackaton_S7_G5"]
         colec = my_db["salones"]
-        for x in colec.find({},{"cod_salon": 1, "desc": 1, "cod_grado": 1}):
+        for x in colec.find({},{"cod_salon": 1, "desc": 1}):
             print(x)
         try: 
             codSalon = int(input("Crea un código para el  salón: "))
@@ -21,13 +21,8 @@ def crearSalon():
                 print(f"Ya existe un salon con codigo {codSalon}")
                 time.sleep(2)
                 break
-            colec = my_db["grados"]
-            for x in colec.find({},{"cod_grado": 1, "desc": 1}):
-                print(x)
-            colec = my_db["salones"]
-            codGrado = int(input("Ingresa el código del grado para el salón: "))
-            desc = "SALON - " + str(codSalon)
-            dicSalon = {"cod_salon": codSalon,"desc": desc,"cod_grado": codGrado}
+            desc = input("Ingrese la descripción del salón: ")
+            dicSalon = {"cod_salon": codSalon,"desc": desc}
             resConn = colec.insert_one(dicSalon)
             os.system("cls")
             for x in colec.find({},{"cod_salon": 1, "desc": 1, "cod_grado": 1}):
@@ -44,17 +39,16 @@ def modificarSalon():
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
         my_db = myclient["Hackaton_S7_G5"]
         colec = my_db["salones"]
-        for x in colec.find({},{"cod_salon": 1, "desc": 1, "cod_grado": 1}):
+        for x in colec.find({},{"cod_salon": 1, "desc": 1}):
             print(x)
         codSalon= int(input("Ingresa el codigo del SALON que desea modificar: "))
-        nuevoCodGrad = int(input("Ingresa el nuevo codigo del grado para el SALON: "))
         nuevoDesc = input("Ingrese una nueva descripción: ")
-        colec.update({"cod_salon": codSalon}, {"$set":{"desc":nuevoDesc, "cod_grado":nuevoCodGrad}})
+        colec.update({"cod_salon": codSalon}, {"$set":{"desc":nuevoDesc}})
         os.system("cls")
-        for x in colec.find({},{"cod_salon": 1, "desc": 1, "cod_grado": 1}):
+        for x in colec.find({},{"cod_salon": 1, "desc": 1}):
             print(x)
         print("Se modifico correctamente")
-        time.sleep(3)
+        time.sleep(2)
         break
 def eliminarSalon():
     while True:
@@ -62,13 +56,13 @@ def eliminarSalon():
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
         my_db = myclient["Hackaton_S7_G5"]
         colec = my_db["salones"]
-        for x in colec.find({},{"cod_salon": 1, "desc": 1, "cod_grado": 1}):
+        for x in colec.find({},{"cod_salon": 1, "desc": 1}):
             print(x)
         codSalon= int(input("Ingresa el codigo del SALON que desea eliminar: "))
         salonDel = {"cod_salon": codSalon}
         resConn = colec.delete_one(salonDel)
         os.system("cls")
-        for x in colec.find({},{"cod_salon": 1, "desc": 1, "cod_grado": 1}):
+        for x in colec.find({},{"cod_salon": 1, "desc": 1}):
             print(x)
         print("Se eliminó correctamente")
         time.sleep(3)
@@ -215,7 +209,7 @@ def crearCurso():
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
         my_db = myclient["Hackaton_S7_G5"]
         colec = my_db["cursos"]
-        for x in colec.find({},{"cod_curso": 1, "nombre": 1, "cod_grado": 1, "numero_notas": 1}):
+        for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
             print(x)
         while True:
             try:
@@ -229,44 +223,17 @@ def crearCurso():
             except:
                 print("Ingrese un número entero para el cod_curso")
         nombreCurso = str(input("Ingresa el nombre del curso: "))
-        #Mostar todos los grados
-        colec = my_db["grados"]
-        for x in colec.find({},{"cod_grado": 1, "desc": 1}):
-            print(x)
-        while True:
-            try:
-                colec = my_db["grados"]
-                codGrado = int(input("Ingrese el codigo del grado donde se dictara el curso: "))
-                codexiste = bool(colec.find_one({"cod_grado":codGrado}))
-                colec = my_db["cursos"]
-                if codexiste :
-                    while True:
-                        try:
-                            numNotas = int(input("Ingrese la cantidad de notas que tendra el curso: "))
-                            break
-                        except:
-                            print("Ingrese un numero entero")
-                            time.sleep(2)
-                    dicCurso = {"cod_curso": codCurso,"nombre": nombreCurso,"cod_grado": codGrado, "numero_notas": numNotas}
-                    try:
-                        resConn = colec.insert_one(dicCurso)
-                        for x in range(numNotas):
-                            colec.update({'cod_curso': codCurso},{'$set': {f"Nota {x+1} ": 0 }})  
-                        os.system("cls")
-                        for x in colec.find({},{"cod_curso": 1, "nombre": 1, "cod_grado": 1, "numero_notas": 1}):
-                            print(x)
-                        print("Se agregó correctamente")
-                        time.sleep(2)
-                        break
-                    except:
-                        print(f"Ya existe un curso con codigo {codCurso}")
-                        time.sleep(2)
-                else: 
-                    print("El grado indicado no existe")
-                    time.sleep(2)  
-            except:
-                print("Ingrese el cod_grado correctamente")    
-                time.sleep(2)  
+        dicCurso = {"cod_curso": codCurso,"nombre": nombreCurso}
+        try:
+            resConn = colec.insert_one(dicCurso)
+            for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
+                print(x)
+                print("Se agregó correctamente")
+                time.sleep(2)
+                break
+        except:
+            print(f"Ya existe un curso con codigo {codCurso}")
+            time.sleep(2)
         break           
 def modificarCursos():
    while True:
@@ -274,15 +241,13 @@ def modificarCursos():
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
         my_db = myclient["Hackaton_S7_G5"]
         colec = my_db["cursos"]
-        for x in colec.find({},{"cod_curso": 1, "nombre": 1, "cod_grado": 1, "numero_notas": 1}):
+        for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
             print(x)
-        codCurso = str(input("Ingresa el codigo del CURSO que desea modificar: "))
+        codCurso = int(input("Ingresa el codigo del CURSO que desea modificar: "))
         nuevoNombre = str(input("Ingresa el NUEVO nombre del CURSO: "))
-        nuevoCodgrado = str(input("Ingresa el NUEVO codigó grado del CURSO: "))
-        nuevoNumnotas = int(input("Ingrese el nuevo numero de notas: "))
-        colec.update_one({ "cod_curso": f"{codCurso}" },{ "$set": { "nombre": f"{nuevoNombre}","cod_grado": f"{nuevoCodgrado}", "numero_notas": f"{nuevoNumnotas}" } })
+        colec.update_one({"cod_curso":codCurso},{ "$set": {"nombre": nuevoNombre}})
         os.system("cls")
-        for x in colec.find({},{"cod_curso": 1, "nombre": 1, "cod_grado": 1, "numero_notas": 1}):
+        for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
             print(x)
         print("Se modifico correctamente")
         time.sleep(3)
@@ -293,17 +258,16 @@ def eliminarCursos():
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
         my_db = myclient["Hackaton_S7_G5"]
         colec = my_db["cursos"]
-        for x in colec.find({},{"cod_curso": 1, "nombre": 1, "cod_grado": 1, "numero_notas": 1}):
+        for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
             print(x)
         codCurso= int(input("Ingresa el codigo del CURSO que desea eliminar: "))
-        resConn = colec.delete_one({"cod_curso": codCurso})
+        colec.delete_one({"cod_curso": codCurso})
         os.system("cls")
-        for x in colec.find({},{"cod_curso": 1, "nombre": 1, "cod_grado": 1, "numero_notas": 1}):
+        for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
             print(x)
         print("Se eliminó correctamente")
         time.sleep(3)
         break
-
 # CREAR PROFESOR
 def crearProfesor():
     os.system("cls")
@@ -444,13 +408,134 @@ def eliminarAlumno():
     print("Se eliminó correctamente")
     time.sleep(2)
 
+#CREAR MATRICULA
+def crearMatricula():
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    my_db = myclient["Hackaton_S7_G5"]
+    colec = my_db["matriculas"]
+    print("cod_matricula\talumno\t\tnombre\t\tgrado\t\tperiodo")
+    for x in colec.find():
+        alumno=x["alumno"]
+        grado = x["grado"]
+        periodo = x["periodo"]
+        print(str(x["cod_matricula"]) + "\t\t" + alumno["nombre"] + "\t\t" + alumno["apellido"] + "\t" + grado["desc"] + "\t" + periodo["desc"])   
+    while True: 
+        try:
+            codigoMatricula = int(input("Ingrese el codigo de la matricula: "))
+            if 0 < codigoMatricula :
+                break
+            else:
+                print("Error!: Ingrese un número entero positivo")
+                pass
+        except:
+            print("Error!: Ingrese un número entero positivo")
+    os.system("cls")
+    colec = my_db["alumnos"]
+    print("cod_alumno\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_alumno": 1, "nombre": 1, "apellido": 1}):
+        print (str(x["cod_alumno"]) + "\t\t" + x["nombre"] + "\t\t" + x["apellido"])       
+    codigoAlumno = int(input("Ingrese el codigo del alumno: "))
+    dicAlumno = colec.find_one({"cod_alumno":codigoAlumno})
+    os.system("cls")
+    colec = my_db["grados"]
+    print("cod_grado\tdesc")
+    for x in colec.find({},{"cod_grado": 1, "desc": 1}):
+        print (str(x["cod_grado"]) + "\t\t" + x["desc"])       
+    codigoGrado = int(input("Ingrese el codigo del grado: "))   
+    dicGrado = colec.find_one({"cod_grado":codigoGrado})
+    os.system("cls")
+    colec = my_db["periodos"]
+    print("cod_periodo\tdesc")
+    for x in colec.find({},{"cod_periodo": 1, "desc": 1}):
+        print (str(x["cod_periodo"]) + "\t\t" + x["desc"])       
+    codigoPeriodo = int(input("Ingrese el codigo del periodo: "))   
+    dicPeriodo = colec.find_one({"cod_periodo":codigoPeriodo})
+    os.system("cls")
+    colec = my_db["cursos"]
+    print("cod_curso\tnombre")
+    for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
+        print (str(x["cod_curso"]) + "\t\t" + x["nombre"])       
+    codigoCurso = int(input("Ingrese el codigo del curso: "))   
+    dicCurso = colec.find_one({"cod_curso":codigoCurso})
+    os.system("cls")
+    colec = my_db["profesores"]
+    print("cod_profesor\tnombre\t\tapellido")
+    for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido":1}):
+        print (str(x["cod_profesor"]) + "\t\t" + x["nombre"] + "\t\t"+ x["apellido"])       
+    codigoProfesor = int(input("Ingrese el codigo del profesor: "))
+    dicProfesor = colec.find_one({"cod_profesor":codigoProfesor})
+    os.system("cls")
+    colec = my_db["salones"]
+    print("cod_salon\tdesc")
+    for x in colec.find({},{"cod_salon": 1, "desc": 1}):
+        print (str(x["cod_salon"]) + "\t\t" + x["desc"])     
+    codigoSalon= int(input("Ingrese el codigo del Salon: "))
+    dicSalon = colec.find_one({"cod_salon":codigoSalon})
+    os.system("cls")
+    colec = my_db["matriculas"]
+    colec.insert_one({"cod_matricula": codigoMatricula,"alumno": dicAlumno, "grado": dicGrado, "periodo":dicPeriodo, "cursos":[] })
+    colec.update_one({'cod_matricula': codigoMatricula},{'$push': {'cursos':[dicCurso,dicProfesor,dicSalon]}})
 
-
-
-
-
-
-
-
+    while True:
+        more = input("Deseas agregar mas cursos? S/N: ")
+        if more == "S":
+            colec = my_db["cursos"]
+            print("cod_curso\tnombre")
+            for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
+                print (str(x["cod_curso"]) + "\t\t" + x["nombre"])       
+            codigoCurso = int(input("Ingrese el codigo del curso: "))   
+            dicCurso = colec.find_one({"cod_curso":codigoCurso})
+            os.system("cls")
+            colec = my_db["profesores"]
+            print("cod_profesor\tnombre\t\tapellido")
+            for x in colec.find({},{"cod_profesor": 1, "nombre": 1, "apellido":1}):
+                print (str(x["cod_profesor"]) + "\t\t" + x["nombre"] + "\t\t"+ x["apellido"])       
+            codigoProfesor = int(input("Ingrese el codigo del profesor: "))
+            dicProfesor = colec.find_one({"cod_profesor":codigoProfesor})
+            os.system("cls")
+            colec = my_db["salones"]
+            print("cod_salon\tdesc")
+            for x in colec.find({},{"cod_salon": 1, "desc": 1}):
+                print (str(x["cod_salon"]) + "\t\t" + x["desc"])     
+            codigoSalon= int(input("Ingrese el codigo del Salon: "))
+            dicSalon = colec.find_one({"cod_salon":codigoSalon})
+            colec = my_db["matriculas"]
+            colec.update_one({'cod_matricula': codigoMatricula},{'$push': {'cursos':[dicCurso,dicProfesor,dicSalon]}})
+        elif more == "N":
+            break
+        else:
+            print("Ingrese S o N")    
+    print("cod_matricula\talumno\t\tnombre\t\tgrado\t\tperiodo")
+    for x in colec.find():
+        alumno=x["alumno"]
+        grado = x["grado"]
+        periodo = x["periodo"]
+        print(str(x["cod_matricula"]) + "\t\t" + alumno["nombre"] + "\t\t" + alumno["apellido"] + "\t" + grado["desc"] + "\t" + periodo["desc"])   
+    time.sleep(2) 
+#CREAR NOTAS
+def crearNota():
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    my_db = myclient["Hackaton_S7_G5"]
+    colec = my_db["matriculas"]
+    listAlumnos = colec.find()
+    print("cod_matricula\talumno\t\tnombre\t\tgrado\t\tperiodo")
+    for x in colec.find():
+        alumno=x["alumno"]
+        grado = x["grado"]
+        periodo = x["periodo"]
+        print(str(x["cod_matricula"]) + "\t\t" + alumno["nombre"] + "\t\t" + alumno["apellido"] + "\t" + grado["desc"] + "\t" + periodo["desc"])   
+    codmatricula = int(input("Ingrese el codigo de matricula del alumno a ingresar la nota: "))
+    print("cod_curso\tnombre")
+    dicalumno=colec.find_one({"cod_matricula":codmatricula})
+    numcursos=len(dicalumno["cursos"])
+    for i in range(numcursos):
+        cod = dicalumno["cursos"][i][0]["cod_curso"]
+        nombre = dicalumno["cursos"][i][0]["nombre"]
+        print(f'{cod}\t\t{nombre}')
+    codCurso = int(input("Ingrese el codigo de curso: "))
+    nota = int(input("ingrese la nota del cusor: "))
+    colec = my_db["notas"]
+    colec.insert_one({"cod_matricula":codmatricula, "cod_curso":codCurso, "nota": nota})
+    time.sleep(2)
 
 
