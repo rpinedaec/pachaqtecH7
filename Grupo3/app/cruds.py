@@ -463,7 +463,7 @@ def docenteCurso():
     listarSalon()
     IdSalon = buscarSalon()
     try:
-        consulta = query.InsertDocenteCurso(IdDocente, IdCurso, IdSalon, Nota=0)
+        consulta = query.InsertDocenteCurso(IdDocente, IdCurso, IdSalon)
         resconn = conn.ejecutarBDD(consulta)
         if resconn:
             print("Se agrego correctamente")
@@ -482,6 +482,62 @@ def alumnoCurso():
     IdCurso = buscarCurso()
     try:
         consulta = query.InsertAlumnoCurso(IdMatricula, IdCurso)
+        resconn = conn.ejecutarBDD(consulta)
+        if resconn:
+            print("Se agrego correctamente")
+        else:
+            print("No fue posible asignar al alumno")
+        input("Desea continuar")
+    except Exception as e:
+        print(e)
+
+def listarDocenteCurso():
+    try:
+        consulta = query.ListarDocenteCurso()
+        resconn = conn.consultarBDD(consulta)   
+        for tplDocenteCurso in resconn:
+            print(tplDocenteCurso[0], tplDocenteCurso[1], tplDocenteCurso[2], tplDocenteCurso[3])
+        sleep(2)
+    except Exception as e:
+        print(e)
+
+def buscarDocenteCurso():
+    try:
+        IdDocenteCurso = input("Ingrese id del docente para detalle:\n")
+        consulta = query.BuscarDocenteCurso(IdDocenteCurso)
+        resconn = conn.consultarBDD(consulta)   
+        for tplDocenteCurso in resconn:
+            print(tplDocenteCurso[0], tplDocenteCurso[1], tplDocenteCurso[2], tplDocenteCurso[3])
+        sleep(2)
+    except Exception as e:
+        print(e)
+
+def listarAlumnoCurso():
+    try:
+        consulta = query.ListarAllAlumnoCurso()
+        resconn = conn.consultarBDD(consulta)
+        for tplAlumCurso in resconn:
+            print(tplAlumCurso[0], tplAlumCurso[1], tplAlumCurso[2], tplAlumCurso[3], tplAlumCurso[4], tplAlumCurso[5], tplAlumCurso[6])
+        sleep(2)
+    except Exception as e:
+        print(e)
+
+def buscarAsignarNotas():
+    IdCursoMatricula = input("Ingresar id del cual desea asignar la nota:\n")    
+    try:
+        consulta = query.BuscarAlumnoCursoNota(IdCursoMatricula)
+        resconn = conn.consultarBDD(consulta)
+        for tplAlumCurso in resconn:
+            print(tplAlumCurso[0], tplAlumCurso[1], tplAlumCurso[2], tplAlumCurso[3], tplAlumCurso[4], tplAlumCurso[5], tplAlumCurso[6])
+        sleep(2)
+        return IdCursoMatricula
+    except Exception as e:
+        print(e)
+
+def asignarNota(IdNota):    
+    Nota = input("Ingrese la Nota:\n")
+    try:
+        consulta = query.AsignarNota(Nota, IdNota)
         resconn = conn.ejecutarBDD(consulta)
         if resconn:
             print("Se agrego correctamente")
