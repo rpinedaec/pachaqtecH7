@@ -1,4 +1,5 @@
 from Cursos import Cursos
+import sys
 from Alumnos import Alumnos
 from Notas import Notas
 from pymongo import MongoClient, errors
@@ -6,11 +7,14 @@ from pprint import PrettyPrinter
 from connection.conn import Connection
 import PySimpleGUI as sg
 from termcolor import colored, cprint
-import sys
+import colorama
 from salon import *
 from logica import *
 from connection.conn import Connection
 from Profesores_ import Profesores
+
+import subprocess
+subprocess.call('', shell=True)
 
 connection = Connection(
     'mongodb+srv://reyner:pachaqtec@pachaqtec.sdvq7.mongodb.net/pachaqtec?retryWrites=true&w=majority', 'pachacteq')
@@ -20,7 +24,7 @@ program = True
 
 def cprintInfo(toPrint):
     return print(colored(toPrint, 'yellow',
-                         attrs=['reverse', 'blink']))
+                          attrs=['reverse', 'blink']))
 
 
 while(program):
@@ -191,7 +195,31 @@ while(program):
                 input("Presione una tecla para continuar")
                 entered = False
     elif value == 9:  # Avanzado 3
-        # reporte2
+        entered = True
+        while(entered):
+            cprintInfo("Listar Salones , promedio por curso etc ....")
+            cprintInfo("Ingresar nombre de Salon para listar")
+            table = []
+            data = connection.obtenerRegistros("salones")
+            for i in range(len(data)):
+                table.append([data[i]["_id"], data[i]["nombreSalon"]])
+
+            print(colored('Tabla de Salones', 'yellow',
+                          attrs=['reverse', 'blink']))
+            print(tabulate(table, headers=[
+                "Id Salon", "Nombre Salon"], tablefmt='fancy_grid'))
+            print(colored('Ingresar un nombre:', 'yellow',
+                          attrs=['reverse', 'blink']))
+            nombreSalon = input()
+            checkSalon = connection.obtenerRegistro(
+                "salones", {'nombreSalon': nombreSalon})
+            if not checkSalon:
+                cprintInfo("Salon no encontrado. Intente de nuevo")
+
+            else:
+                reporte2(nombreSalon, connection)
+                input("Presione una tecla para continuar")
+                entered = False
         pass
 
     elif value == 10:
