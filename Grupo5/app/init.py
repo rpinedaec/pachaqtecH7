@@ -21,7 +21,8 @@ menuMantPeriodo = Menu({1: "Crear Periodo",    2: "Modificar Periodo", 3: "Elimi
                    "Colegio Perez de Cuellar", "Menú mantenimiento Periodo")
 menuMantGrados = Menu({1: "Crear Grados",    2: "Modificar Grados", 3: "Eliminar Grados"},
                    "Colegio Perez de Cuellar", "Menú mantenimiento Grados")
-
+menuModProfesor = Menu({1: "Modificar datos personales",    2: "Agregar un curso", 3: "Eliminar un curso"},
+                   "Colegio Perez de Cuellar", "Menú modificar Profesor")
 # Menu de navegación
 while True:
     intOptionSelect = menuPrincipal.show()
@@ -40,7 +41,7 @@ while True:
                 while True:
                     intOptionSelect = menuMantAlumnos.show()
                     if intOptionSelect == 1: #Crear alumno
-                        pass
+                        crearAlumno()
                     elif intOptionSelect == 2: #modificar alumno
                         pass
                     elif intOptionSelect == 3: #Eliminar alumno
@@ -50,12 +51,21 @@ while True:
             elif intOptionSelect == 2:  # Mantenimiento Docente 
                 while True:
                     intOptionSelect = menuMantDocentes.show()
-                    if intOptionSelect == 1: #Crear Docente
-                        pass
+                    if intOptionSelect == 1: #Crear Docente99
+                        crearProfesor()
                     elif intOptionSelect == 2: #Modificar Docente
-                        pass
+                        while True:
+                            intOptionSelect = menuModProfesor.show()
+                            if intOptionSelect == 1: # Modificar datos personales
+                                modDataProfesor()
+                            elif intOptionSelect == 2: # Asignarle mas curso
+                                modAddCursoProfesor()
+                            elif intOptionSelect == 3: # Elimnar un curso
+                                modDelCursoProfesor()
+                            else:
+                                break
                     elif intOptionSelect == 3: #Eliminar Docente
-                        pass
+                        eliminarProfesor()
                     else:
                         break
             elif intOptionSelect == 3:  # Mantenimiento Salones
