@@ -165,3 +165,15 @@ class Querys:
     def EliminarNota(self):
         query = ""
         return query
+
+
+
+# ███    ███  █████  ████████ ██████  ██  ██████ ██    ██ ██       █████  
+# ████  ████ ██   ██    ██    ██   ██ ██ ██      ██    ██ ██      ██   ██ 
+# ██ ████ ██ ███████    ██    ██████  ██ ██      ██    ██ ██      ███████ 
+# ██  ██  ██ ██   ██    ██    ██   ██ ██ ██      ██    ██ ██      ██   ██ 
+# ██      ██ ██   ██    ██    ██   ██ ██  ██████  ██████  ███████ ██   ██ 
+
+    def mostrarAlumnos(self, Nota):
+        query = f"SELECT * FROM docentes_has_cursos where nota = '{Nota}'"
+        return query
