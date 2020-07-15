@@ -24,10 +24,10 @@ class conexionBDD:
         if(self.intBDD == 1):
             try:
                 conn = mysql.connector.connect(user='root',
-                                               password='admin',
+                                               password='pachaqtec',
                                                host="localhost",
                                                port="3306",
-                                               database="perezdecuellar-h7")
+                                               database="hackatons6rpineda")
                 return conn
             except(mysql.connector.Error, Exception) as error:
                 return False
@@ -51,7 +51,7 @@ class conexionBDD:
                 return False
         elif(self.intBDD == 4):
             uri = 'mongodb://localhost:27017'
-            database = 'Colegio'
+            database = 'perezdecuellar-h7'
             try:
                 conn = MongoClient(uri)
                 db = conn[str(f"{database}")]
@@ -123,7 +123,7 @@ class conexionBDD:
             doc.delete_one(eliminar)
             return True
         except Exception as error:
-            self.__log.debug(error)
+            self.__log.debug(error);
             return False
     
     def eliminarRegistros(self, collection,  eliminar):
@@ -133,5 +133,6 @@ class conexionBDD:
             doc.delete_many(eliminar)
             return True
         except Exception as error:
-            self.__log.debug(error)
+            self.__log.debug(error);
             return False
+

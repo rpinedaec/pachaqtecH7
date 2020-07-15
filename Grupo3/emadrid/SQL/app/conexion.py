@@ -24,7 +24,7 @@ class conexionBDD:
         if(self.intBDD == 1):
             try:
                 conn = mysql.connector.connect(user='root',
-                                               password='admin',
+                                               password='L1m42020$',
                                                host="localhost",
                                                port="3306",
                                                database="perezdecuellar-h7")
@@ -51,7 +51,7 @@ class conexionBDD:
                 return False
         elif(self.intBDD == 4):
             uri = 'mongodb://localhost:27017'
-            database = 'Colegio'
+            database = 'rpineda'
             try:
                 conn = MongoClient(uri)
                 db = conn[str(f"{database}")]
