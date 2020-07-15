@@ -8,5 +8,14 @@ class docentes:
     self.correodocente = correodocente
     self.nacdocente = nacdocente
     
+  def toDic(self):
+    d = {
+      "idAlumno": self.idalumnos,
+      "nombrealumno": self.nombrealumno,
+      "apellidoalumno": self.apellidoalumno,
+      "correoalumno": self.correoalumno,
+      "nacalumno": self.nacalumno
+    }
+    return d
     
     

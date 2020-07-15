@@ -1,8 +1,9 @@
 import conexion
 import querys
 from time import sleep
+import alumnos
 
-conn = conexion.conexionBDD(1)
+conn = conexion.conexionBDD(4)
 query = querys.Querys()
 
 
@@ -16,11 +17,14 @@ query = querys.Querys()
 #Ingresar Alumno
 def ingresarAlumno():
     #Datos del alumno
+    idAlumno = input("Ingrese id del Alumno:\n")
     nombre = input("Ingrese Nombre del Alumno:\n")
     apellido = input(f"Ingrese Apellido del Alumno {nombre}:\n")
     correo = input(f"Ingrese Correo del Alumno {nombre}:\n")
     fechanac = input(f"Ingrese Fecha de Nacimiento del Alumno {nombre}:\n")
-    try:
+    nuevoAlumno = alumnos.alumnos(idAlumno, nombre, apellido, correo, fechanac)
+    resConn = conn.insertarRegistro("Alumno",nuevoAlumno.toDic())
+    """try:
         consulta = query.InsertAlumno(nombre, apellido, correo, fechanac)
         resconn = conn.ejecutarBDD(consulta)
         if resconn:
@@ -29,23 +33,33 @@ def ingresarAlumno():
             print("No fue posible agregar al alumno")
         input("Desea continuar")
     except ValueError as e:
-        print(e)
+        print(e)"""
     
 #Listar Alumno
 def listarAlumnos():
-    consulta = query.ListarAllAlumno()
+    dic = {}
+    resConn = conn.leerRegistros("Alumno", dic)
+    for row in resConn:
+        print(f"{str(row['idAlumno'])}\t{str(row['nombrealumno'])}\t{str(row['apellidoalumno'])}\t{str(row['correoalumno'])}\t{str(row['nacalumno'])}")
+    """consulta = query.ListarAllAlumno()
     resconn = conn.consultarBDD(consulta)
     for tplAlumno in resconn:
-        print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])
+        print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])"""
 
 #Buscar Alumno
 def buscarAlumno():
     try:
-        idAlumno = int(input("Ingrese el id del alumno que desea buscar:\n"))
-        consulta = query.BuscarAlumno(idAlumno)
+        idAlumno = input("Ingrese el id del alumno que desea buscar:\n")
+        query = {'idAlumno' : idAlumno}
+        print(query)
+        resConn = conn.leerRegistro("Alumno", query)
+        print (resConn['idAlumno'])
+        """for row in resConn:
+            print(f"{row['idAlumno']}\t{row['nombrealumno']}\t{row['apellidoalumno']}\t{row['correoalumno']}\t{row['nacalumno']}")
+        """"""consulta = query.BuscarAlumno(idAlumno)
         resconn = conn.consultarBDD(consulta)
         for tplAlumno in resconn:
-            print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])
+            print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])"""
         return idAlumno
     except Exception as e:
         print("Debe ingresar un numero")
