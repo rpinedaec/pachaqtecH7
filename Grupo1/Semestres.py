@@ -12,29 +12,29 @@ class Semestres:
         connection.insertRegistro(Semestres.collection, {
             'descSemestre': self.descSemestre
         })
-        print("Se ingresó Semestre")
+        #print("Se ingresó Semestre")
 
     @staticmethod
     def mostrarSemestres(connection, condition=None):
         data = connection.obtenerRegistros(Semestres.collection, condition)
-        print("Se mostró Semestre")
+        #print("Se mostró Semestre")
         return data
 
     @staticmethod
     def mostrarSemestre(connection, condition=None):
         data = connection.obtenerRegistro(Semestres.collection, condition)
-        print("Se mostro Semestre")
+        #print("Se mostro Semestre")
         return data
 
     @staticmethod
     def updateSemestre(connection, condition, change):
         connection.actualizarRegistro(Semestres.collection, condition, change)
-        print("Se actualizó Semestre")
+        #print("Se actualizó Semestre")
 
     @staticmethod
     def eliminarSemestre(connection, condition):
         connection.eliminarRegistro(Semestres.collection, condition)
-        print("Se eliminó Semestre")
+        #print("Se eliminó Semestre")
 
     @staticmethod
     def transformToObject(**kwargs):

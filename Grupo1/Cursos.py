@@ -2,22 +2,22 @@ from connection.conn import Connection
 import PySimpleGUI as sg
 from Semestres import Semestres
 from tabulate import tabulate
-connection = Connection(
-    'mongodb+srv://reyner:pachaqtec@pachaqtec.sdvq7.mongodb.net/pachaqtec?retryWrites=true&w=majority', 'pachacteq')
+import sys
+from termcolor import colored, cprint
+# connection = Connection(
+#    'mongodb+srv://reyner:pachaqtec@pachaqtec.sdvq7.mongodb.net/pachaqtec?retryWrites=true&w=majority', 'pachacteq')
 
 
 class Cursos:
     collection = "cursos"
 
-    def __init__(self, nombreCurso, idProfesor, idSemestre):
+    def __init__(self, nombreCurso, idSemestre):
         self.nombreCurso = nombreCurso
-        self.idProfesor = idProfesor
         self.idSemestre = idSemestre
 
     def ingresarCurso(self, connection):
         connection.insertRegistro(Cursos.collection, {
             'nombreCurso': self.nombreCurso,
-            'idProfesor': self.idProfesor,
             'idSemestre': self.idSemestre
         })
         print("Se ingresó Curso")
@@ -49,32 +49,77 @@ class Cursos:
         return kwargs
 
     @staticmethod
-    def ingresarCursoMain(connection):
-        table = []
-        # Primero mostramos la tabla Semestre para que el usuario escriba el semestre al que va a ingresar el Curso
-        data = Semestres.mostrarSemestres(connection)
-        for i in range(data):
-            table.append([data[i]["_id"], data[i]["desSemestre"]])
+    def ingresarCursoMenu(connection):
+        ingreso = True
+        while(ingreso):
+            table = []
+            # Primero mostramos la tabla Semestre para que el usuario escriba el semestre al que va a ingresar el Curso
+            data = Semestres.mostrarSemestres(connection)
+            for i in range(len(data)):
+                table.append([data[i]["_id"], data[i]["desSemestre"]])
 
-        print(tabulate(table, headers=["Id Semestre", "Nombre Semestre"]))
+            print(colored('Tabla de Semestres', 'yellow',
+                          attrs=['reverse', 'blink']))
+            print(tabulate(table, headers=[
+                  "Id Semestre", "Nombre Semestre"], tablefmt='fancy_grid'))
 
-        # Generamos un simple GUI para ingresar la data
+            # Generamos un simple GUI para ingresar la data
 
-        layout = [
-            [sg.Text('Ingrese Curso')],
-            [sg.Text('Nombre del Curso', size=(15, 1)), sg.InputText()],
-            [sg.Text('Nombre del Semestre', size=(15, 1)), sg.InputText()],
-            [sg.Submit()]
-        ]
-        window = sg.Window("Ingreso de Curso", layout)
-        event, values = window.read()
+            layout = [
+                [sg.Text('Ingrese Curso')],
+                [sg.Text('Nombre del Curso', size=(15, 1)), sg.InputText()],
+                [sg.Text('Nombre del Semestre', size=(15, 1)), sg.InputText()],
+                [sg.Submit()]
+            ]
+            window = sg.Window("Ingreso de Curso", layout)
+            event, values = window.read()
+            window.close()
 
-        # Nombre del Semestre a su valor id
-        checkExist = Semestres.mostrarSemestre(
-            connection, {'desSemestre': values[2]})
-        window.close()
-        if not checkExist:
-            return False
-        else:
-            values[2] = checkExist["_id"]  # actualizamos el _id
-            return values
+            # Nombre del Semestre a su valor id
+            checkExist = Semestres.mostrarSemestre(
+                connection, {'desSemestre': values[1]})
+
+            if not checkExist:
+                print(colored('Ingrese de nuevo. Nombre de Semestre no encontrado', 'red',
+                              attrs=['reverse', 'blink']))
+            else:
+                values[2] = checkExist["_id"]  # actualizamos el _id
+                return values
+
+    @staticmethod
+    def borraCursoMenu(connection):
+        ingreso = True
+        while(ingreso):
+            table = []
+            # Primero mostramos la tabla Semestre para que el usuario escriba el semestre al que va a ingresar el Curso
+            data = Cursos.mostrarCursos(connection)
+            for i in range(len(data)):
+                table.append([data[i]["_id"], data[i]["nombreCurso"]])
+                l
+
+            print(colored('Tabla de Cursos', 'yellow',
+                          attrs=['reverse', 'blink']))
+            print(tabulate(table, headers=[
+                  "Id Curso", "Nombre de Curso"], tablefmt='fancy_grid'))
+
+            # Generamos un simple GUI para ingresar la data
+
+            layout = [
+                [sg.Text('Ingrese Curso a Eliminar')],
+                [sg.Text('Nombre del Curso', size=(15, 1)), sg.InputText()],
+                [sg.Submit()]
+            ]
+            window = sg.Window("Elimnar Curso", layout)
+            event, values = window.read()
+            window.close()
+
+            # Nombre del Semestre a su valor id
+            checkExist = Semestres.mostrarSemestre(
+                connection, {'nombreCurso': values[1]})
+
+            if not checkExist:
+                print(colored('Ingrese de nuevo. Nombre de Curso no encontrado', 'red',
+                              attrs=['reverse', 'blink']))
+            else:
+                values[2] = checkExist["_id"]  # actualizamos el _id
+                return values

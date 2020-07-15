@@ -46,7 +46,6 @@ class Connection:
         collection.delete_one(condition)
         print(f"Delete Row")
 
-    
-    def returnCollection(self,collection):
+    def returnCollection(self, collection):
         collection = self.db[collection]
         return collection
