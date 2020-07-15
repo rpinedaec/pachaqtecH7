@@ -1,3 +1,4 @@
+import utils
 #Clase alumnos
 class alumnos:
   __log = utils.log("alumnos")

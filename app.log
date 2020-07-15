@@ -342,3 +342,747 @@
 2020-07-14 13:18:40,413 - Principal - INFO - Menu Empleado --> Matricula
 2020-07-14 13:18:45,862 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
 2020-07-14 13:19:06,810 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 14:20:44,127 - Menu - ERROR - invalid literal for int() with base 10: 'C:/Users/USER/AppData/Local/Programs/Python/Python37/python.exe c:/Users/BRYAN/Documents/repositorioprofe/Hackaton7/Grupo3/app/init.py'
+2020-07-14 14:38:48,842 - Principal - INFO - Inicio del sistema
+2020-07-14 14:39:05,137 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 14:39:05,137 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 14:39:08,320 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 14:39:08,320 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 14:39:10,520 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 14:41:08,970 - Principal - INFO - Inicio del sistema
+2020-07-14 14:41:10,390 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 14:41:10,391 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 14:41:13,382 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 14:41:13,382 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 14:41:14,406 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 14:42:13,639 - Principal - INFO - Inicio del sistema
+2020-07-14 14:42:15,590 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 14:42:15,591 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 14:42:17,022 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 14:42:17,022 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 14:42:27,104 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 14:51:26,141 - Principal - INFO - Inicio del sistema
+2020-07-14 14:51:28,721 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 14:51:28,721 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 14:51:36,937 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 14:51:36,937 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 14:51:41,433 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 14:52:23,296 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 14:52:35,112 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 15:00:09,710 - Principal - INFO - Inicio del sistema
+2020-07-14 15:00:10,829 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:00:10,829 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:00:12,996 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 15:00:12,996 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 15:00:14,332 - Menu - DEBUG - La opcion 2 es valida del menu Menu Matricula
+2020-07-14 15:00:36,860 - Menu - DEBUG - La opcion 2 es valida del menu Menu Matricula
+2020-07-14 15:00:44,477 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 15:00:57,540 - Menu - DEBUG - La opcion 2 es valida del menu Menu Matricula
+2020-07-14 15:08:06,641 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 15:08:29,872 - Principal - INFO - Inicio del sistema
+2020-07-14 15:08:31,079 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:08:31,079 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:08:31,976 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 15:08:31,976 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 15:08:32,992 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 15:08:52,120 - Principal - INFO - Inicio del sistema
+2020-07-14 15:08:53,160 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:08:53,160 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:08:54,751 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 15:08:54,752 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 15:09:05,935 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 15:09:09,408 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 15:09:21,487 - Menu - DEBUG - La opcion 2 es valida del menu Menu Matricula
+2020-07-14 15:09:26,519 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 15:09:37,832 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 15:09:53,661 - Principal - INFO - Inicio del sistema
+2020-07-14 15:09:54,783 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:09:54,783 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:09:55,455 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 15:09:55,455 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 15:09:56,215 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 15:11:11,950 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 15:11:14,309 - Principal - INFO - Inicio del sistema
+2020-07-14 15:11:15,263 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:11:15,263 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:11:16,566 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 15:11:16,566 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 15:11:18,382 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 15:12:53,801 - Principal - INFO - Inicio del sistema
+2020-07-14 15:12:54,765 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:12:54,766 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:12:55,462 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 15:12:55,462 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 15:12:57,534 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 15:21:28,459 - Menu - ERROR - invalid literal for int() with base 10: '    def InsertAlumnoCurso(self, IdMatricula, IdCurso):'
+2020-07-14 15:22:50,243 - Principal - INFO - Inicio del sistema
+2020-07-14 15:22:51,552 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:22:51,552 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:22:52,440 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 15:22:52,440 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 15:22:56,296 - Menu - DEBUG - La opcion 4 es valida del menu Menu Matricula
+2020-07-14 15:23:49,265 - Principal - INFO - Inicio del sistema
+2020-07-14 15:23:50,240 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:23:50,240 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:23:50,880 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 15:23:50,881 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 15:23:53,136 - Menu - DEBUG - La opcion 4 es valida del menu Menu Matricula
+2020-07-14 15:24:31,357 - Principal - INFO - Inicio del sistema
+2020-07-14 15:24:32,391 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:24:32,392 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:24:33,256 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 15:24:33,256 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 15:24:34,048 - Menu - DEBUG - La opcion 4 es valida del menu Menu Matricula
+2020-07-14 15:27:14,604 - Principal - INFO - Inicio del sistema
+2020-07-14 15:27:20,486 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:27:20,486 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:27:21,382 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 15:27:21,382 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 15:27:27,182 - Menu - DEBUG - La opcion 4 es valida del menu Menu Matricula
+2020-07-14 15:30:38,988 - Menu - DEBUG - La opcion 5 es valida del menu Menu Matricula
+2020-07-14 15:30:41,060 - Menu - DEBUG - La opcion 0 es valida del menu Menu Empleado
+2020-07-14 15:32:04,030 - Principal - INFO - Inicio del sistema
+2020-07-14 15:32:05,307 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:32:05,307 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:32:08,363 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 15:32:09,572 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:32:09,572 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:32:10,148 - Menu - DEBUG - La opcion 0 es valida del menu Menu Empleado
+2020-07-14 15:32:29,417 - Principal - INFO - Inicio del sistema
+2020-07-14 15:32:34,555 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 15:32:34,555 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 15:32:36,691 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 15:32:36,691 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 15:32:37,771 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-14 15:32:40,964 - Menu - DEBUG - La opcion 0 es valida del menu Menu Alumno
+2020-07-14 16:04:05,435 - Principal - INFO - Inicio del sistema
+2020-07-14 16:04:09,523 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:04:09,523 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:04:26,314 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 16:04:26,314 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 16:04:42,754 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 16:05:07,671 - Menu - DEBUG - La opcion 2 es valida del menu Menu Matricula
+2020-07-14 16:05:22,162 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 16:06:17,626 - Menu - DEBUG - La opcion 4 es valida del menu Menu Matricula
+2020-07-14 16:09:34,777 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 16:10:10,621 - Principal - INFO - Inicio del sistema
+2020-07-14 16:10:12,399 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 16:10:12,400 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 16:11:22,454 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:11:22,455 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:11:33,631 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 16:11:35,607 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:11:35,607 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:11:42,014 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 16:15:54,140 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:15:54,141 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:15:57,388 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 16:15:57,389 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 16:16:00,511 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 16:16:52,348 - Menu - DEBUG - La opcion 5 es valida del menu Menu Matricula
+2020-07-14 16:18:03,030 - Menu - DEBUG - La opcion 0 es valida del menu Menu Empleado
+2020-07-14 16:18:07,482 - Principal - INFO - Inicio del sistema
+2020-07-14 16:18:09,524 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:18:09,525 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:18:11,116 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 16:18:11,117 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 16:18:13,283 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 16:18:47,290 - Principal - INFO - Inicio del sistema
+2020-07-14 16:18:48,943 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:18:48,944 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:18:51,293 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 16:18:51,294 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 16:18:53,866 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 16:19:39,503 - Principal - INFO - Inicio del sistema
+2020-07-14 16:19:41,138 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:19:41,138 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:19:43,563 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 16:19:43,563 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 16:19:44,738 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 16:23:01,713 - Menu - DEBUG - La opcion 5 es valida del menu Menu Matricula
+2020-07-14 16:23:03,720 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 16:23:06,392 - Menu - DEBUG - La opcion 5 es valida del menu Menu Matricula
+2020-07-14 16:23:08,881 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 16:23:12,609 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 16:23:19,189 - Principal - INFO - Inicio del sistema
+2020-07-14 16:43:18,639 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:43:18,639 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:43:19,910 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 16:43:19,911 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 16:43:22,294 - Menu - DEBUG - La opcion 4 es valida del menu Menu Matricula
+2020-07-14 16:43:33,733 - Menu - DEBUG - La opcion 4 es valida del menu Menu Matricula
+2020-07-14 16:44:26,925 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 16:44:59,567 - Principal - INFO - Inicio del sistema
+2020-07-14 16:45:06,228 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:45:06,229 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:45:06,965 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 16:45:06,965 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 16:45:09,733 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 17:29:07,962 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 17:40:19,180 - Principal - INFO - Inicio del sistema
+2020-07-14 17:40:20,508 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 17:40:20,508 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 17:40:22,643 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 17:40:24,331 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 17:40:24,331 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 17:40:26,212 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 17:41:05,310 - Principal - INFO - Inicio del sistema
+2020-07-14 17:41:08,595 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 17:41:08,595 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 17:41:09,619 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 17:41:14,683 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-14 17:41:14,683 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-14 17:41:58,821 - Principal - INFO - Inicio del sistema
+2020-07-14 17:42:00,218 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 17:42:00,218 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 17:42:00,986 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 17:42:00,987 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 17:42:03,947 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 17:42:27,602 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 17:42:29,651 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 17:42:49,099 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 17:42:51,714 - Menu - DEBUG - La opcion 5 es valida del menu Menu Alumno
+2020-07-14 17:42:53,018 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-14 17:42:53,019 - Principal - INFO - Menu Empleado --> Docente
+2020-07-14 17:42:55,122 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 17:43:54,122 - Principal - DEBUG - Se ingresaron los datos del docente
+2020-07-14 17:43:56,458 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 17:44:22,753 - Principal - DEBUG - Se ingresaron los datos del docente
+2020-07-14 17:44:24,449 - Menu - DEBUG - La opcion 5 es valida del menu Menu Docente
+2020-07-14 17:44:26,802 - Menu - DEBUG - La opcion 3 es valida del menu Menu Empleado
+2020-07-14 17:44:26,802 - Principal - INFO - Menu Empleado --> Cursos
+2020-07-14 17:44:28,081 - Menu - DEBUG - La opcion 1 es valida del menu Menu Cursos
+2020-07-14 17:44:36,641 - Principal - DEBUG - Se ingresaron los datos del cursos
+2020-07-14 17:44:37,729 - Menu - DEBUG - La opcion 1 es valida del menu Menu Cursos
+2020-07-14 17:44:44,282 - Principal - DEBUG - Se ingresaron los datos del cursos
+2020-07-14 17:44:46,265 - Menu - DEBUG - La opcion 5 es valida del menu Menu Cursos
+2020-07-14 17:44:48,305 - Menu - DEBUG - La opcion 4 es valida del menu Menu Empleado
+2020-07-14 17:44:48,305 - Principal - INFO - Menu Empleado --> Salones
+2020-07-14 17:44:50,977 - Menu - DEBUG - La opcion 1 es valida del menu Menu Salones
+2020-07-14 17:44:56,290 - Principal - DEBUG - Se ingresaron los datos del Salones
+2020-07-14 17:44:56,328 - Menu - DEBUG - La opcion 1 es valida del menu Menu Salones
+2020-07-14 17:45:02,434 - Principal - DEBUG - Se ingresaron los datos del Salones
+2020-07-14 17:45:05,113 - Menu - DEBUG - La opcion 5 es valida del menu Menu Salones
+2020-07-14 17:45:07,185 - Menu - DEBUG - La opcion 5 es valida del menu Menu Empleado
+2020-07-14 17:45:07,185 - Principal - INFO - Menu Empleado --> Periodo
+2020-07-14 17:45:08,209 - Menu - DEBUG - La opcion 1 es valida del menu Menu Periodo
+2020-07-14 17:45:14,601 - Principal - DEBUG - Se ingresaron los datos del Periodo
+2020-07-14 17:45:17,601 - Menu - DEBUG - La opcion 5 es valida del menu Menu Periodo
+2020-07-14 17:45:20,177 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 17:45:20,177 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 17:45:21,489 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 17:45:28,392 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 17:45:34,192 - Menu - DEBUG - La opcion 2 es valida del menu Menu Matricula
+2020-07-14 17:45:38,016 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 17:45:46,897 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-14 17:45:53,904 - Menu - DEBUG - La opcion 5 es valida del menu Menu Matricula
+2020-07-14 17:45:57,088 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 17:46:02,377 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 17:46:24,567 - Principal - INFO - Inicio del sistema
+2020-07-14 17:46:26,137 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 17:46:26,137 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 17:46:27,576 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 17:46:56,400 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-14 17:46:56,400 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-14 17:50:30,593 - Principal - INFO - Inicio del sistema
+2020-07-14 17:50:32,039 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 17:50:32,039 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 17:50:33,438 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 17:50:33,438 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 17:50:35,447 - Menu - DEBUG - La opcion 4 es valida del menu Menu Matricula
+2020-07-14 17:50:49,909 - Menu - DEBUG - La opcion 4 es valida del menu Menu Matricula
+2020-07-14 17:51:00,582 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 17:51:18,395 - Principal - INFO - Inicio del sistema
+2020-07-14 17:51:21,582 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 17:51:21,582 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 17:51:22,566 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 17:51:22,566 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 17:51:24,191 - Menu - DEBUG - La opcion 4 es valida del menu Menu Matricula
+2020-07-14 17:55:27,756 - Menu - DEBUG - La opcion 5 es valida del menu Menu Matricula
+2020-07-14 17:55:30,051 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 17:55:31,515 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 17:55:33,848 - Principal - INFO - Inicio del sistema
+2020-07-14 17:55:35,371 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 17:55:35,371 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 17:55:36,996 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 18:01:05,638 - Principal - INFO - Inicio del sistema
+2020-07-14 18:01:07,545 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 18:01:07,545 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 18:01:08,569 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 18:01:18,888 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 18:01:18,888 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 18:01:20,544 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 18:01:53,416 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 18:01:53,416 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 18:19:17,494 - Menu - DEBUG - La opcion 0 es valida del menu Menu Docente
+2020-07-14 18:19:19,247 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-14 18:19:19,247 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-14 18:19:21,526 - Principal - INFO - Inicio del sistema
+2020-07-14 18:19:23,103 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 18:19:23,103 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 18:19:25,175 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 18:32:40,988 - Menu - ERROR - invalid literal for int() with base 10: 'python c:/Users/BRYAN/Documents/repositorioprofe/Hackaton7/Grupo3/app/init.py'
+2020-07-14 18:32:43,049 - Menu - ERROR - invalid literal for int() with base 10: ''
+2020-07-14 18:32:47,419 - Principal - INFO - Inicio del sistema
+2020-07-14 18:32:49,098 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 18:32:49,098 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 18:32:50,217 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 18:32:50,217 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 18:32:51,265 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-14 18:32:55,281 - Menu - DEBUG - La opcion 5 es valida del menu Menu Alumno
+2020-07-14 18:32:56,295 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-14 18:32:56,296 - Principal - INFO - Menu Empleado --> Docente
+2020-07-14 18:32:57,224 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 18:33:00,975 - Menu - DEBUG - La opcion 5 es valida del menu Menu Docente
+2020-07-14 18:33:02,632 - Menu - DEBUG - La opcion 3 es valida del menu Menu Empleado
+2020-07-14 18:33:02,632 - Principal - INFO - Menu Empleado --> Cursos
+2020-07-14 18:33:04,071 - Menu - DEBUG - La opcion 2 es valida del menu Menu Cursos
+2020-07-14 18:33:07,824 - Menu - DEBUG - La opcion 5 es valida del menu Menu Cursos
+2020-07-14 18:33:11,905 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 18:33:11,905 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 18:33:13,687 - Menu - DEBUG - La opcion 2 es valida del menu Menu Matricula
+2020-07-14 18:33:16,807 - Menu - DEBUG - La opcion 5 es valida del menu Menu Matricula
+2020-07-14 18:33:17,800 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 18:33:19,616 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-14 18:33:22,352 - Principal - INFO - Inicio del sistema
+2020-07-14 18:33:23,848 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 18:33:23,849 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 18:33:25,824 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 18:35:31,254 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-14 18:35:31,255 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-14 18:35:37,174 - Principal - INFO - Inicio del sistema
+2020-07-14 18:35:41,445 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 18:35:41,446 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 18:35:53,293 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-14 18:36:28,015 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 18:36:28,015 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 19:00:26,857 - Menu - DEBUG - La opcion 0 es valida del menu Menu Docente
+2020-07-14 19:00:28,016 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-14 19:00:28,016 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-14 19:00:54,580 - Principal - INFO - Inicio del sistema
+2020-07-14 19:00:56,833 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 19:00:56,833 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 19:00:58,393 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 19:02:06,890 - Principal - INFO - Inicio del sistema
+2020-07-14 19:02:11,568 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 19:02:11,568 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 19:02:13,289 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 19:03:11,706 - Principal - INFO - Inicio del sistema
+2020-07-14 19:03:13,295 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 19:03:13,296 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 19:03:14,632 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 19:03:30,574 - Principal - INFO - Inicio del sistema
+2020-07-14 19:03:31,672 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 19:03:31,672 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 19:03:32,824 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 19:03:46,679 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 19:03:46,680 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 19:03:48,079 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 19:04:00,279 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 19:04:00,279 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 19:04:01,935 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 19:19:37,569 - Principal - INFO - Inicio del sistema
+2020-07-14 19:19:38,775 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 19:19:38,775 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 19:19:39,864 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 19:19:49,168 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 19:19:49,168 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 19:19:50,471 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 20:32:49,135 - Principal - INFO - Inicio del sistema
+2020-07-14 20:32:50,994 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 20:32:50,994 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 20:32:54,489 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 20:33:31,373 - Principal - INFO - Inicio del sistema
+2020-07-14 20:33:33,785 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 20:33:33,786 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 20:33:35,257 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 20:34:10,760 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 20:34:10,761 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 20:34:13,143 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 20:34:26,616 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 20:34:26,616 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 20:34:28,047 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-14 20:35:06,744 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 20:35:06,744 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 20:35:10,753 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 20:49:05,040 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-14 20:49:05,040 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-14 20:50:09,150 - Principal - INFO - Inicio del sistema
+2020-07-14 20:50:10,704 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 20:50:10,704 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 20:50:11,495 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 20:50:11,495 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 20:50:12,359 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 20:50:35,041 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 21:02:50,851 - Menu - DEBUG - La opcion 0 es valida del menu Menu Alumno
+2020-07-14 21:04:35,357 - Principal - INFO - Inicio del sistema
+2020-07-14 21:04:37,720 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:04:37,720 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:04:38,487 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:04:38,488 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:04:41,415 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-14 21:13:33,907 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 21:14:10,337 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 21:14:17,170 - Menu - DEBUG - La opcion 0 es valida del menu Menu Alumno
+2020-07-14 21:14:57,070 - Principal - INFO - Inicio del sistema
+2020-07-14 21:14:58,210 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:14:58,210 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:14:59,290 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:14:59,290 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:15:01,897 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-14 21:15:07,442 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 21:16:02,573 - Principal - INFO - Inicio del sistema
+2020-07-14 21:16:03,593 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:16:03,594 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:16:04,490 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:16:04,490 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:16:06,810 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 21:20:28,352 - Principal - INFO - Inicio del sistema
+2020-07-14 21:20:30,368 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:20:30,368 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:20:30,871 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:20:30,871 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:20:32,624 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 21:21:27,801 - Principal - INFO - Inicio del sistema
+2020-07-14 21:21:29,186 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:21:29,186 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:21:29,991 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:21:29,992 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:21:31,455 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 21:23:29,372 - Principal - INFO - Inicio del sistema
+2020-07-14 21:23:30,398 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:23:30,398 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:23:30,749 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:23:30,750 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:23:32,149 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 21:24:24,906 - Principal - INFO - Inicio del sistema
+2020-07-14 21:24:26,717 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:24:26,718 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:24:28,749 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:24:28,749 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:24:30,373 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 21:28:09,533 - Principal - INFO - Inicio del sistema
+2020-07-14 21:28:10,731 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:28:10,731 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:28:11,331 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:28:11,331 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:28:15,923 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 21:29:23,131 - Principal - INFO - Inicio del sistema
+2020-07-14 21:30:16,146 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:30:16,146 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:30:16,978 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:30:16,978 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:30:18,826 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 21:37:47,402 - Principal - INFO - Inicio del sistema
+2020-07-14 21:37:48,654 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:37:48,655 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:37:49,222 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:37:49,222 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:37:50,621 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-14 21:38:10,374 - Principal - INFO - Inicio del sistema
+2020-07-14 21:38:11,486 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:38:11,486 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:38:12,342 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:38:12,342 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:38:21,957 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-14 21:57:09,994 - Principal - INFO - Inicio del sistema
+2020-07-14 21:57:19,004 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:57:19,005 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:57:20,607 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:57:20,608 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:57:23,172 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 21:58:45,599 - Principal - INFO - Inicio del sistema
+2020-07-14 21:58:47,155 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:58:47,156 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:58:47,756 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:58:47,757 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:58:48,714 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 22:08:28,803 - Principal - INFO - Inicio del sistema
+2020-07-14 22:08:35,767 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 22:08:35,767 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 22:08:37,286 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 22:08:37,287 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 22:08:42,135 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 22:09:08,864 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 22:26:25,548 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-14 22:28:45,605 - Principal - INFO - Inicio del sistema
+2020-07-14 22:28:47,769 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 22:28:47,769 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 22:28:48,428 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 22:28:48,429 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 22:28:49,955 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-14 22:29:34,169 - Principal - INFO - Inicio del sistema
+2020-07-14 22:29:35,995 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 22:29:35,995 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 22:29:36,690 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 22:29:36,691 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 22:29:38,827 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 22:29:54,093 - Principal - INFO - Inicio del sistema
+2020-07-14 22:29:55,734 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 22:29:55,735 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 22:29:56,373 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 22:29:56,373 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 22:29:57,004 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-14 22:30:05,107 - Principal - INFO - Inicio del sistema
+2020-07-14 22:30:06,572 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 22:30:06,572 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 22:30:06,938 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 22:30:06,939 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 22:30:08,018 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 22:30:26,599 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-15 10:29:40,764 - Principal - INFO - Inicio del sistema
+2020-07-15 10:29:45,632 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 10:29:45,633 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 10:29:46,432 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-15 10:29:46,432 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-15 10:29:47,354 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-15 10:29:52,488 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-15 10:30:35,848 - Principal - DEBUG - Se modificaron los datos del alumno
+2020-07-15 10:30:40,992 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-15 10:30:44,120 - Menu - DEBUG - La opcion 0 es valida del menu Menu Alumno
+2020-07-15 10:36:19,911 - Principal - INFO - Inicio del sistema
+2020-07-15 10:36:21,325 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 10:36:21,325 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 10:36:23,525 - Menu - DEBUG - La opcion 5 es valida del menu Menu Empleado
+2020-07-15 10:36:23,525 - Principal - INFO - Menu Empleado --> Periodo
+2020-07-15 10:36:24,701 - Menu - DEBUG - La opcion 1 es valida del menu Menu Periodo
+2020-07-15 10:36:34,165 - Principal - DEBUG - Se ingresaron los datos del Periodo
+2020-07-15 10:36:36,116 - Menu - DEBUG - La opcion 2 es valida del menu Menu Periodo
+2020-07-15 10:37:56,906 - Principal - INFO - Inicio del sistema
+2020-07-15 10:37:58,116 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 10:37:58,116 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 10:37:59,547 - Menu - DEBUG - La opcion 5 es valida del menu Menu Empleado
+2020-07-15 10:37:59,547 - Principal - INFO - Menu Empleado --> Periodo
+2020-07-15 10:38:00,508 - Menu - DEBUG - La opcion 2 es valida del menu Menu Periodo
+2020-07-15 10:38:48,753 - Principal - INFO - Inicio del sistema
+2020-07-15 10:38:52,076 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 10:38:52,076 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 10:38:54,563 - Menu - DEBUG - La opcion 5 es valida del menu Menu Empleado
+2020-07-15 10:38:54,563 - Principal - INFO - Menu Empleado --> Periodo
+2020-07-15 10:38:56,060 - Menu - DEBUG - La opcion 2 es valida del menu Menu Periodo
+2020-07-15 10:39:11,651 - Menu - DEBUG - La opcion 0 es valida del menu Menu Periodo
+2020-07-15 10:55:55,258 - Principal - INFO - Inicio del sistema
+2020-07-15 10:55:57,531 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 10:55:57,531 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 10:55:59,922 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-15 10:55:59,923 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-15 10:56:01,930 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-15 10:57:38,886 - Menu - ERROR - invalid literal for int() with base 10: 'C:/Users/BRYAN/AppData/Local/Programs/Python/Python37/python.exe c:/Users/BRYAN/Documents/repositorioprofe/Hackaton7/Grupo3/app/init.py'
+2020-07-15 10:57:46,379 - Principal - INFO - Inicio del sistema
+2020-07-15 10:57:48,034 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 10:57:48,034 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 10:57:50,617 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-15 10:57:50,618 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-15 10:57:52,498 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-15 12:03:34,964 - Menu - DEBUG - La opcion 0 es valida del menu Menu Matricula
+2020-07-15 12:03:49,666 - Principal - INFO - Inicio del sistema
+2020-07-15 12:04:00,302 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 12:04:00,302 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 12:04:01,198 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-15 12:04:01,199 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-15 12:04:05,142 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-15 12:04:39,968 - Principal - DEBUG - Se modificaron los datos del alumno
+2020-07-15 12:04:41,662 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-15 12:07:11,437 - Menu - ERROR - invalid literal for int() with base 10: 'C:/Users/BRYAN/AppData/Local/Programs/Python/Python37/python.exe c:/Users/BRYAN/Documents/repositorioprofe/Hackaton7/Grupo3/app/init.py'
+2020-07-15 12:07:17,395 - Principal - INFO - Inicio del sistema
+2020-07-15 12:07:41,325 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 12:07:41,325 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 12:07:42,533 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-15 12:07:42,534 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-15 12:07:44,132 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-15 12:09:11,659 - Principal - INFO - Inicio del sistema
+2020-07-15 12:09:14,132 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 12:09:14,132 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 12:09:14,956 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-15 12:09:14,957 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-15 12:09:16,292 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-15 12:17:37,372 - Principal - INFO - Inicio del sistema
+2020-07-15 12:17:38,759 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 12:17:38,759 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 12:17:39,647 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-15 12:17:39,647 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-15 12:17:41,495 - Menu - DEBUG - La opcion 3 es valida del menu Menu Alumno
+2020-07-15 12:20:58,127 - Principal - DEBUG - Se modificaron los datos del alumno
+2020-07-15 12:20:59,021 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-15 12:28:37,051 - Menu - DEBUG - La opcion 0 es valida del menu Menu Alumno
+2020-07-15 12:28:40,201 - Principal - INFO - Inicio del sistema
+2020-07-15 12:28:41,770 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 12:28:41,770 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 12:28:42,593 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-15 12:28:42,594 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-15 12:28:44,377 - Menu - DEBUG - La opcion 4 es valida del menu Menu Alumno
+2020-07-15 12:28:58,716 - Principal - DEBUG - Se eliminaron los datos del alumno
+2020-07-15 12:29:08,825 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-15 12:29:12,329 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-15 12:29:33,709 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-15 12:29:35,081 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-15 13:07:49,917 - Menu - ERROR - invalid literal for int() with base 10: 'C:/Users/BRYAN/AppData/Local/Programs/Python/Python37/python.exe c:/Users/BRYAN/Documents/repositorioprofe/Hackaton7/Grupo3/app/init.py'
+2020-07-15 13:08:39,904 - Principal - INFO - Inicio del sistema
+2020-07-15 13:08:41,676 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 13:08:41,676 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 13:08:43,444 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-15 13:08:43,444 - Principal - INFO - Menu Empleado --> Docente
+2020-07-15 13:08:45,741 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-15 13:08:49,180 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-15 13:09:17,341 - Principal - DEBUG - Se ingresaron los datos del docente
+2020-07-15 13:09:18,747 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-15 13:10:11,572 - Menu - DEBUG - La opcion 0 es valida del menu Menu Docente
+2020-07-15 13:10:14,547 - Principal - INFO - Inicio del sistema
+2020-07-15 13:10:16,507 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 13:10:16,508 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 13:10:18,387 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-15 13:10:18,388 - Principal - INFO - Menu Empleado --> Docente
+2020-07-15 13:10:19,372 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-15 13:11:01,627 - Principal - INFO - Inicio del sistema
+2020-07-15 13:11:03,908 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 13:11:03,908 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 13:11:04,355 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-15 13:11:04,355 - Principal - INFO - Menu Empleado --> Docente
+2020-07-15 13:11:05,411 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-15 13:11:31,147 - Principal - DEBUG - Se ingresaron los datos del docente
+2020-07-15 13:12:32,903 - Menu - DEBUG - La opcion 0 es valida del menu Menu Docente
+2020-07-15 13:12:48,103 - Principal - INFO - Inicio del sistema
+2020-07-15 13:12:49,914 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 13:12:49,914 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 13:12:50,633 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-15 13:12:50,633 - Principal - INFO - Menu Empleado --> Docente
+2020-07-15 13:12:59,561 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-15 13:13:42,891 - Principal - DEBUG - Se ingresaron los datos del docente
+2020-07-15 13:13:44,490 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-15 13:15:14,337 - Menu - DEBUG - La opcion 3 es valida del menu Menu Docente
+2020-07-15 13:16:40,927 - Principal - INFO - Inicio del sistema
+2020-07-15 13:16:42,856 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 13:16:42,856 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 13:16:43,424 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-15 13:16:43,424 - Principal - INFO - Menu Empleado --> Docente
+2020-07-15 13:16:46,040 - Menu - DEBUG - La opcion 3 es valida del menu Menu Docente
+2020-07-15 13:23:58,969 - Principal - INFO - Inicio del sistema
+2020-07-15 13:24:01,243 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 13:24:01,244 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 13:24:02,292 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-15 13:24:02,292 - Principal - INFO - Menu Empleado --> Docente
+2020-07-15 13:24:05,763 - Menu - DEBUG - La opcion 3 es valida del menu Menu Docente
+2020-07-15 14:00:12,840 - Principal - INFO - Inicio del sistema
+2020-07-15 14:00:16,562 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 14:00:16,562 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 14:00:17,609 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-15 14:00:17,610 - Principal - INFO - Menu Empleado --> Docente
+2020-07-15 14:00:20,891 - Menu - DEBUG - La opcion 3 es valida del menu Menu Docente
+2020-07-15 14:01:20,720 - Principal - INFO - Inicio del sistema
+2020-07-15 14:01:24,380 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-15 14:01:24,380 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-15 14:01:27,200 - Principal - INFO - Inicio del sistema
+2020-07-15 14:01:35,689 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 14:01:35,689 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 14:01:36,865 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-15 14:01:36,865 - Principal - INFO - Menu Empleado --> Docente
+2020-07-15 14:01:38,809 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-15 14:02:37,384 - Menu - DEBUG - La opcion 3 es valida del menu Menu Docente
+2020-07-15 14:07:31,605 - Principal - INFO - Inicio del sistema
+2020-07-15 14:07:33,814 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 14:07:33,814 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 14:07:35,118 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-15 14:07:35,118 - Principal - INFO - Menu Empleado --> Docente
+2020-07-15 14:07:35,950 - Menu - DEBUG - La opcion 1 es valida del menu Menu Docente
+2020-07-15 14:08:05,574 - Principal - DEBUG - Se ingresaron los datos del docente
+2020-07-15 14:08:14,125 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-15 14:08:27,253 - Menu - DEBUG - La opcion 4 es valida del menu Menu Docente
+2020-07-15 14:08:35,341 - Principal - DEBUG - Se eliminaron los datos del docente
+2020-07-15 14:08:57,368 - Menu - DEBUG - La opcion 0 es valida del menu Menu Docente
+2020-07-15 14:11:49,936 - Principal - INFO - Inicio del sistema
+2020-07-15 14:11:51,861 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 14:11:51,861 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 14:11:53,123 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-15 14:11:53,123 - Principal - INFO - Menu Empleado --> Docente
+2020-07-15 14:11:55,291 - Menu - DEBUG - La opcion 4 es valida del menu Menu Docente
+2020-07-15 14:12:12,587 - Principal - DEBUG - Se eliminaron los datos del docente
+2020-07-15 14:12:13,739 - Menu - DEBUG - La opcion 2 es valida del menu Menu Docente
+2020-07-15 14:12:16,988 - Menu - DEBUG - La opcion 0 es valida del menu Menu Docente
+2020-07-15 14:55:54,088 - Principal - INFO - Inicio del sistema
+2020-07-15 14:55:55,461 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 14:55:55,461 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 14:56:04,732 - Menu - INFO - La opcion 34 no es valida del menu Menu Empleado
+2020-07-15 14:56:08,076 - Menu - DEBUG - La opcion 4 es valida del menu Menu Empleado
+2020-07-15 14:56:08,077 - Principal - INFO - Menu Empleado --> Salones
+2020-07-15 14:56:09,356 - Menu - DEBUG - La opcion 1 es valida del menu Menu Salones
+2020-07-15 14:58:29,338 - Principal - INFO - Inicio del sistema
+2020-07-15 14:58:47,699 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 14:58:47,699 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 14:58:49,034 - Menu - DEBUG - La opcion 4 es valida del menu Menu Empleado
+2020-07-15 14:58:49,034 - Principal - INFO - Menu Empleado --> Salones
+2020-07-15 14:58:50,562 - Menu - DEBUG - La opcion 1 es valida del menu Menu Salones
+2020-07-15 14:58:56,067 - Principal - DEBUG - Se ingresaron los datos del Salones
+2020-07-15 14:59:03,058 - Menu - DEBUG - La opcion 1 es valida del menu Menu Salones
+2020-07-15 14:59:10,091 - Principal - DEBUG - Se ingresaron los datos del Salones
+2020-07-15 14:59:11,115 - Menu - DEBUG - La opcion 2 es valida del menu Menu Salones
+2020-07-15 14:59:14,307 - Menu - DEBUG - La opcion 3 es valida del menu Menu Salones
+2020-07-15 14:59:33,291 - Principal - DEBUG - Se modificaron los datos del Salones
+2020-07-15 14:59:34,826 - Menu - DEBUG - La opcion 3 es valida del menu Menu Salones
+2020-07-15 14:59:44,795 - Principal - DEBUG - Se modificaron los datos del Salones
+2020-07-15 14:59:56,337 - Menu - DEBUG - La opcion 1 es valida del menu Menu Salones
+2020-07-15 15:00:04,739 - Principal - DEBUG - Se ingresaron los datos del Salones
+2020-07-15 15:00:07,139 - Menu - DEBUG - La opcion 4 es valida del menu Menu Salones
+2020-07-15 15:00:13,027 - Principal - DEBUG - Se eliminaron los datos del Salones
+2020-07-15 15:00:14,658 - Menu - DEBUG - La opcion 2 es valida del menu Menu Salones
+2020-07-15 15:00:44,738 - Menu - DEBUG - La opcion 0 es valida del menu Menu Salones
+2020-07-15 15:20:25,926 - Principal - INFO - Inicio del sistema
+2020-07-15 15:20:56,863 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 15:20:56,863 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 15:20:58,455 - Menu - DEBUG - La opcion 3 es valida del menu Menu Empleado
+2020-07-15 15:20:58,455 - Principal - INFO - Menu Empleado --> Cursos
+2020-07-15 15:20:59,631 - Menu - DEBUG - La opcion 1 es valida del menu Menu Cursos
+2020-07-15 15:21:10,935 - Principal - DEBUG - Se ingresaron los datos del cursos
+2020-07-15 15:21:11,871 - Menu - DEBUG - La opcion 1 es valida del menu Menu Cursos
+2020-07-15 15:21:24,672 - Principal - DEBUG - Se ingresaron los datos del cursos
+2020-07-15 15:21:25,481 - Menu - DEBUG - La opcion 2 es valida del menu Menu Cursos
+2020-07-15 15:21:28,374 - Menu - DEBUG - La opcion 3 es valida del menu Menu Cursos
+2020-07-15 15:21:41,910 - Principal - DEBUG - Se modificaron los datos del Cursos
+2020-07-15 15:21:43,038 - Menu - DEBUG - La opcion 1 es valida del menu Menu Cursos
+2020-07-15 15:21:55,167 - Principal - DEBUG - Se ingresaron los datos del cursos
+2020-07-15 15:21:57,534 - Menu - DEBUG - La opcion 4 es valida del menu Menu Cursos
+2020-07-15 15:22:05,399 - Principal - DEBUG - Se eliminaron los datos del Cursos
+2020-07-15 15:22:07,609 - Menu - DEBUG - La opcion 2 es valida del menu Menu Cursos
+2020-07-15 15:22:20,671 - Menu - DEBUG - La opcion 0 es valida del menu Menu Cursos
+2020-07-15 15:48:27,349 - Principal - INFO - Inicio del sistema
+2020-07-15 15:48:29,425 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 15:48:29,425 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 15:48:31,368 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-15 15:48:31,369 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-15 15:48:33,848 - Menu - DEBUG - La opcion 2 es valida del menu Menu Matricula
+2020-07-15 16:15:11,091 - Menu - ERROR - invalid literal for int() with base 10: 'C:/Users/BRYAN/AppData/Local/Programs/Python/Python37/python.exe c:/Users/BRYAN/Documents/repositorioprofe/Hackaton7/Grupo3/app/init.py'
+2020-07-15 16:16:26,164 - Principal - INFO - Inicio del sistema
+2020-07-15 16:16:27,906 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 16:16:27,906 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 16:16:29,017 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-15 16:16:29,018 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-15 16:16:31,155 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-15 16:18:45,282 - Principal - INFO - Inicio del sistema
+2020-07-15 16:18:48,496 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 16:18:48,497 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 16:18:50,184 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-15 16:18:50,185 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-15 16:18:51,360 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-15 16:20:06,167 - Principal - INFO - Inicio del sistema
+2020-07-15 16:20:08,367 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 16:20:08,367 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 16:20:09,774 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-15 16:20:09,774 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-15 16:20:12,031 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-15 16:21:55,044 - Principal - INFO - Inicio del sistema
+2020-07-15 16:21:56,431 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 16:21:56,431 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 16:22:07,798 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-15 16:22:07,799 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-15 16:22:08,759 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-15 16:22:29,316 - Principal - INFO - Inicio del sistema
+2020-07-15 16:22:32,463 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 16:22:32,463 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 16:22:33,510 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-15 16:22:33,510 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-15 16:22:34,622 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula
+2020-07-15 16:28:58,255 - Principal - INFO - Inicio del sistema
+2020-07-15 16:29:00,891 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-15 16:29:00,891 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-15 16:29:02,107 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-15 16:29:02,107 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-15 16:29:03,059 - Menu - DEBUG - La opcion 3 es valida del menu Menu Matricula

@@ -1,3 +1,4 @@
+import utils
 #clase cursos
 class cursos:
   __log = utils.log("cursos")

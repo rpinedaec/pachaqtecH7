@@ -1,0 +1,6 @@
+2020-07-14 14:21:58,420 - Principal - INFO - Inicio del sistema
+2020-07-14 14:22:05,929 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 14:22:05,929 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 14:22:07,904 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 14:22:07,904 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 14:22:12,592 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
