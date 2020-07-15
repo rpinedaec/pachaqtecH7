@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"colegio.periodo"}],"uuid":"789d81eb287248328aafdcf69e00b74a"}
