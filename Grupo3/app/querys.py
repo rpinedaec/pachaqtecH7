@@ -180,10 +180,30 @@ class Querys:
         query = "SELECT m.idmatricula, a.nombrealumno, a.apellidoalumno, pe.desperiodo FROM matricula m INNER JOIN alumnos a ON m.alumnos_idalumnos = a.idalumnos INNER JOIN periodoescolar pe ON pe.idperiodoEscolar = m.periodoescolar_idperiodoEscolar WHERE m.idmatricula = '"+str(IdMatricula)+"'"
         return query
     
-    def InsertDocenteCurso(self, IdDocente, IdCurso, IdSalon, Nota):
-        query = "INSERT INTO docentes_has_cursos (docentes_iddocentes, cursos_idcursos, salones_idsalones, nota) VALUES ('"+str(IdDocente)+"', '"+str(IdCurso)+"', '"+str(IdSalon)+"', '"+str(Nota)+"')"
+    def InsertDocenteCurso(self, IdDocente, IdCurso, IdSalon):
+        query = "INSERT INTO docentes_has_cursos (docentes_iddocentes, cursos_idcursos, salones_idsalones) VALUES ('"+str(IdDocente)+"', '"+str(IdCurso)+"', '"+str(IdSalon)+"')"
         return query
 
     def InsertAlumnoCurso(self, IdMatricula, IdCurso):
         query = "INSERT INTO cursos_has_matricula (cursos_idcursos, matricula_idmatricula) VALUES ('"+str(IdCurso)+"', '"+str(IdMatricula)+"')"
+        return query
+
+    def ListarDocenteCurso(self):
+        query = "SELECT d.iddocentes, d.nombredocente, c.nombrecurso, s.nombresalon FROM docentes_has_cursos dc INNER JOIN cursos c ON dc.cursos_idcursos = c.idcursos INNER JOIN docentes d ON d.iddocentes = dc.docentes_iddocentes INNER JOIN salones s ON s.idsalones = dc.salones_idsalones"
+        return query
+
+    def BuscarDocenteCurso(self, IdDocenteCurso):
+        query = "SELECT d.nombredocente, c.nombrecurso, s.nombresalon, a.nombrealumno, a.apellidoalumno, cm.nota FROM docentes_has_cursos dc INNER JOIN cursos c ON dc.cursos_idcursos = c.idcursos INNER JOIN docentes d ON d.iddocentes = dc.docentes_iddocentes INNER JOIN salones s ON s.idsalones = dc.salones_idsalones INNER JOIN cursos_has_matricula cm ON cm.cursos_idcursos = c.idcursos INNER JOIN matricula m ON m.idmatricula = cm.matricula_idmatricula INNER JOIN alumnos a ON a.idalumnos = m.alumnos_idalumnos WHERE d.iddocentes = '"+str(IdDocenteCurso)+"';"
+        return query
+
+    def ListarAllAlumnoCurso(self):
+        query = "SELECT cm.IdCursoMatriculaa, d.nombredocente, c.nombrecurso, s.nombresalon, a.nombrealumno, a.apellidoalumno, cm.nota FROM docentes_has_cursos dc INNER JOIN cursos c ON dc.cursos_idcursos = c.idcursos INNER JOIN docentes d ON d.iddocentes = dc.docentes_iddocentes INNER JOIN salones s ON s.idsalones = dc.salones_idsalones INNER JOIN cursos_has_matricula cm ON cm.cursos_idcursos = c.idcursos INNER JOIN matricula m ON m.idmatricula = cm.matricula_idmatricula INNER JOIN alumnos a ON a.idalumnos = m.alumnos_idalumnos "
+        return query
+
+    def BuscarAlumnoCursoNota(self, ID):
+        query = "SELECT cm.IdCursoMatriculaa, d.nombredocente, c.nombrecurso, s.nombresalon, a.nombrealumno, a.apellidoalumno, cm.nota FROM docentes_has_cursos dc INNER JOIN cursos c ON dc.cursos_idcursos = c.idcursos INNER JOIN docentes d ON d.iddocentes = dc.docentes_iddocentes INNER JOIN salones s ON s.idsalones = dc.salones_idsalones INNER JOIN cursos_has_matricula cm ON cm.cursos_idcursos = c.idcursos INNER JOIN matricula m ON m.idmatricula = cm.matricula_idmatricula INNER JOIN alumnos a ON a.idalumnos = m.alumnos_idalumnos WHERE cm.idcursomatriculaa = '"+str(ID)+"'"
+        return query
+        
+    def AsignarNota(self, Nota, Id):
+        query = "UPDATE cursos_has_matricula SET nota = '"+str(Nota)+"' WHERE IdCursoMatriculaa = '"+str(Id)+"'"
         return query

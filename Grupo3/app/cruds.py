@@ -1,8 +1,9 @@
 import conexion
 import querys
 from time import sleep
+import alumnos
 
-conn = conexion.conexionBDD(1)
+conn = conexion.conexionBDD(4)
 query = querys.Querys()
 
 
@@ -16,11 +17,14 @@ query = querys.Querys()
 #Ingresar Alumno
 def ingresarAlumno():
     #Datos del alumno
+    idAlumno = input("Ingrese id del Alumno:\n")
     nombre = input("Ingrese Nombre del Alumno:\n")
     apellido = input(f"Ingrese Apellido del Alumno {nombre}:\n")
     correo = input(f"Ingrese Correo del Alumno {nombre}:\n")
     fechanac = input(f"Ingrese Fecha de Nacimiento del Alumno {nombre}:\n")
-    try:
+    nuevoAlumno = alumnos.alumnos(idAlumno, nombre, apellido, correo, fechanac)
+    resConn = conn.insertarRegistro("Alumno",nuevoAlumno.toDic())
+    """try:
         consulta = query.InsertAlumno(nombre, apellido, correo, fechanac)
         resconn = conn.ejecutarBDD(consulta)
         if resconn:
@@ -29,23 +33,33 @@ def ingresarAlumno():
             print("No fue posible agregar al alumno")
         input("Desea continuar")
     except ValueError as e:
-        print(e)
+        print(e)"""
     
 #Listar Alumno
 def listarAlumnos():
-    consulta = query.ListarAllAlumno()
+    dic = {}
+    resConn = conn.leerRegistros("Alumno", dic)
+    for row in resConn:
+        print(f"{str(row['idAlumno'])}\t{str(row['nombrealumno'])}\t{str(row['apellidoalumno'])}\t{str(row['correoalumno'])}\t{str(row['nacalumno'])}")
+    """consulta = query.ListarAllAlumno()
     resconn = conn.consultarBDD(consulta)
     for tplAlumno in resconn:
-        print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])
+        print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])"""
 
 #Buscar Alumno
 def buscarAlumno():
     try:
-        idAlumno = int(input("Ingrese el id del alumno que desea buscar:\n"))
-        consulta = query.BuscarAlumno(idAlumno)
+        idAlumno = input("Ingrese el id del alumno que desea buscar:\n")
+        query = {'idAlumno' : idAlumno}
+        print(query)
+        resConn = conn.leerRegistro("Alumno", query)
+        print (resConn['idAlumno'])
+        """for row in resConn:
+            print(f"{row['idAlumno']}\t{row['nombrealumno']}\t{row['apellidoalumno']}\t{row['correoalumno']}\t{row['nacalumno']}")
+        """"""consulta = query.BuscarAlumno(idAlumno)
         resconn = conn.consultarBDD(consulta)
         for tplAlumno in resconn:
-            print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])
+            print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])"""
         return idAlumno
     except Exception as e:
         print("Debe ingresar un numero")
@@ -463,7 +477,7 @@ def docenteCurso():
     listarSalon()
     IdSalon = buscarSalon()
     try:
-        consulta = query.InsertDocenteCurso(IdDocente, IdCurso, IdSalon, Nota=0)
+        consulta = query.InsertDocenteCurso(IdDocente, IdCurso, IdSalon)
         resconn = conn.ejecutarBDD(consulta)
         if resconn:
             print("Se agrego correctamente")
@@ -482,6 +496,62 @@ def alumnoCurso():
     IdCurso = buscarCurso()
     try:
         consulta = query.InsertAlumnoCurso(IdMatricula, IdCurso)
+        resconn = conn.ejecutarBDD(consulta)
+        if resconn:
+            print("Se agrego correctamente")
+        else:
+            print("No fue posible asignar al alumno")
+        input("Desea continuar")
+    except Exception as e:
+        print(e)
+
+def listarDocenteCurso():
+    try:
+        consulta = query.ListarDocenteCurso()
+        resconn = conn.consultarBDD(consulta)   
+        for tplDocenteCurso in resconn:
+            print(tplDocenteCurso[0], tplDocenteCurso[1], tplDocenteCurso[2], tplDocenteCurso[3])
+        sleep(2)
+    except Exception as e:
+        print(e)
+
+def buscarDocenteCurso():
+    try:
+        IdDocenteCurso = input("Ingrese id del docente para detalle:\n")
+        consulta = query.BuscarDocenteCurso(IdDocenteCurso)
+        resconn = conn.consultarBDD(consulta)   
+        for tplDocenteCurso in resconn:
+            print(tplDocenteCurso[0], tplDocenteCurso[1], tplDocenteCurso[2], tplDocenteCurso[3])
+        sleep(2)
+    except Exception as e:
+        print(e)
+
+def listarAlumnoCurso():
+    try:
+        consulta = query.ListarAllAlumnoCurso()
+        resconn = conn.consultarBDD(consulta)
+        for tplAlumCurso in resconn:
+            print(tplAlumCurso[0], tplAlumCurso[1], tplAlumCurso[2], tplAlumCurso[3], tplAlumCurso[4], tplAlumCurso[5], tplAlumCurso[6])
+        sleep(2)
+    except Exception as e:
+        print(e)
+
+def buscarAsignarNotas():
+    IdCursoMatricula = input("Ingresar id del cual desea asignar la nota:\n")    
+    try:
+        consulta = query.BuscarAlumnoCursoNota(IdCursoMatricula)
+        resconn = conn.consultarBDD(consulta)
+        for tplAlumCurso in resconn:
+            print(tplAlumCurso[0], tplAlumCurso[1], tplAlumCurso[2], tplAlumCurso[3], tplAlumCurso[4], tplAlumCurso[5], tplAlumCurso[6])
+        sleep(2)
+        return IdCursoMatricula
+    except Exception as e:
+        print(e)
+
+def asignarNota(IdNota):    
+    Nota = input("Ingrese la Nota:\n")
+    try:
+        consulta = query.AsignarNota(Nota, IdNota)
         resconn = conn.ejecutarBDD(consulta)
         if resconn:
             print("Se agrego correctamente")
