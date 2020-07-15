@@ -1,0 +1,30 @@
+2020-07-14 17:15:56,008 - Principal - INFO - Inicio del sistema
+2020-07-14 17:16:03,611 - Menu - DEBUG - La opcion 2 es valida del menu Menu Inicio
+2020-07-14 17:16:03,612 - Principal - DEBUG - Mostramos el Menu Alumno
+2020-07-14 17:20:39,945 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 17:20:39,946 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 17:20:42,324 - Menu - DEBUG - La opcion 6 es valida del menu Menu Empleado
+2020-07-14 17:20:42,325 - Principal - INFO - Menu Empleado --> Matricula
+2020-07-14 17:20:50,719 - Menu - DEBUG - La opcion 5 es valida del menu Menu Matricula
+2020-07-14 17:20:54,186 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 17:20:58,634 - Menu - DEBUG - La opcion 5 es valida del menu Menu Matricula
+2020-07-14 17:21:00,619 - Menu - DEBUG - La opcion 0 es valida del menu Menu Empleado
+2020-07-14 17:21:05,432 - Principal - INFO - Inicio del sistema
+2020-07-14 17:49:52,841 - Menu - DEBUG - La opcion 2 es valida del menu Menu Inicio
+2020-07-14 17:49:52,842 - Principal - DEBUG - Mostramos el Menu Alumno
+2020-07-14 17:49:54,085 - Menu - DEBUG - La opcion 0 es valida del menu Menu Inicio
+2020-07-14 17:49:54,086 - Principal - DEBUG - Volvemos a mostrar menu
+2020-07-14 17:52:48,792 - Principal - INFO - Inicio del sistema
+2020-07-14 17:52:50,768 - Menu - DEBUG - La opcion 2 es valida del menu Menu Inicio
+2020-07-14 17:52:50,769 - Principal - DEBUG - Mostramos el Menu Alumno
+2020-07-14 17:53:08,278 - Menu - DEBUG - La opcion 0 es valida del menu Listas de Alumnos
+2020-07-14 17:53:11,429 - Principal - INFO - Inicio del sistema
+2020-07-14 17:53:13,355 - Menu - DEBUG - La opcion 2 es valida del menu Menu Inicio
+2020-07-14 17:53:13,356 - Principal - DEBUG - Mostramos el Menu Alumno
+2020-07-14 17:53:17,456 - Menu - DEBUG - La opcion 1 es valida del menu Listas de Alumnos
+2020-07-14 18:32:13,728 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 18:32:21,078 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 18:32:23,084 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 18:32:49,486 - Principal - INFO - Inicio del sistema
+2020-07-14 18:33:16,274 - Menu - DEBUG - La opcion 2 es valida del menu Menu Inicio
+2020-07-14 18:33:16,276 - Principal - DEBUG - Mostramos el Menu Alumno
