@@ -1,7 +1,7 @@
 from connection.conn import Connection
 import menu
 
-connection = Connection('mongodb+srv://paola:pachaqtec@pachaqtec.sdvq7.mongodb.net/test', 'pachacteq')
+Connection = Connection('mongodb+srv://paola:pachaqtec@pachaqtec.sdvq7.mongodb.net/test', 'pachacteq')
 
 lstSalon=[]
 
@@ -10,9 +10,9 @@ class salones:
     collection = 'salones'
 
     def __init__(self, nombreSalon, idAlumno, idProfesor):
-        self.nombreSalon = self.Salon
-        self.idAlumno = self.Alumno
-        self.idProfesor = self.Profesor
+        self.nombreSalon = nombreSalon
+        self.idAlumno = idAlumno
+        self.idProfesor = idProfesor
     
 def mantenimiento_salones():
         dicM_Salones = {"Ver todos los salones": 1, "Buscar por No. de Salón": 2, "Modificar Salón por No. de Salón": 3, "Crear Salón": 4,"Borrar Salón": 5}
@@ -33,7 +33,7 @@ def mantenimiento_salones():
 
         elif (resM_Salones == 2):
             buscador_numero = input("Escribe el No. de salón a ubicar: ")
-            listar_porsalon = Connection.obtenerRegistro(salones.collection, f'{buscador_numero}')
+            listar_porsalon = Connection.obtenerRegistro(salones.collection, {'nombreSalon': buscador_numero})
             print(listar_porsalon)
             print("")
             print ("-\t¿Desea volver al menu?"+
@@ -47,17 +47,21 @@ def mantenimiento_salones():
 
         elif (resM_Salones == 3):
             listar_salones = Connection.obtenerRegistros(salones.collection)
+            listar_salones = list(listar_salones)
             print("Escoja el ID del cliente que desea modificar")
             print(listar_salones)
             print("")
             print("Ahora escriba el nuevo valor el No. de Salón")
-            salones.Salon = input()
-            salones.idAlumno = None
-            salones.idProfesor = None
+            nombreSalon = input()
+            mostrar_profesor = Connection.obtenerRegistros('profesores')
+            mostrar_profesor = list(mostrar_profesor)
+            print("Ahora escriba el nombre del Profesor")
+            print(mostrar_profesor)
+            idProfesor= input()
             resM_Cambio = Connection.actualizarRegistro(salones.collection, {
-                                        'nombreSalon': salones.Salon,
-                                        'idAlumno': salones.Alumno,
-                                        'idProfesor': salones.Profesor
+                                        'nombreSalon': nombreSalon,
+                                        'idAlumno': idAlumno,
+                                        'idProfesor': idProfesor
                                         })
             while(resM_Cambio):
                 print("Éxito. Se actualizó el contacto")
