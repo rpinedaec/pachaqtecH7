@@ -3,7 +3,6 @@ from classes import *
 import time
 import pymongo
 from pymongo import MongoClient, errors
-#FUNCIONES UTILES
 
 # FUNCIONES MANTENIMIENTO SALON
 def crearSalon():
@@ -130,6 +129,96 @@ def eliminarPeriodo ():
         time.sleep(3)
         break
 
+#FUNCIONES MANTENIMIENTOS CURSOS
+def crearCurso():
+    while True:
+        os.system("cls")
+        myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+        my_db = myclient["Hackaton_S7_G5"]
+        colec = my_db["cursos"]
+        for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
+            print(x)
+        while True:
+            try:
+                codCurso = int(input("Crea un código para el  Curso: "))
+                codexiste = bool(colec.find_one({"cod_curso":codCurso}))
+                if codexiste :
+                    print(f"Ya existe un curso con codigo {codCurso}")
+                    time.sleep(2)
+                else:
+                    break
+            except:
+                print("Ingrese un número entero para el cod_curso")
+        nombreCurso = str(input("Ingresa el nombre del curso: "))
+        #Mostar todos los grados
+        # colec = my_db["grados"]
+        # for x in colec.find({},{"cod_grado": 1, "desc": 1}):
+        #     print(x)
+        # while True:
+            # try:
+            #     colec = my_db["grados"]
+            #     codGrado = int(input("Ingrese el codigo del grado donde se dictara el curso: "))
+            #     codexiste = bool(colec.find_one({"cod_grado":codGrado}))
+            #     colec = my_db["cursos"]
+            #     if codexiste :
+            #         while True:
+            #             try:
+            #                 numNotas = int(input("Ingrese la cantidad de notas que tendra el curso: "))
+            #                 break
+            #             except:
+            #                 print("Ingrese un numero entero")
+            #                 time.sleep(2)
+        dicCurso = {"cod_curso": codCurso,"nombre": nombreCurso}
+        try:
+            resConn = colec.insert_one(dicCurso)
+                        # for x in range(numNotas):
+                        #     colec.update({'cod_curso': codCurso},{'$set': {f"Nota {x+1} ": 0 }})  
+                        # os.system("cls")
+            for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
+                print(x)
+                print("Se agregó correctamente")
+                time.sleep(2)
+                break
+        except:
+            print(f"Ya existe un curso con codigo {codCurso}")
+            time.sleep(2)
+        break           
+def modificarCursos():
+   while True:
+        os.system("cls")
+        myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+        my_db = myclient["Hackaton_S7_G5"]
+        colec = my_db["cursos"]
+        for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
+            print(x)
+        codCurso = int(input("Ingresa el codigo del CURSO que desea modificar: "))
+        nuevoNombre = str(input("Ingresa el NUEVO nombre del CURSO: "))
+        # nuevoCodgrado = str(input("Ingresa el NUEVO codigó grado del CURSO: "))
+        # nuevoNumnotas = int(input("Ingrese el nuevo numero de notas: "))
+        colec.update_one({"cod_curso":codCurso},{ "$set": {"nombre": nuevoNombre}})
+        os.system("cls")
+        for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
+            print(x)
+        print("Se modifico correctamente")
+        time.sleep(3)
+        break
+def eliminarCursos():
+    while True:
+        os.system("cls")
+        myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+        my_db = myclient["Hackaton_S7_G5"]
+        colec = my_db["cursos"]
+        for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
+            print(x)
+        codCurso= int(input("Ingresa el codigo del CURSO que desea eliminar: "))
+        colec.delete_one({"cod_curso": codCurso})
+        os.system("cls")
+        for x in colec.find({},{"cod_curso": 1, "nombre": 1}):
+            print(x)
+        print("Se eliminó correctamente")
+        time.sleep(3)
+        break
+
 # fUNCIONES MANTENIMIENTO GRADOS
 def crearGrados():
     while True:
@@ -138,6 +227,9 @@ def crearGrados():
             myclient = pymongo.MongoClient("mongodb://localhost:27017/")
             my_db = myclient["Hackaton_S7_G5"]
             colec = my_db["grados"]
+            print("cod_grado\tdesc")
+            for x in colec.find({},{"cod_grado": 1, "desc": 1}):
+                print (str(x["cod_grado"]) + "\t\t" + x["desc"])
             while True: 
                 Primaria = input("¿El colegio brindara educación primaria? S/N: ")
                 if Primaria == "S":
@@ -164,44 +256,109 @@ def crearGrados():
             time.sleep(3)
             break
         except:
-            print("Ya se ah configurado")
+            print("Ya se ha configurado")
             time.sleep(3)
-            break
+            break     
 def modificarGrados():
+    os.system("cls")
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    my_db = myclient["Hackaton_S7_G5"]
+    colec = my_db["grados"]
+    print("cod_grado\tdesc")
+    for x in colec.find({},{"cod_grado": 1, "desc": 1}):
+        print (str(x["cod_grado"]) + "\t\t" + x["desc"])
+    while True:
+        try:
+            codGrado = int(input("Ingrese el codigo del Grado a modificar: "))
+            break
+        except:
+            print("Error!: Ingrese un número entero positivo")
+    nuevodescGrado = str(input(f"Ingresa la descripción del Grado {codGrado}: "))
+    colec.update_one({ "cod_grado": codGrado },{ "$set": { "desc": f"{nuevodescGrado}"} })
+    print("cod_grado\tdesc")
+    for x in colec.find({},{"cod_grado": 1, "desc": 1}):
+        print (str(x["cod_grado"]) + "\t\t" + x["desc"])
+    print("Se modifico correctamente")
+    time.sleep(2)     
+def eliminarGrados():
+    os.system("cls")
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    my_db = myclient["Hackaton_S7_G5"]
+    colec = my_db["grados"]
+    print("cod_grado\tdesc")
+    for x in colec.find({},{"cod_grado": 1, "desc": 1}):
+        print (str(x["cod_grado"]) + "\t\t" + x["desc"])
+    while True:
+        try:
+            codGrado = int(input("Ingrese el codigo del Grado a eliminar: "))
+            break
+        except:
+            print("Error!: Ingrese un número entero positivo")
+    resConn = colec.delete_one(gradoDel)
+    os.system("cls")
+    print("cod_grado\tdesc")
+    for x in colec.find({},{"cod_grado": 1, "desc": 1}):
+        print (str(x["cod_grado"]) + "\t\t" + x["desc"])
+    print("Se eliminó correctamente")
+    time.sleep(2)
+
+# fUNCIONES MANTENIMIENTO SALONES
+def crearSalon():
+    os.system("cls")
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    my_db = myclient["Hackaton_S7_G5"]
+    colec = my_db["salones"]
+    for x in colec.find({},{"cod_salon": 1, "desc": 1}):
+        print(x)
+    codSalon = int(input("Crea un código para el  salón: "))
+    desc = input("Ingresa la descripción del salon: ")
+    dicSalon = {"cod_salon": codSalon,"desc": desc}
+    resConn = colec.insert_one(dicSalon)
+    os.system("cls")
+    for x in colec.find({},{"cod_salon": 1, "desc": 1}):
+        print(x)
+    print("Se agregó correctamente")
+    time.sleep(2)       
+def modificarSalon():
     while True:
         os.system("cls")
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
         my_db = myclient["Hackaton_S7_G5"]
-        colec = my_db["grados"]
-        for x in colec.find({},{"cod_grado": 1, "desc": 1}):
+        colec = my_db["salones"]
+        for x in colec.find({},{"cod_salon": 1, "desc": 1}):
             print(x)
-        codGrado = int(input("Ingresa el codigo del GRADO que desea modificar: "))
-        nuevodescGrado = str(input(f"Ingresa la descripción del Grado {codGrado}: "))
-        colec.update({ "cod_grado": codGrado}, {"$set":{"desc": nuevodescGrado}})
+        codSalon= int(input("Ingresa el codigo del SALON que desea modificar: "))
+        desc = str(input("Ingresa la nueva descripción para el SALON: "))
+        salonMod = {"cod_salon": codSalon}
+        colec.find_and_modify(salonMod, {"$set":{"desc":desc}})
         os.system("cls")
-        for x in colec.find({},{"cod_grado": 1, "desc": 1}):
+        for x in colec.find({},{"cod_salon": 1, "desc": 1}):
             print(x)
         print("Se modifico correctamente")
-        time.sleep(3)
+        time.sleep(2)
         break
-def eliminarGrados():
+def eliminarSalon():
+    os.system("cls")
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    my_db = myclient["Hackaton_S7_G5"]
+    colec = my_db["salones"]
+    print("cod_salon\tdesc")
+    for x in colec.find({},{"cod_salon": 1, "desc": 1}):
+        print (str(x["cod_salon"]) + "\t\t" + x["desc"])
     while True:
-        os.system("cls")
-        myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-        my_db = myclient["Hackaton_S7_G5"]
-        colec = my_db["grados"]
-        for x in colec.find({},{"cod_grado": 1, "desc": 1}):
-            print(x)
-        codGrado = int(input("Ingresa el codigo del GRADO que desea eliminar: "))
-        gradoDel = {"cod_grado": codGrado}
-        resConn = colec.delete_one(gradoDel)
-        os.system("cls")
-        for x in colec.find({},{"cod_grado": 1, "desc": 1}):
-            print(x)
-        print("Se eliminó correctamente")
-        time.sleep(3)
-        break
-  
+        try:
+            codigoSalon = int(input("Ingrese el codigo del Salon a eliminar: "))
+            break
+        except:
+            print("Error!: Ingrese un número entero positivo")
+    resConn = colec.delete_one(salonDel)
+    os.system("cls")
+    print("cod_salon\tdesc")
+    for x in colec.find({},{"cod_salon": 1, "desc": 1}):
+        print (str(x["cod_salon"]) + "\t\t" + x["desc"])
+    print("Se eliminó correctamente")
+    time.sleep(2)
+      
 # FUNCIONES MANTENIMIENTO CURSOS
 def crearCurso():
     while True:
@@ -268,7 +425,7 @@ def eliminarCursos():
         print("Se eliminó correctamente")
         time.sleep(3)
         break
-# CREAR PROFESOR
+# FUNCIONES MANTENIMEINTO PROFESOR
 def crearProfesor():
     os.system("cls")
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -338,7 +495,7 @@ def eliminarProfesor():
     print("Se eliminó correctamente")
     time.sleep(2)
     
-# CREAR ALUMNOS:
+# FUNCIONES MANTENIMIENTO ALUMNOS:
 def crearAlumno():
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     my_db = myclient["Hackaton_S7_G5"]
