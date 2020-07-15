@@ -95,7 +95,6 @@ class Cursos:
             data = Cursos.mostrarCursos(connection)
             for i in range(len(data)):
                 table.append([data[i]["_id"], data[i]["nombreCurso"]])
-                l
 
             print(colored('Tabla de Cursos', 'yellow',
                           attrs=['reverse', 'blink']))
