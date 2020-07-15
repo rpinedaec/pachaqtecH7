@@ -24,36 +24,17 @@ class conexionBDD:
         if(self.intBDD == 1):
             try:
                 conn = mysql.connector.connect(user='root',
-                                               password='admin',
+                                               password='RICARDO1984PAPO2011',
                                                host="localhost",
                                                port="3306",
-                                               database="perezdecuellar-h7")
+                                               database="PerezdeCuellar-H7")
                 return conn
             except(mysql.connector.Error, Exception) as error:
                 return False
-
-        elif(self.intBDD == 2):
-            try:
-                conn = psycopg2.connect(user='postgres',
-                                        password='pachaqtec',
-                                        host="localhost",
-                                        port="5432",
-                                        database="rpineda")
-                return conn
-            except Exception as error:
-                return False
-
-        elif(self.intBDD == 3):
-            try:
-                conn = sqlite3.connect('rpineda.db')
-                return conn
-            except Exception as error:
-                return False
-
-                
+              
         elif(self.intBDD == 4):
             uri = 'mongodb://localhost:27017'
-            database = 'rpineda'
+            database = 'avellaneda'
             try:
                 conn = MongoClient(uri)
                 db = conn[str(f"{database}")]
@@ -81,6 +62,20 @@ class conexionBDD:
             return exito
         except Exception as identifier:
             return False
+    
+
+#INTENTO DE BUSQUEDA DE ALUMNOS
+
+    # def listarAlumnos(self, query):
+    #     try:
+    #         conexion = self.conexion()
+    #         cur = conexion.cursor()
+    #         cur.execute(query)
+    #         resultado = cur.fetchall()
+    #         resultadofinal = [list(i) for i in resultado]
+    #         # final_result = [i[0] for i in cursor.fetchall()]
+    #     except Error as error:
+    #         return False
 
 
 
