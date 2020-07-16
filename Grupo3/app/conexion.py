@@ -106,6 +106,18 @@ class conexionBDD:
         res = doc.find(data)
         return res
 
+    def ordenarNotasDesc(self, collection, data):
+        conexion = self.conexion()
+        doc = conexion[str(f"{collection}")]
+        res = doc.find(data).sort("Notas", -1)
+        return res
+
+    def ordenarNotasAsc(self, collection, data):
+        conexion = self.conexion()
+        doc = conexion[str(f"{collection}")]
+        res = doc.find(data).sort("Notas", 1)
+        return res
+
     def actualizarRegistro(self, collection, condicion, cambio):
         try:
             conexion = self.conexion()
