@@ -12,6 +12,7 @@ from salon import *
 from logica import *
 from connection.conn import Connection
 from Profesores_ import Profesores
+import gc
 
 import subprocess
 subprocess.call('', shell=True)
@@ -49,6 +50,9 @@ while(program):
     window = sg.Window("Ingreso de Curso", layout)
     event, values = window.read()
     window.close()
+    layout = None
+    window = None
+    gc.collect()
     value = int(values[0])
     if value == 1:  # Menu Alumnos
         entered = True
@@ -57,7 +61,7 @@ while(program):
             cprintInfo("2. Eliminar Alumno")
             cprintInfo("3. Mostrar Alumno")
             cprintInfo("4. Salir Alumno")
-            value = int(input())
+            value = int(input("Ingrese una opción : "))
             if value == 1:
                 values = Alumnos.ingresarCursoMenu(connection)
                 alumno = Alumnos(values[0], values[1], values[2], values[4])
@@ -80,7 +84,7 @@ while(program):
             cprintInfo("2. Eliminar Profesor")
             cprintInfo("3. Mostrar Profesores")
             cprintInfo("4. Salir Menu")
-            value = int(input())
+            value = int(input("Ingrese una opción : "))
             if value == 1:
                 values = Profesores.ingresarProfesorMenu(connection)
                 profesor = Profesores(
@@ -103,7 +107,7 @@ while(program):
             cprintInfo("2. Eliminar Curso")
             cprintInfo("3. Mostrar Cursos")
             cprintInfo("4. Salir Menu")
-            value = int(input())
+            value = int(input("Ingrese una opción : "))
             if value == 1:
                 values = Cursos.ingresarCursoMenu(connection)
                 curso = Cursos(values[0], values[2])
@@ -124,10 +128,10 @@ while(program):
             cprintInfo("2. Eliminar Nota")
             cprintInfo("3. Mostrar Notas")
             cprintInfo("4. Salir Menu")
-            value = int(input())
+            value = int(input("Ingrese una opción : "))
             if value == 1:
                 values = Notas.ingresarNotaMenu(connection)
-                nota = Notas(values[0], values[5], values[4])
+                nota = Notas(values[0], values[5], values[4],int(values[3]))
                 nota.ingresarNota(connection)  # Ingresa hacia la mongodb
                 cprint("Se ingreso la Nota")
             elif value == 2:
@@ -173,6 +177,7 @@ while(program):
         while(entered):
             cprintInfo("Listar Alumnos ....")
             cprintInfo("Ingresar Alumno de Profesor para listar")
+            input("Presione una tecla para continuar")
             table = []
             data = Alumnos.mostrarAlumnos(connection)
             for i in range(len(data)):
@@ -202,13 +207,14 @@ while(program):
             table = []
             data = connection.obtenerRegistros("salones")
             for i in range(len(data)):
+
                 table.append([data[i]["_id"], data[i]["nombreSalon"]])
 
             print(colored('Tabla de Salones', 'yellow',
                           attrs=['reverse', 'blink']))
             print(tabulate(table, headers=[
                 "Id Salon", "Nombre Salon"], tablefmt='fancy_grid'))
-            print(colored('Ingresar un nombre:', 'yellow',
+            print(colored('Ingresar un nombre del Salon para mostrar su promedio:', 'yellow',
                           attrs=['reverse', 'blink']))
             nombreSalon = input()
             checkSalon = connection.obtenerRegistro(

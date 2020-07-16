@@ -4,6 +4,7 @@ from Semestres import Semestres
 from tabulate import tabulate
 import sys
 from termcolor import colored, cprint
+import gc
 # connection = Connection(
 #    'mongodb+srv://reyner:pachaqtec@pachaqtec.sdvq7.mongodb.net/pachaqtec?retryWrites=true&w=majority', 'pachacteq')
 #print = sg.Print
@@ -22,7 +23,8 @@ class Alumnos:
         connection.insertRegistro(Alumnos.collection, {
             'nombreAlumno': self.nombreAlumno,
             'edad': self.edad,
-            'correoAlumno': self.correoAlumno
+            'correoAlumno': self.correoAlumno,
+            'idSalon': self.idSalon
         })
         print("Se ingresó Alumno")
 
@@ -46,12 +48,12 @@ class Alumnos:
 
         for i in range(len(list(data))):
             table.append([data[i]["_id"], data[i]["nombreAlumno"],
-                          data[i]["edad"], data[i]["correoAlumno"]])
+                          data[i]["edad"], data[i]["correoAlumno"],data[i]['idSalon']])
 
         print(colored('Tabla de Cursos', 'yellow',
                       attrs=['reverse', 'blink']))
         print(tabulate(table, headers=[
-            "ID Curso", "Nombre Curso"], tablefmt='fancy_grid'))
+            "ID Alumno", "Nombre Alumno","Edad Alumno","Correo Alumno", "ID Curso"], tablefmt='fancy_grid'))
         input("Presione alguna tecla para Continuar")
 
     @staticmethod
@@ -96,6 +98,9 @@ class Alumnos:
             window = sg.Window("Ingreso del Alumno", layout)
             event, values = window.read()
             window.close()
+            layout = None
+            window = None
+            gc.collect()
 
             # Comprobamos si el nombre de salon existe
             checkExist = connection.obtenerRegistro(
@@ -132,7 +137,9 @@ class Alumnos:
             ]
             window = sg.Window("Eliminar Alumno", layout)
             event, values = window.read()
-            window.close()
+            layout = None
+            window = None
+            gc.collect()
 
             idCurso = connection.obtenerRegistro(
                 "alumnos", {'nombreAlumno': values[0]})

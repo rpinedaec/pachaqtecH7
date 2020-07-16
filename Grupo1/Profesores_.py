@@ -5,7 +5,7 @@ import sys
 from Alumnos import Alumnos
 from Cursos import Cursos
 from termcolor import colored, cprint
-
+import gc
 
 class Profesores:
     collection = "profesores"
@@ -17,7 +17,7 @@ class Profesores:
         self.idCurso = idCurso
 
     def ingresarProfesor(self, connection):
-        connection.insertRegistro(Cursos.collection, {
+        connection.insertRegistro(Profesores.collection, {
             'nombreProfesor': self.nombreProfesor,
             'edadProfesor': self.edadProfesor,
             'correoProfesor': self.correoProfesor,
@@ -78,6 +78,7 @@ class Profesores:
             # Mostramos tabla de Cursos
             table = []
             data = Cursos.mostrarCursos(connection)
+            #print(data)
             for i in range(len(data)):
                 table.append([data[i]["_id"], data[i]["nombreCurso"]])
 
@@ -100,10 +101,13 @@ class Profesores:
             window = sg.Window("Ingreso de Profesor", layout)
             event, values = window.read()
             window.close()
+            layout = None
+            window = None
+            gc.collect()
 
             # Verificamos si existe el Curso ingresado
             checkExist = Cursos.mostrarCurso(
-                connection, {'nombreCurso': values[1]})
+                connection, {'nombreCurso': values[3]})
 
             if not checkExist:
                 print(colored('Ingrese de nuevo. Nombre del curso no encontrado', 'red',
@@ -144,13 +148,18 @@ class Profesores:
             ]
             window = sg.Window("Eliminar Profesor", layout)
             event, values = window.read()
-            window.close()
+            window.close()           
+            layout = None
+            window = None
+            gc.collect()
 
             idCurso = connection.obtenerRegistro(
                 "profesores", {'nombreProfesor': values[0]})
 
             if idCurso == None:
                 print("Intente de nuevo. Nombre de Profesor no existe")
+                print("Se reinicia la solicitud")
+                input("Presione alguna tecla para contiunar")
 
             else:
                 id_ = idCurso['_id']

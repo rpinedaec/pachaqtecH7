@@ -5,21 +5,24 @@ import sys
 from Alumnos import Alumnos
 from Cursos import Cursos
 from termcolor import colored, cprint
-
+import gc
 
 class Notas:
     collection = "notas"
 
-    def __init__(self, descNota, idAlumno, idCurso):
+    def __init__(self, descNota, idAlumno, idCurso,nota):
         self.descNota = descNota
         self.idAlumno = idAlumno
         self.idCurso = idCurso
+        self.nota = nota
 
     def ingresarNota(self, connection):
-        connection.insertRegistro(Cursos.collection, {
+        connection.insertRegistro(Notas.collection, {
             'descNota': self.descNota,
             'idAlumno': self.idAlumno,
-            'idCurso': self.idCurso
+            'idCurso': self.idCurso,
+            'nota': self.nota
+            
         })
         print("Se ingresó Nota")
 
@@ -109,8 +112,9 @@ class Notas:
             window = sg.Window("Ingreso de Alumno", layout)
             event, values = window.read()
             window.close()
-
-            # Verificamos si existe el Curso ingresado
+            layout = None
+            window = None
+            gc.collect()
             checkExist = Cursos.mostrarCurso(
                 connection, {'nombreCurso': values[1]})
 
@@ -118,9 +122,8 @@ class Notas:
                 print(colored('Ingrese de nuevo. Nombre del curso no encontrado', 'red',
                               attrs=['reverse', 'blink']))
             else:
-                # Ahora el values[3] tendra el id nuestro curso
+                
                 values[4] = checkExist["_id"]
-                # Verificamos el ingreso del Alumno
                 checkExist = Alumnos.mostrarAlumno(
                     connection, {'nombreAlumno': values[2]})
 
@@ -161,7 +164,10 @@ class Notas:
             window = sg.Window("Eliminar Nota", layout)
             event, values = window.read()
             window.close()
-
+            layout = None
+            window = None
+            gc.collect()
+            
             idCurso = connection.obtenerRegistro(
                 "notas", {'descNota': values[0]})
 

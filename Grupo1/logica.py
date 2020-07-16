@@ -83,6 +83,7 @@ def listarAlumnos(nombreAlumno, connection):
     ])
 
     data = list(data)[0]
+    #print(data)
     # print(dumps(data,indent=2))
     # profesorId is ObjectId, para imprimirlo se debe from bson import ObjectId
     profesorId = data['salones'][0]['idProfesor']

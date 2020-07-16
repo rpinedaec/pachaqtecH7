@@ -47,17 +47,6 @@ class Semestres:
         ingreso = True
         while(ingreso):
             table = []
-            # Primero mostramos la tabla Semestre para que el usuario escriba el semestre al que va a ingresar el Curso
-            # data = Semestres.mostrarSemestres(connection)
-            # for i in range(len(data)):
-            #     table.append([data[i]["_id"], data[i]["desSemestre"]])
-
-            # print(colored('Tabla de Semestres', 'yellow',
-            #               attrs=['reverse', 'blink']))
-            # print(tabulate(table, headers=[
-            #       "Id Semestre", "Nombre Semestre"], tablefmt='fancy_grid'))
-
-            # Generamos un simple GUI para ingresar la data
 
             layout = [
                 [sg.Text('Ingrese Periodo')],
@@ -68,6 +57,9 @@ class Semestres:
             window = sg.Window("Ingreso de Periodo", layout)
             event, values = window.read()
             window.close()
+            layout = None
+            window = None
+            gc.collect()
             print(colored('Se ingreso Periodo',
                           'yellow', attrs=['reverse', 'blink']))
 
@@ -79,13 +71,3 @@ class Semestres:
                 table.append([data[i]["_id"], data[i]["desSemestre"]])
 
             return values
-            # # Nombre del Semestre a su valor id
-            # checkExist = Semestres.mostrarSemestre(
-            #     connection, {'desSemestre': values[1]})
-
-            # if not checkExist:
-            #     print(colored('Ingrese de nuevo. Nombre de Semestre no encontrado', 'red',
-            #                   attrs=['reverse', 'blink']))
-            # else:
-            #     values[2] = checkExist["_id"]  # actualizamos el _id
-            #     return values
