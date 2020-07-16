@@ -223,47 +223,54 @@ def mantenimientoEmpleado():
                     utils.Salir()
         #Regresar al menu anterior
         elif resmenuEmpleado == 7:
-            break
+            InicioPrincipal()
         elif resmenuEmpleado == 0:
             utils.Salir()
         else:
             pass
-            
-stopMenuInicio = True
-while stopMenuInicio:
-    dicMenuInicio = ("1. Empleado", "2. Alumno", "3. Docente")
-    menuInicio = utils.Menu("Menu Inicio", dicMenuInicio)
-    resMenuInicio = menuInicio.MostrarMenu()
-    if(resMenuInicio == 1):
-        __log.debug("Mostramos el Menu Empleado")
-        mantenimientoEmpleado()
-        #cargarObjetos()
 
-    elif(resMenuInicio == 2):
-        __log.debug("Mostramos el Menu Alumno")
-        tplAlumnoP = ('1. Listar todos los alumnos', '2. Listar por promedio', '3. Regresar')
-        menuAlumnoP = utils.Menu("Menu Alumno", tplAlumnoP)
-        resMenuAlumnoP = menuAlumnoP.MostrarMenu()
-        if resMenuAlumnoP == 1:
-            cruds.listarNotas()
-            sleep(2)
-        elif resMenuAlumnoP == 2:
-            pass
+def InicioPrincipal():            
+    stopMenuInicio = True
+    while stopMenuInicio:
+        dicMenuInicio = ("1. Empleado", "2. Alumno", "3. Docente")
+        menuInicio = utils.Menu("Menu Inicio", dicMenuInicio)
+        resMenuInicio = menuInicio.MostrarMenu()
+        if(resMenuInicio == 1):
+            __log.debug("Mostramos el Menu Empleado")
+            mantenimientoEmpleado()
+            #cargarObjetos()
+
+        elif(resMenuInicio == 2):
+            __log.debug("Mostramos el Menu Alumno")
+            tplAlumnoP = ('1. Listar todos los alumnos', '2. Listar de Menor a Mayor Nota', '3.  Listar de Mayor a Menor Nota', '4. Regresar')
+            menuAlumnoP = utils.Menu("Menu Alumno", tplAlumnoP)
+            resMenuAlumnoP = menuAlumnoP.MostrarMenu()
+            if resMenuAlumnoP == 1:
+                cruds.listarNotas()
+                sleep(2)
+            elif resMenuAlumnoP == 2:
+                cruds.listarNotasAsc()
+                sleep(2)
+            elif resMenuAlumnoP == 3:
+                cruds.listarNotasDesc()
+                sleep(2)
+            else:
+                utils.Salir()
+
+        elif(resMenuInicio == 3):
+            __log.debug("Mostramos el Menu Docente")
+            tplMenuDocente = ('1. Listar Docente y Curso', '2. Asignar Notas', '3. Regresar')
+            menuDocente = utils.Menu("Menu Docente", tplMenuDocente)
+            resMenuDocente = menuDocente.MostrarMenu()
+            if resMenuDocente == 1:
+                cruds.listarAlumnoCurso()
+                input("Continuar")
+            elif resMenuDocente == 2:
+                cruds.listarAlumnoCurso()
+                IdAlumnoCurso = cruds.buscarAlumnoCurso()            
+                cruds.asignarNota(IdAlumnoCurso)
         else:
+            __log.debug("Volvemos a mostrar menu")
             utils.Salir()
 
-    elif(resMenuInicio == 3):
-        __log.debug("Mostramos el Menu Docente")
-        tplMenuDocente = ('1. Listar Docente y Curso', '2. Asignar Notas', '3. Regresar')
-        menuDocente = utils.Menu("Menu Docente", tplMenuDocente)
-        resMenuDocente = menuDocente.MostrarMenu()
-        if resMenuDocente == 1:
-            cruds.listarAlumnoCurso()
-            input("Continuar")
-        elif resMenuDocente == 2:
-            cruds.listarAlumnoCurso()
-            IdAlumnoCurso = cruds.buscarAlumnoCurso()            
-            cruds.asignarNota(IdAlumnoCurso)
-    else:
-        __log.debug("Volvemos a mostrar menu")
-        utils.Salir()
+InicioPrincipal()

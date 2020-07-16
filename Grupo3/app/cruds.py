@@ -615,3 +615,23 @@ def listarNotas():
         sleep(2)
     except Exception as e:
         print(e)
+
+def listarNotasAsc():
+    try:
+        query = {}
+        resconn = conn.ordenarNotasAsc("Notas", query)
+        for tplAlumCurso in resconn:
+            print(tplAlumCurso['IdAlumnoCurso'], tplAlumCurso['Notas'])
+        sleep(2)
+    except Exception as e:
+        print(e)
+
+def listarNotasDesc():
+    try:
+        query = {}
+        resconn = conn.ordenarNotasDesc("Notas", query)
+        for tplAlumCurso in resconn:
+            print(tplAlumCurso['IdAlumnoCurso'], tplAlumCurso['Notas'])
+        sleep(2)
+    except Exception as e:
+        print(e)
