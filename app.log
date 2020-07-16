@@ -342,3 +342,74 @@
 2020-07-14 13:18:40,413 - Principal - INFO - Menu Empleado --> Matricula
 2020-07-14 13:18:45,862 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
 2020-07-14 13:19:06,810 - Menu - DEBUG - La opcion 1 es valida del menu Menu Matricula
+2020-07-14 16:08:04,196 - Principal - INFO - Inicio del sistema
+2020-07-14 16:08:07,405 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:08:07,405 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:09:32,759 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-14 16:09:32,761 - Principal - INFO - Menu Empleado --> Docente
+2020-07-14 16:10:11,356 - Menu - DEBUG - La opcion 0 es valida del menu Menu Docente
+2020-07-14 16:10:14,678 - Principal - INFO - Inicio del sistema
+2020-07-14 16:10:52,172 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:10:52,174 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:10:55,943 - Menu - DEBUG - La opcion 2 es valida del menu Menu Empleado
+2020-07-14 16:10:55,944 - Principal - INFO - Menu Empleado --> Docente
+2020-07-14 16:11:29,217 - Menu - DEBUG - La opcion 5 es valida del menu Menu Docente
+2020-07-14 16:11:31,177 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 16:11:35,970 - Menu - DEBUG - La opcion 5 es valida del menu Menu Docente
+2020-07-14 16:11:37,889 - Menu - DEBUG - La opcion 0 es valida del menu Menu Empleado
+2020-07-14 16:11:40,442 - Principal - INFO - Inicio del sistema
+2020-07-14 16:11:56,093 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 16:11:56,094 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 16:11:57,295 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 16:11:57,296 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 16:18:50,933 - Menu - ERROR - invalid literal for int() with base 10: '/usr/bin/python3 /home/ricardo/Escritorio/Pacha-Q-Tec/pachaqtecH7/Grupo3/app/init.py'
+2020-07-14 16:18:59,151 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 16:18:59,152 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 16:19:02,123 - Menu - DEBUG - La opcion 2 es valida del menu Menu Inicio
+2020-07-14 16:19:02,124 - Principal - DEBUG - Mostramos el Menu Alumno
+2020-07-14 16:19:03,389 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 16:19:03,389 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 16:27:08,627 - Menu - ERROR - invalid literal for int() with base 10: '/usr/bin/python3.7 /home/ricardo/Escritorio/Pacha-Q-Tec/pachaqtecH7/Grupo3/app/init.py'
+2020-07-14 19:24:03,762 - Menu - ERROR - invalid literal for int() with base 10: '/usr/bin/python3 /home/ricardo/Escritorio/Pacha-Q-Tec/pachaqtecH7/Grupo3/avellaneda/init.py'
+2020-07-14 19:24:20,002 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 19:24:22,919 - Menu - DEBUG - La opcion 2 es valida del menu Menu Inicio
+2020-07-14 19:24:22,919 - Principal - DEBUG - Mostramos el Menu Alumno
+2020-07-14 19:24:25,346 - Menu - DEBUG - La opcion 3 es valida del menu Menu Inicio
+2020-07-14 19:24:25,346 - Principal - DEBUG - Mostramos el Menu Docente
+2020-07-14 19:24:35,661 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 19:24:35,661 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 19:25:17,955 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 19:25:17,955 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 19:25:22,915 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 19:25:48,492 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 19:25:52,416 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-14 19:26:45,274 - Principal - INFO - Inicio del sistema
+2020-07-14 19:26:48,128 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 19:26:48,128 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 19:26:50,025 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 19:26:50,025 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 19:26:51,740 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
+2020-07-14 21:30:47,978 - Principal - INFO - Inicio del sistema
+2020-07-14 21:30:55,269 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:30:55,270 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:31:04,917 - Menu - DEBUG - La opcion 7 es valida del menu Menu Empleado
+2020-07-14 21:34:00,323 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 21:34:00,323 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 21:34:02,410 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 21:34:02,410 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 21:34:03,794 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 21:34:26,420 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 22:55:31,243 - Principal - INFO - Inicio del sistema
+2020-07-14 22:55:33,614 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 22:55:33,615 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 22:55:37,998 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 22:55:37,999 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 22:55:39,936 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 22:56:00,983 - Principal - INFO - Inicio del sistema
+2020-07-14 22:56:04,150 - Menu - DEBUG - La opcion 1 es valida del menu Menu Inicio
+2020-07-14 22:56:04,151 - Principal - DEBUG - Mostramos el Menu Empleado
+2020-07-14 22:56:05,300 - Menu - DEBUG - La opcion 1 es valida del menu Menu Empleado
+2020-07-14 22:56:05,301 - Principal - INFO - Menu Empleado --> Alumno
+2020-07-14 22:56:06,916 - Menu - DEBUG - La opcion 1 es valida del menu Menu Alumno
+2020-07-14 22:56:42,504 - Principal - DEBUG - Se ingresaron los datos del alumno
+2020-07-14 22:56:45,210 - Menu - DEBUG - La opcion 2 es valida del menu Menu Alumno
