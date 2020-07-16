@@ -42,13 +42,12 @@ def delete_curso(curso,ano_academico):
     return query
 
 # update
-def update_curso_DNI(DNI):
-    query_DNI={"DNI":DNI}
-    return query_DNI
+# update
+def update_input(nombre,ano_academico):
+    query={'curso':nombre,'año academico':ano_academico}
+    return query
 
-def update_curso(new_value,new_field):
-    curso_dict={'$set':{'field':'value'}}
-    curso_dict['$set']['field']=new_value
-    curso_dict['$set'][new_field]=curso_dict['$set'].pop('field')
-    return curso_dict
+def update_curso(new_value,field):    
+    my_dict={'$set':{field:new_value}}
+    return my_dict
 

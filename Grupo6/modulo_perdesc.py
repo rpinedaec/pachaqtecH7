@@ -26,7 +26,7 @@ class Modulo_perdesc:
             utils.logging.info(query)
             self.conexion.insert(query)
         elif(self.ans=='4'): #update
-            print("Ingrese la informacion solicitada:")
+            print("Ingrese los datos solicitados del registro que desea cambiar:")
             Año=input("Año: ")
             Bimestre=input("Bimestre: ")
             print("Ingrese el campo que desea modificar:")

@@ -25,14 +25,12 @@ def delete_perdesc(ano,bimestre):
     return query
 
 # update
-def update_input(field,new_valuem,ano,bimestre):
-    query={'Año':ano,'Bimestre':bimestre},{$set:{field: new_value}}
+def update_input(ano,bimestre):
+    query={'Año':ano,'Bimestre':bimestre}
     return query
 
-def update_perdesc(new_value,new_field):    
-    perdesc_dict={'$set':{'':'value'}}
-    perdesc_dict['$set']['field']=new_value
-    perdesc_dict['$set'][new_field]=perdesc_dict['$set'].pop('field')
-    return perdesc_dict
+def update_perdesc(new_value,field):    
+    my_dict={'$set':{field:new_value}}
+    return my_dict
 
 

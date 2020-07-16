@@ -18,29 +18,28 @@ class Modulo_salon:
             record=self.conexion.find_all_cond(query)
             print(record)             
         elif(self.ans=='3'): #create
-            print("Ingrese los datos solicitados: ")
+            print("Ingrese los datos solicitados del registro que desea cambiar: ")
             Numero=input("numero: ")
             Seccion=input("Seccion: ")
             query=a_salon.funcion.insert_salon(Numero,Seccion)
             utils.logging.info(query)
             self.conexion.insert(query)
-        # elif(self.ans=='4'): #update
-            # print("Ingrese el Año:")
-            # Año=input("Respuesta: ")
-            # print("Ingrese el campo que desea modificar:")
-            # print("DNI➜ [1]           Nombre➜ [2]          Apellido➜ [3]")
-            # Field=input("Respuesta: ")
-            # if (Field=='1'):
-            #     field="DNI"
-            # elif (Field=='2'):
-            #     field="nombre"
-            # elif (Field=='3'):
-            #     field="apellido"
-            # print("Ingrese el nuevo valor:")
-            # New_value=input("Respuesta: ")
-            # query=a_salon.funcion.update_profesor_DNI(DNI_profesor)
-            # my_dict=a_salon.funcion.update_profesor(New_value,field)
-            # self.conexion.update(query,my_dict)
+        elif(self.ans=='4'): #update
+            print("Ingrese la informacion solicitada:")
+            Numero=input("Numero: ")
+            Seccion=input("Seccion: ")
+            print("Ingrese el campo que desea modificar:")
+            print("Numero➜ [1]           Seccion➜ [2]")
+            Field=input("Respuesta: ")
+            if (Field=='1'):
+                field="numero"
+            elif (Field=='2'):
+                field="seccion"
+            print("Ingrese el nuevo valor:")
+            New_value=input("Respuesta: ")
+            query=a_salon.funcion.update_input(Numero,Seccion)
+            my_dict=a_salon.funcion.update_salon(New_value,field)
+            self.conexion.update(query,my_dict)
         elif(self.ans=='5'): #delete
             print("Ingrese los datos que desea eliminar")
             Numero=input("Numero:")

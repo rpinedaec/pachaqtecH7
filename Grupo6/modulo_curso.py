@@ -24,23 +24,22 @@ class Modulo_curso:
             query=a_curso.funcion.insert_curso(Curso,Año)
             utils.logging.info(query)
             self.conexion.insert(query)
-        # elif(self.ans=='4'): #update
-            # print("Ingrese el Año:")
-            # Año=input("Respuesta: ")
-            # print("Ingrese el campo que desea modificar:")
-            # print("DNI➜ [1]           Nombre➜ [2]          Apellido➜ [3]")
-            # Field=input("Respuesta: ")
-            # if (Field=='1'):
-            #     field="DNI"
-            # elif (Field=='2'):
-            #     field="nombre"
-            # elif (Field=='3'):
-            #     field="apellido"
-            # print("Ingrese el nuevo valor:")
-            # New_value=input("Respuesta: ")
-            # query=a_curso.funcion.update_profesor_DNI(DNI_profesor)
-            # my_dict=a_curso.funcion.update_profesor(New_value,field)
-            # self.conexion.update(query,my_dict)
+        elif(self.ans=='4'): #update
+            print("Ingrese la informacion solicitada:")
+            Nombre=input("Nombre: ")
+            Año_academico=input("Año academico: ")
+            print("Ingrese los datos solicitados del registro que desea cambiar:")
+            print("Nombre➜ [1]           Año academico➜ [2]")
+            Field=input("Respuesta: ")
+            if (Field=='1'):
+                field="curso"
+            elif (Field=='2'):
+                field="año academico"
+            print("Ingrese el nuevo valor:")
+            New_value=input("Respuesta: ")
+            query=a_curso.funcion.update_input(Nombre,Año_academico)
+            my_dict=a_curso.funcion.update_curso(New_value,field)
+            self.conexion.update(query,my_dict)
         elif(self.ans=='5'): #delete
             print("Ingrese los datos que desea eliminar")
             Curso=input("Curso:")

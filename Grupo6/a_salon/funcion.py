@@ -30,13 +30,11 @@ def delete_salon(numero,seccion):
     return query
 
 # update
-def update_salon_DNI(DNI):
-    query_DNI={"DNI":DNI}
-    return query_DNI
+def update_input(numero,seccion):
+    query={'numero':numero,'seccion':seccion}
+    return query
 
-def update_salon(new_value,new_field):
-    salon_dict={'$set':{'field':'value'}}
-    salon_dict['$set']['field']=new_value
-    salon_dict['$set'][new_field]=salon_dict['$set'].pop('field')
-    return salon_dict
+def update_salon(new_value,field):    
+    my_dict={'$set':{field:new_value}}
+    return my_dict
 
