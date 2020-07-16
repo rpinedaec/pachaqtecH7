@@ -1,5 +1,4 @@
 import utils
-
 # set_up
 def set_up_profesor():
     profesor_list=[
@@ -21,7 +20,6 @@ def insert_profesor(DNI,nombre,apellido):
 # find
 def find_profesor(DNI):
     query={'DNI':DNI}
-    utils.logging.info("La query find: "+str(query))
     return query
 
 # delete
@@ -32,13 +30,11 @@ def delete_profesor(DNI):
 # update
 def update_profesor_DNI(DNI):
     query_DNI={"DNI":DNI}
-    utils.logging.info(query_DNI)
     return query_DNI
 
 def update_profesor(new_value,new_field):
     profesor_dict={'$set':{'field':'value'}}
     profesor_dict['$set']['field']=new_value
     profesor_dict['$set'][new_field]=profesor_dict['$set'].pop('field')
-    utils.logging.info(profesor_dict)
     return profesor_dict
 

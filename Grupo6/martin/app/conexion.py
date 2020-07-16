@@ -1,5 +1,6 @@
-import utils
-log = utils.log("INIT")
+import martin.app.utils
+
+log = martin.app.utils.log("INIT")
 # mongoDB
 #import pymongo
 import pymongo

@@ -1,31 +1,43 @@
 import pymongo
-from pymongo import MongoClient
 import utils
 
-
 class Mongo_DB:
-    def __init__(self,mydb,collection):
-        self.mydb=mydb
+    def __init__(self,collection):
         self.collection=collection
     
     def conecc(self):
         myclient = pymongo.MongoClient('mongodb://localhost:27017')
-        mydb = myclient[self.mydb]
+        mydb = myclient['Hackaton7Grupo6']
         mycol = mydb[self.collection]
         return mycol
     
     def find(self,query):
         conexion=self.conecc()
-        utils.logging.info(conexion)
         x=conexion.find_one(query)
         return x
-    
+     
+    def find_all(self,query):
+        conexion=self.conecc()
+        list_all=[]
+        for x in conexion.find({},query):
+            list_all.append(x)
+        return list_all
+
+    def find_all_cond(self,query):
+        conexion=self.conecc()
+        list_all=[]
+        for x in conexion.find(query):
+            list_all.append(x)
+        return list_all
+     
     def insert(self,query):
         conexion=self.conecc()
+        utils.logging.info(query)
         conexion.insert_one(query)
 
     def insert_many(self,query):
         conexion=self.conecc()
+        utils.logging.info(query)
         conexion.insert_many(query)
 
     def update(self,query,my_dict):
@@ -35,6 +47,3 @@ class Mongo_DB:
     def delete(self,query):
         conexion=self.conecc()
         conexion.delete_one(query)
-
-
-
