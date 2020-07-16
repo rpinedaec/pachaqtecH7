@@ -451,7 +451,7 @@ def listarMatricula():
         query = {}
         resconn = conn.leerRegistros("Matricula", query)
         for tplMatricula in resconn:
-            print(tplMatricula['idmatricula'], tplMatricula['alumno'], tplMatricula['periodo'])
+            print(tplMatricula['idmatricula'], tplMatricula['alumno']['nombrealumno'], tplMatricula['alumno']['apellidoalumno'], tplMatricula['periodo']['desperiodo'])
         sleep(2)
     except Exception as e:
         print(e)
@@ -464,7 +464,7 @@ def buscarMatricula():
         query = {'idmatricula' : idMatricula}
         resconn = conn.leerRegistros("Matricula", query)
         for tplMatricula in resconn:
-            print(tplMatricula['idmatricula'], tplMatricula['alumno'], tplMatricula['periodo'])
+            print(tplMatricula['idmatricula'], tplMatricula['alumno']['nombrealumno'], tplMatricula['alumno']['apellidoalumno'], tplMatricula['periodo']['desperiodo'])
         m = matricula.matricula(tplMatricula['idmatricula'], tplMatricula['alumno'], tplMatricula['periodo'])
         return m.toDic()
     except Exception as e:
@@ -508,7 +508,7 @@ def listarDocenteCurso():
         query = {}
         resconn = conn.leerRegistros("Asigacion Docente Curso", query)  
         for tplDocenteCurso in resconn:
-            print(tplDocenteCurso['IdDocenteCurso'], tplDocenteCurso['Docente'], tplDocenteCurso['Curso'], tplDocenteCurso['Salon'])
+            print(tplDocenteCurso['IdDocenteCurso'], tplDocenteCurso['Docente']['nombredocente'], tplDocenteCurso['Docente']['dnidocente'], tplDocenteCurso['Curso']['nombrecurso'], tplDocenteCurso['Salon']['nombresalon'])
         sleep(2)
     except Exception as e:
         print(e)
@@ -521,7 +521,7 @@ def buscarDocenteCurso():
         query = {'IdDocenteCurso' : IdDocenteCurso}
         resconn = conn.leerRegistros("Asigacion Docente Curso", query)
         for tplDocenteCurso in resconn:
-            print(tplDocenteCurso['IdDocenteCurso'], tplDocenteCurso['Docente'], tplDocenteCurso['Curso'], tplDocenteCurso['Salon'])
+            print(tplDocenteCurso['IdDocenteCurso'], tplDocenteCurso['Docente']['nombredocente'], tplDocenteCurso['Docente']['dnidocente'], tplDocenteCurso['Curso']['nombrecurso'], tplDocenteCurso['Salon']['nombresalon'])
         dc = DocenteCurso.docenteCurso(tplDocenteCurso['IdDocenteCurso'], tplDocenteCurso['Docente'], tplDocenteCurso['Curso'], tplDocenteCurso['Salon'])
         return dc.toDic()
         sleep(2)
