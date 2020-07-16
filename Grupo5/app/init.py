@@ -3,7 +3,7 @@ from conn import Conexion
 from functions import *
 import time
 # Definición de todos los menus:
-menuPrincipal = Menu({1: "Crear Matricula", 2: "Listar Docentes", 3: "Listar Alumnos", 4: "Crear Reporte", 5: "Mantenimiento"},
+menuPrincipal = Menu({1: "Crear Matricula", 2: "Listar Docentes", 3: "Listar Alumnos", 4: "Mantenimiento"},
                      "Colegio Perez de Cuellar", "Menú Principal")                     
 menuMantenimiento = Menu({1: "Alumnos",    2: "Docentes", 3: "Salones", 4: "Cursos", 5: "Notas", 6: "Periodo escolar", 7: "Grados"},
                    "Colegio Perez de Cuellar", "Menú Mantenimiento")
@@ -27,12 +27,10 @@ while True:
     if intOptionSelect == 1:  # Menu Cuadro de merito
         crearMatricula()
     elif intOptionSelect == 2:  # Menu Listar Docente
-        pass
+        listarDocentes()
     elif intOptionSelect == 3:  # Menu Listar Alumnos
-        pass
-    elif intOptionSelect == 4:  # Menu Crear Reporte
-        pass
-    elif intOptionSelect == 5:  # Menu Mantenimiento
+        listarAlumnos()
+    elif intOptionSelect == 4:  # Menu Mantenimiento
         while True:
             intOptionSelect = menuMantenimiento.show()
             if intOptionSelect == 1:  # Mantenimiento Alumno
