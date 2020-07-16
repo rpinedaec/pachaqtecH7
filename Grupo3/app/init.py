@@ -241,7 +241,16 @@ while stopMenuInicio:
 
     elif(resMenuInicio == 2):
         __log.debug("Mostramos el Menu Alumno")
-        print("Alumno") 
+        tplAlumnoP = ('1. Listar todos los alumnos', '2. Listar por promedio', '3. Regresar')
+        menuAlumnoP = utils.Menu("Menu Alumno", tplAlumnoP)
+        resMenuAlumnoP = menuAlumnoP.MostrarMenu()
+        if resMenuAlumnoP == 1:
+            cruds.listarNotas()
+            sleep(2)
+        elif resMenuAlumnoP == 2:
+            pass
+        else:
+            utils.Salir()
 
     elif(resMenuInicio == 3):
         __log.debug("Mostramos el Menu Docente")
@@ -249,13 +258,12 @@ while stopMenuInicio:
         menuDocente = utils.Menu("Menu Docente", tplMenuDocente)
         resMenuDocente = menuDocente.MostrarMenu()
         if resMenuDocente == 1:
-            cruds.listarDocenteCurso()
-            cruds.buscarDocenteCurso()
+            cruds.listarAlumnoCurso()
             input("Continuar")
         elif resMenuDocente == 2:
             cruds.listarAlumnoCurso()
-            IdNota = cruds.buscarAsignarNotas()
-            cruds.asignarNota(IdNota)
+            IdAlumnoCurso = cruds.buscarAlumnoCurso()            
+            cruds.asignarNota(IdAlumnoCurso)
     else:
         __log.debug("Volvemos a mostrar menu")
         utils.Salir()
