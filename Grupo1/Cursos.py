@@ -19,7 +19,7 @@ class Cursos:
     def ingresarCurso(self, connection):
         connection.insertRegistro(Cursos.collection, {
             'nombreCurso': self.nombreCurso,
-            'idSemestre': self.idSemestre
+            'idPeriodo': self.idSemestre
         })
         print("Se ingresó Curso")
 

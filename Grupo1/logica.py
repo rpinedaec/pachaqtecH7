@@ -3,12 +3,126 @@ from bson.json_util import dumps
 from bson import ObjectId
 from tabulate import tabulate
 
-# Nivel avanzado
-# Listar a los profesores con su respectiva curso, salon y alumnos
 
-# connection = Connection(
-#     'mongodb+srv://reyner:pachaqtec@pachaqtec.sdvq7.mongodb.net/pachaqtec?retryWrites=true&w=majority', 'pachacteq')
 
+def listarListaPromedioNotasAlumnos(desSemestre,idCurso,connection):
+    # A falta de poblar la tabla con mas informacion se mostrara la lista promedio por semestreme y por cursos de mayor a menor 
+    collection = connection.returnCollection('notas')
+    data = collection.aggregate([
+    {
+        '$lookup': {
+            'from': 'cursos', 
+            'localField': 'idCurso', 
+            'foreignField': '_id', 
+            'as': 'curso'
+        }
+    }, {
+        '$unwind': {
+            'path': '$curso'
+        }
+    }, {
+        '$lookup': {
+            'from': 'semestres', 
+            'localField': 'curso.idPeriodo', 
+            'foreignField': '_id', 
+            'as': 'idPeriodo'
+        }
+    }, {
+        '$unwind': {
+            'path': '$idPeriodo'
+        }
+    }, {
+        '$group': {
+            '_id': {
+                'idAlumno': '$idAlumno', 
+                'idCurso': '$idCurso', 
+                'idPeriodo': '$idPeriodo.desSemestre'
+            }, 
+            'average': {
+                '$avg': '$nota'
+            }
+        }
+    }, {
+        '$sort': {
+            'average': -1
+        }
+    },
+    {
+        '$match': {
+            '_id.idPeriodo': desSemestre,
+            '_id.idCurso': idCurso
+        }
+    }
+    ])
+
+    data = list(data)
+    getNameCursoById = connection.obtenerRegistro("cursos",{'_id': idCurso})
+    lista = []
+    for i in range(len(data)):
+        getAlumnoNameById = connection.obtenerRegistro("alumnos",{'_id': data[i]['_id']['idAlumno']})
+        lista.append([desSemestre,getNameCursoById,getAlumnoNameById,data[i]['average']])
+
+    print(tabulate(lista, headers=[
+          "Semestre", "Curso", "Alumno", "Promedio"], tablefmt='fancy_grid'))
+
+    
+def listarListaPromedioNotasAlumnos2(connection):
+    # A falta de poblar la tabla con mas informacion se mostrara la lista promedio por semestreme y por cursos de mayor a menor 
+    collection = connection.returnCollection('notas')
+    data = collection.aggregate([
+    {
+        '$lookup': {
+            'from': 'cursos', 
+            'localField': 'idCurso', 
+            'foreignField': '_id', 
+            'as': 'curso'
+        }
+    }, {
+        '$unwind': {
+            'path': '$curso'
+        }
+    }, {
+        '$lookup': {
+            'from': 'semestres', 
+            'localField': 'curso.idPeriodo', 
+            'foreignField': '_id', 
+            'as': 'idPeriodo'
+        }
+    }, {
+        '$unwind': {
+            'path': '$idPeriodo'
+        }
+    }, {
+        '$group': {
+            '_id': {
+                'idAlumno': '$idAlumno', 
+                'idCurso': '$idCurso', 
+                'idPeriodo': '$idPeriodo.desSemestre'
+            }, 
+            'average': {
+                '$avg': '$nota'
+            }
+        }
+    }, {
+        '$sort': {
+            'average': -1
+        }
+    }
+
+    ])
+
+    data = list(data)
+    
+    lista = []
+    for i in range(len(data)):
+        getAlumnoNameById = connection.obtenerRegistro("alumnos",{'_id': data[i]['_id']['idAlumno']})
+        getNameCursoById = connection.obtenerRegistro("cursos",{'_id': data[i]['_id']['idCurso']})
+
+        if getAlumnoNameById != None or getAlumnoNameById != None:
+              lista.append([data[i]['_id']['idPeriodo'],getNameCursoById['nombreCurso'],getAlumnoNameById['nombreAlumno'],data[i]['average']])
+
+    print(tabulate(lista, headers=[
+          "Semestre", "Curso", "Alumno", "Promedio"], tablefmt='fancy_grid'))
 
 def listarProfesores(nombreProfesor, connection):
     collection = connection.returnCollection('profesores')

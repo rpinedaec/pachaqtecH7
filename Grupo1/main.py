@@ -1,7 +1,9 @@
 from Cursos import Cursos
 import sys
 from Alumnos import Alumnos
+from Semestres import Semestres
 from Notas import Notas
+#from Salones import Salones
 from pymongo import MongoClient, errors
 from pprint import PrettyPrinter
 from connection.conn import Connection
@@ -41,7 +43,8 @@ while(program):
         [sg.Text('7. Avanzado 1: Listar a los Profesor ..')],
         [sg.Text('8. Avanzado 2: Enlistar Alumnos ...')],
         [sg.Text('9. Avanzado 3: Enviar Reporte ...')],
-        [sg.Text('10. Terminar Programa')],
+        [sg.Text('10. Extra: Mostar Lista de promedio de notas de todos los alumnos por curso y semestre')],
+        [sg.Text('11. Salir')],
         [sg.Text('Ingrese opcion',
                  size=(15, 1)), sg.InputText()],
         [sg.Submit()]
@@ -143,8 +146,54 @@ while(program):
             else:
                 pass
 
-    elif value == 6:  # Listar Alumnos
-        pass
+    elif value == 6:  # Listar Alumnos por promedio por curso por salon y por semestre
+        entered = True
+        while(entered):
+
+            cprintInfo("Listar Alumnos por promedio por curso por salon y por semestre")
+            input("Presione una tecla para continuar\n")
+            cprintInfo("Ingresar nombre de Semestre para listar")
+            table = []
+            data = Semestres.mostrarSemestres(connection)
+            for i in range(len(data)):
+                table.append([data[i]["_id"], data[i]["desSemestre"]])
+
+            print(colored('Tabla de Semestres', 'yellow',
+                            attrs=['reverse', 'blink']))
+            print(tabulate(table, headers=[
+                "Id", "Nombre Semestre"], tablefmt='fancy_grid'))
+            print(colored('Ingresar un Semestre Valido: ', 'yellow',
+                            attrs=['reverse', 'blink']))
+            nombreSemestre = input("Ingrese un Semestre\n")
+            checkSemestre = connection.obtenerRegistro(
+                "semestres", {'desSemestre': nombreSemestre})
+            if not checkSemestre:
+                cprintInfo("Semestre no encontrado. Intente de nuevo")
+                input("Presione una tecla para continuar\n")
+
+            else:
+                table = []
+                
+                data = connection.obtenerRegistros("salones")
+                for i in range(len(data)):
+                    table.append([data[i]["_id"], data[i]["nombreSalon"]])
+
+                print(colored('Tabla de Salones', 'yellow',
+                                attrs=['reverse', 'blink']))
+                print(tabulate(table, headers=[
+                    "Id", "Nombre Salon"], tablefmt='fancy_grid'))
+                print(colored('Ingresar un Salon Valido', 'yellow',
+                                attrs=['reverse', 'blink']))
+                nombreSalon= input("Ingrese un Salon\n")
+                checkSalon = connection.obtenerRegistro(
+                    "salones", {'nombreSalon': nombreSalon})
+                if not checkSalon:
+                    cprintInfo("Ingrese un Salon valido. Vuelva a Ingresar")
+                    input("Presione una tecla para continuar\n")
+                else:
+                    getIdSalon = connection.obtenerRegistro("salones",{"_id": nombreSalon})
+                    listarListaPromedioNotasAlumnos(nombreSemestre,getIdSalon,connection)
+                    entered = False
     elif value == 7:  # Avanzado 1
         entered = True
         while(entered):
@@ -226,9 +275,13 @@ while(program):
                 reporte2(nombreSalon, connection)
                 input("Presione una tecla para continuar")
                 entered = False
-        pass
-
+        
+    
     elif value == 10:
+        listarListaPromedioNotasAlumnos2(connection)
+
+
+    elif value == 11:
         connection.cerrarConexion()
         sys.exit()
     else:
