@@ -9,11 +9,14 @@ class docentes:
     self.correodocente = correodocente
     self.nacdocente = nacdocente
     
-
-#  ██████  █████  ███    ███ ██████  ██  ██████  
-# ██      ██   ██ ████  ████ ██   ██ ██ ██    ██ 
-# ██      ███████ ██ ████ ██ ██████  ██ ██    ██ 
-# ██      ██   ██ ██  ██  ██ ██   ██ ██ ██    ██ 
-#  ██████ ██   ██ ██      ██ ██████  ██  ██████ 
+  def toDic(self):
+    d = {
+      "iddocentes": self.iddocentes,
+      "nombredocente": self.nombredocente,
+      "dnidocente": self.dnidocente,
+      "correodocente": self.correodocente,
+      "nacdocente": self.nacdocente
+    }
+    return d
     
     

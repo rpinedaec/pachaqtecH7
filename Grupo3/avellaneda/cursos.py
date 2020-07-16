@@ -6,4 +6,10 @@ class cursos:
     self.idcursos = idcursos
     self.nombrecurso = nombrecurso
     
+  def toDic(self):
+    d = {
+      "idcursos": self.idcursos,
+      "nombrecurso": self.nombrecurso 
+    }
+    return d
     

@@ -14,18 +14,11 @@ def mantenimientoEmpleado():
 
     stopMenuEmpleado = True
     while stopMenuEmpleado:
-
-
-
         if resmenuEmpleado == 1:
             __log.info("Menu Empleado --> Alumno")
             stopMenuAlumno = True
             while stopMenuAlumno:
-                tplAlumno = ("1. Agregar Alumno", 
-                             "2. Listar Alumnos", 
-                             "3. Modificar Alumno", 
-                             "4. Eliminar Alumno", 
-                             "5. Regresar")
+                tplAlumno = ("1. Agregar Alumno", "2. Listar Alumnos", "3. Modificar Alumno", "4. Eliminar Alumno", "5. Regresar")
                 menuAlumno = utils.Menu("Menu Alumno", tplAlumno)
                 resmenuAlumno = menuAlumno.MostrarMenu()
                 #Agregar Alumno
@@ -57,19 +50,12 @@ def mantenimientoEmpleado():
                     utils.Salir()
                 else:
                     print("Ingrese una opcion valida")
-
-
-
         #Menu Empleado Docente
         elif resmenuEmpleado == 2:
             __log.info("Menu Empleado --> Docente")
             stopMenuDocente = True
             while stopMenuDocente:
-                tplDocente = ("1. Agregar Docente", 
-                              "2. Listar Docente", 
-                              "3. Modificar Docente", 
-                              "4. Eliminar Docente", 
-                              "5. Regresar")
+                tplDocente = ("1. Agregar Docente", "2. Listar Docente", "3. Modificar Docente", "4. Eliminar Docente", "5. Regresar")
                 menuDocente = utils.Menu("Menu Docente", tplDocente)
                 resmenuDocente = menuDocente.MostrarMenu()
                 #Agregar Docente
@@ -101,19 +87,12 @@ def mantenimientoEmpleado():
                     utils.Salir()
                 else:
                     print("Ingrese una opcion valida")
-
-
-
         #Menu empleado Cursos
         elif resmenuEmpleado == 3:
             __log.info("Menu Empleado --> Cursos")
             stopMenuCursos = True
             while stopMenuCursos:
-                tplCursos = ("1. Agregar Cursos", 
-                             "2. Listar Cursos", 
-                             "3. Modificar Cursos", 
-                             "4. Eliminar Cursos", 
-                             "5. Regresar")
+                tplCursos = ("1. Agregar Cursos", "2. Listar Cursos", "3. Modificar Cursos", "4. Eliminar Cursos", "5. Regresar")
                 menuCursos = utils.Menu("Menu Cursos", tplCursos)
                 resmenuCursos = menuCursos.MostrarMenu()
                 #Agregar Cursos
@@ -145,19 +124,12 @@ def mantenimientoEmpleado():
                     utils.Salir()
                 else:
                     print("Ingrese una opcion valida")
-
-
-
         #Menu empleado Salones
         elif resmenuEmpleado == 4:
             __log.info("Menu Empleado --> Salones")
             stopMenuSalones = True
             while stopMenuSalones:
-                tplSalones = ("1. Agregar Salones", 
-                              "2. Listar Salones", 
-                              "3. Modificar Salones", 
-                              "4. Eliminar Salones", 
-                              "5. Regresar")
+                tplSalones = ("1. Agregar Salones", "2. Listar Salones", "3. Modificar Salones", "4. Eliminar Salones", "5. Regresar")
                 menuSalones = utils.Menu("Menu Salones", tplSalones)
                 resmenuSalones = menuSalones.MostrarMenu()
                 #Agregar Salones
@@ -189,18 +161,12 @@ def mantenimientoEmpleado():
                     utils.Salir()
                 else:
                     print("Ingrese una opcion valida")
-
-
         #Menu empleado Periodo Escolar
         elif resmenuEmpleado == 5:
             __log.info("Menu Empleado --> Periodo")
             stopMenuPeriodo = True
             while stopMenuPeriodo:
-                tplPeriodo = ("1. Agregar Periodo", 
-                              "2. Listar Periodo", 
-                              "3. Modificar Periodo", 
-                              "4. Eliminar Periodo", 
-                              "5. Regresar")
+                tplPeriodo = ("1. Agregar Periodo", "2. Listar Periodo", "3. Modificar Periodo", "4. Eliminar Periodo", "5. Regresar")
                 menuPeriodo = utils.Menu("Menu Periodo", tplPeriodo)
                 resmenuPeriodo = menuPeriodo.MostrarMenu()
                 #Agregar Periodo
@@ -210,18 +176,18 @@ def mantenimientoEmpleado():
                     __log.debug("Se ingresaron los datos del Periodo")
                 #Listar Periodo
                 elif resmenuPeriodo == 2:
-                    cruds.listarPeriodos()
+                    cruds.listarPeriodo()
                     sleep(2)
                 #Modificar Periodo
                 elif resmenuPeriodo == 3:                    
-                    cruds.listarPeriodos()                        
+                    cruds.listarPeriodo()                        
                     idPeriodo = cruds.buscarPeriodo()
                     cruds.modificarPeriodo(idPeriodo)
                     sleep(2)
                     __log.debug("Se modificaron los datos del Periodo")
                 #Elimar Periodo
                 elif resmenuPeriodo == 4:                    
-                    cruds.listarPeriodos()                        
+                    cruds.listarPeriodo()                        
                     idPeriodo = cruds.buscarPeriodo()
                     cruds.eliminarPeriodo(idPeriodo)
                     sleep(2)
@@ -232,19 +198,12 @@ def mantenimientoEmpleado():
                     utils.Salir()
                 else:
                     print("Ingrese una opcion valida")
-
-
-
         #Menu empleado Matricula
         elif resmenuEmpleado == 6:
             __log.info("Menu Empleado --> Matricula")
             stopMenuMatricula = True
             while stopMenuMatricula:
-                tplMatricula = ("1. Matricular Alumno", 
-                                "2. Listar Matricula", 
-                                "3. Asignar Docente a Curso", 
-                                "4. Asignar Curso a Alumno", 
-                                "5. Regresar")
+                tplMatricula = ("1. Matricular Alumno", "2. Listar Matricula", "3. Asignar Docente a Curso", "4. Asignar Curso a Alumno", "5. Regresar")
                 menuMatricula = utils.Menu("Menu Matricula", tplMatricula)
                 resmenuMatricula = menuMatricula.MostrarMenu()
                 #Agregar Matricula
@@ -269,57 +228,48 @@ def mantenimientoEmpleado():
             utils.Salir()
         else:
             pass
-
-
-def listasDeAlmunos():
-    tplAlumnos = ("1. Los mejores Alumnos", 
-                  "2. Los peores Alumnos")
-    menuAlumnos = utils.Menu("Listas de Alumnos", tplAlumnos)
-    resmenuAlumnos = menuAlumnos.MostrarMenu()
-
-    stopMenuAlumnos = True
-    while stopMenuAlumnos:
-
-        if resmenuAlumnos == 1:
-            cruds.buscarNota()
-            sleep(2)
-            __log.debug("Se Buscan notas")
-                #Listar Alumno
-        elif resmenuAlumnos == 2:
-            cruds.buscarNota()
-            sleep(2)
-        elif resmenuAlumnos == 0:
-            utils.Salir()
-        else:
-            print("Ingrese una opcion valida")
-
-            
-
-
-
-
-
-
-
             
 stopMenuInicio = True
 while stopMenuInicio:
     dicMenuInicio = ("1. Empleado", "2. Alumno", "3. Docente")
     menuInicio = utils.Menu("Menu Inicio", dicMenuInicio)
     resMenuInicio = menuInicio.MostrarMenu()
-
     if(resMenuInicio == 1):
         __log.debug("Mostramos el Menu Empleado")
         mantenimientoEmpleado()
+        #cargarObjetos()
 
     elif(resMenuInicio == 2):
         __log.debug("Mostramos el Menu Alumno")
-        listasDeAlmunos() 
+        tplMenuAlumno = ('1. Listar Alumnos', '2. Salir')
+        menuAlumno = utils.Menu("Menu Alumno", tplMenuAlumno)
+        resMenuAlumno = menuAlumno.MostrarMenu()
+        if resMenuAlumno == 1:
+
+
+        else:
+            __log.debug("Volvemos a mostrar menu")
+            utils.Salir() 
 
     elif(resMenuInicio == 3):
         __log.debug("Mostramos el Menu Docente")
-        print("Docente")
-
+        tplMenuDocente = ('1. Listar Docente y Curso', 
+                          '2. Asignar Notas', 
+                          '3. Listar Notas',
+                          '4. Regresar')
+        menuDocente = utils.Menu("Menu Docente", tplMenuDocente)
+        resMenuDocente = menuDocente.MostrarMenu()
+        if resMenuDocente == 1:
+            cruds.listarDocenteCurso()
+            cruds.buscarDocenteCurso()
+            input("Continuar")
+        elif resMenuDocente == 2:
+            cruds.listarAlumnoCurso()
+            IdNota = cruds.buscarAsignarNotas()
+            cruds.asignarNota(IdNota)
+        # elif resMenuDocente == 3:
+        #     cruds.buscarNota()
+        #     cruds.listarNota()
     else:
         __log.debug("Volvemos a mostrar menu")
         utils.Salir()

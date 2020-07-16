@@ -2,6 +2,13 @@ import conexion
 import querys
 from time import sleep
 import alumnos
+import periodoEscolar
+import matricula
+import docentes
+import cursos
+import salones
+import DocenteCurso
+import AlumnoCurso
 
 conn = conexion.conexionBDD(4)
 query = querys.Querys()
@@ -53,27 +60,30 @@ def buscarAlumno():
         query = {'idAlumno' : idAlumno}
         print(query)
         resConn = conn.leerRegistro("Alumno", query)
-        print (resConn['idAlumno'])
-        """for row in resConn:
-            print(f"{row['idAlumno']}\t{row['nombrealumno']}\t{row['apellidoalumno']}\t{row['correoalumno']}\t{row['nacalumno']}")
-        """"""consulta = query.BuscarAlumno(idAlumno)
+        a = alumnos.alumnos(resConn['idAlumno'], resConn['nombrealumno'], resConn['apellidoalumno'], resConn['correoalumno'], resConn['nacalumno'])
+        return a.toDic()
+        """consulta = query.BuscarAlumno(idAlumno)
         resconn = conn.consultarBDD(consulta)
         for tplAlumno in resconn:
-            print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])"""
-        return idAlumno
+            print(tplAlumno[0], tplAlumno[1], tplAlumno[2], tplAlumno[3], tplAlumno[4])
+        return idAlumno"""
     except Exception as e:
         print("Debe ingresar un numero")
         print(e)
         sleep(2)
 
 #Modificar Alumno   
-def modificarAlumno(idAlumno):
+def modificarAlumno(dicAlumno):
+    query = dicAlumno
+    idAlumno = input("Ingrese nuevo id del alumno:\n")
     Nombre = input("Ingrese el nuevo nombre del alumno:\n")
     Apellido = input(f"Ingrese el nuevo apellido del alumno {Nombre}:\n")
     Correo = input(f"Ingrese el nuevo correo del alumno {Nombre}:\n")
     FechaNac = input(f"Ingrese la nueva fecha de nacimiento del alumno {Nombre}:\n")
-    consulta = query.ModificarAlumno(Nombre, Apellido, Correo, FechaNac, idAlumno)
-    resconn = conn.ejecutarBDD(consulta)
+    """consulta = query.ModificarAlumno(Nombre, Apellido, Correo, FechaNac, idAlumno)
+    resconn = conn.ejecutarBDD(consulta)"""
+    modiAlumno = alumnos.alumnos(idAlumno, Nombre, Apellido, Correo, FechaNac)
+    resconn = conn.actualizarRegistro("Alumno", query, modiAlumno.toDic())
     if resconn:
         print("Se modifico correctamente")
     else:
@@ -81,11 +91,13 @@ def modificarAlumno(idAlumno):
     input("Desea continuar")
 
 #Eliminar Alumno
-def eliminarAlumno(idAlumno):
-    consulta = query.EliminarAlumno(idAlumno)
-    resconn = conn.ejecutarBDD(consulta)
+def eliminarAlumno(dicAlumno):
+    """consulta = query.EliminarAlumno(idAlumno)
+    resconn = conn.ejecutarBDD(consulta)"""
+    query = dicAlumno
+    resconn = conn.eliminarRegistro("Alumno", query)
     if resconn:
-        print(f"Se elimino al alumno {idAlumno}")
+        print("Se elimino al alumno seleccionado")
     else:
         print("No fue posible eliminar al alumno")
     input("Desea continuar")
@@ -102,13 +114,16 @@ def eliminarAlumno(idAlumno):
 #Ingresar Docente
 def ingresarDocente():
     #Datos del docente
+    idDocente = input("Ingresar Id del Docente:\n")
     nombre = input("Ingrese Nombre del Docente:\n")
     dni = input(f"Ingrese Dni del Docente {nombre}:\n")
     correo = input(f"Ingrese Correo del Docente {nombre}:\n")
     fechanac = input(f"Ingrese Fecha de Nacimiento del Docente {nombre}:\n")
     try:
-        consulta = query.InsertDocente(nombre, dni, correo, fechanac)
-        resconn = conn.ejecutarBDD(consulta)
+        """consulta = query.InsertDocente(nombre, dni, correo, fechanac)
+        resconn = conn.ejecutarBDD(consulta)"""
+        nuevoDocente = docentes.docentes(idDocente, nombre, dni, correo, fechanac)
+        resconn = conn.insertarRegistro("Docente", nuevoDocente.toDic())
         if resconn:
             print("Se agrego correctamente")
         else:
@@ -119,20 +134,25 @@ def ingresarDocente():
     
 #Listar Docente
 def listarDocente():
-    consulta = query.ListarAllDocente()
-    resconn = conn.consultarBDD(consulta)
+    """consulta = query.ListarAllDocente()
+    resconn = conn.consultarBDD(consulta)"""
+    query = {}
+    resconn = conn.leerRegistros("Docente", query)
     for tplDocente in resconn:
-        print(tplDocente[0], tplDocente[1], tplDocente[2], tplDocente[3], tplDocente[4])
+        print(tplDocente['iddocentes'], tplDocente['nombredocente'], tplDocente['dnidocente'], tplDocente['correodocente'], tplDocente['nacdocente'])
 
 #Buscar Docente
 def buscarDocente():
     try:
-        idDocente = int(input("Ingrese el id del docente que desea buscar:\n"))
-        consulta = query.BuscarDocente(idDocente)
-        resconn = conn.consultarBDD(consulta)
+        idDocente = input("Ingrese el id del docente que desea buscar:\n")
+        """consulta = query.BuscarDocente(idDocente)
+        resconn = conn.consultarBDD(consulta)"""
+        query = {'iddocentes' : idDocente}
+        resconn = conn.leerRegistros("Docente", query)
         for tplDocente in resconn:
-            print(tplDocente[0], tplDocente[1], tplDocente[2], tplDocente[3], tplDocente[4])
-        return idDocente
+            print(tplDocente['iddocentes'], tplDocente['nombredocente'], tplDocente['dnidocente'], tplDocente['correodocente'], tplDocente['nacdocente'])
+        d = docentes.docentes(tplDocente['iddocentes'], tplDocente['nombredocente'], tplDocente['dnidocente'], tplDocente['correodocente'], tplDocente['nacdocente'])
+        return d.toDic()
     except Exception as e:
         print("Debe ingresar un numero")
         print(e)
@@ -140,12 +160,15 @@ def buscarDocente():
 
 #Modificar Docente  
 def modificarDocente(idDocente):
+    IdDocente = input("Ingresar el nuevo id del docente:\n")
     Nombre = input("Ingrese el nuevo nombre del docente:\n")
     Dni = input(f"Ingrese el nuevo Dni del docente {Nombre}:\n")
     Correo = input(f"Ingrese el nuevo correo del docente {Nombre}:\n")
     FechaNac = input(f"Ingrese la nueva fecha de nacimiento del docente {Nombre}:\n")
-    consulta = query.ModificarDocente(Nombre, Dni, Correo, FechaNac, idDocente)
-    resconn = conn.ejecutarBDD(consulta)
+    """consulta = query.ModificarDocente(Nombre, Dni, Correo, FechaNac, idDocente)
+    resconn = conn.ejecutarBDD(consulta)"""
+    modiDocente = docentes.docentes(IdDocente, Nombre, Dni, Correo, FechaNac)
+    resconn = conn.actualizarRegistro("Docente", idDocente, modiDocente.toDic())
     if resconn:
         print("Se modifico correctamente")
     else:
@@ -154,10 +177,11 @@ def modificarDocente(idDocente):
 
 #Eliminar Docente
 def eliminarDocente(idDocente):
-    consulta = query.EliminarDocente(idDocente)
-    resconn = conn.ejecutarBDD(consulta)
+    """consulta = query.EliminarDocente(idDocente)
+    resconn = conn.ejecutarBDD(consulta)"""
+    resconn = conn.eliminarRegistro("Docente", idDocente)
     if resconn:
-        print(f"Se elimino al docente {idDocente}")
+        print("Se elimino al docente seleccionado")
     else:
         print("No fue posible eliminar al docente")
     input("Desea continuar")
@@ -174,10 +198,13 @@ def eliminarDocente(idDocente):
 #Ingresar Salon
 def ingresarSalon():
     #Datos del Salon
+    idSalon = input("Ingrese id del Salon:\n")
     nombre = input("Ingrese Nombre del Salon:\n")
     try:
-        consulta = query.InsertSalon(nombre)
-        resconn = conn.ejecutarBDD(consulta)
+        """consulta = query.InsertSalon(nombre)
+        resconn = conn.ejecutarBDD(consulta)"""
+        nuevoSalon = salones.salones(idSalon, nombre)
+        resconn = conn.insertarRegistro("Salon", nuevoSalon.toDic())
         if resconn:
             print("Se agrego correctamente")
         else:
@@ -188,30 +215,38 @@ def ingresarSalon():
     
 #Listar Salones
 def listarSalon():
-    consulta = query.ListarAllSalones()
-    resconn = conn.consultarBDD(consulta)
+    """consulta = query.ListarAllSalones()
+    resconn = conn.consultarBDD(consulta)"""
+    query = {}
+    resconn = conn.leerRegistros("Salon", query)
     for tplSalon in resconn:
-        print(tplSalon[0], tplSalon[1])
+        print(tplSalon['idsalones'], tplSalon['nombresalon'])
 
 #Buscar Salon
 def buscarSalon():
     try:
-        idSalon = int(input("Ingrese el id del salon que desea buscar:\n"))
-        consulta = query.BuscarSalon(idSalon)
-        resconn = conn.consultarBDD(consulta)
+        idSalon = input("Ingrese el id del salon que desea buscar:\n")
+        """consulta = query.BuscarSalon(idSalon)
+        resconn = conn.consultarBDD(consulta)"""
+        query = {'idsalones' : idSalon}
+        resconn = conn.leerRegistros("Salon", query)   
         for tplSalon in resconn:
-            print(tplSalon[0], tplSalon[1])
-        return idSalon
+            print(tplSalon['idsalones'], tplSalon['nombresalon'])
+        s = salones.salones(tplSalon['idsalones'], tplSalon['nombresalon'])
+        return s.toDic()
     except Exception as e:
         print("Debe ingresar un numero")
         print(e)
         sleep(2)
 
 #Modificar Salon   
-def modificarSalon(idSalon):
+def modificarSalon(dicSalon):
+    idSalon = input("Ingrese el nuevo id del salon:\n")
     Nombre = input("Ingrese el nuevo nombre del salon:\n")
-    consulta = query.ModificarSalon(Nombre, idSalon)
-    resconn = conn.ejecutarBDD(consulta)
+    """consulta = query.ModificarSalon(Nombre, idSalon)
+    resconn = conn.ejecutarBDD(consulta)"""
+    modiSalon = salones.salones(idSalon, Nombre)
+    resconn = conn.actualizarRegistro("Salon", dicSalon, modiSalon.toDic())
     if resconn:
         print("Se modifico correctamente")
     else:
@@ -220,10 +255,11 @@ def modificarSalon(idSalon):
 
 #Eliminar Salon
 def eliminarSalon(idSalon):
-    consulta = query.EliminarSalon(idSalon)
-    resconn = conn.ejecutarBDD(consulta)
+    """consulta = query.EliminarSalon(idSalon)
+    resconn = conn.ejecutarBDD(consulta)"""
+    resconn = conn.eliminarRegistro("Salon", idSalon)
     if resconn:
-        print(f"Se elimino al salon {idSalon}")
+        print("Se elimino al salon selecciondo")
     else:
         print("No fue posible eliminar al salon")
     input("Desea continuar")
@@ -240,10 +276,13 @@ def eliminarSalon(idSalon):
 #Ingresar Curso
 def ingresarCurso():
     #Datos del Curso
+    idCurso = input("Ingrese id del Curso:\n")
     nombre = input("Ingrese Nombre del Curso:\n")
     try:
-        consulta = query.InsertCurso(nombre)
-        resconn = conn.ejecutarBDD(consulta)
+        """consulta = query.InsertCurso(nombre)
+        resconn = conn.ejecutarBDD(consulta)"""
+        nuevoCurso = cursos.cursos(idCurso, nombre)
+        resconn = conn.insertarRegistro("Curso", nuevoCurso.toDic())
         if resconn:
             print("Se agrego correctamente")
         else:
@@ -254,30 +293,38 @@ def ingresarCurso():
     
 #Listar Cursos
 def listarCurso():
-    consulta = query.ListarAllCursos()
-    resconn = conn.consultarBDD(consulta)
+    """consulta = query.ListarAllCursos()
+    resconn = conn.consultarBDD(consulta)"""
+    query = {}
+    resconn = conn.leerRegistros("Curso", query)
     for tplCurso in resconn:
-        print(tplCurso[0], tplCurso[1])
+        print(tplCurso['idcursos'], tplCurso['nombrecurso'])
 
 #Buscar Curso
 def buscarCurso():
     try:
-        idCurso = int(input("Ingrese el id del curso que desea buscar:\n"))
-        consulta = query.BuscarCurso(idCurso)
-        resconn = conn.consultarBDD(consulta)
+        idCurso = input("Ingrese el id del curso que desea buscar:\n")
+        """consulta = query.BuscarCurso(idCurso)
+        resconn = conn.consultarBDD(consulta)"""
+        query = {'idcursos' : idCurso}
+        resconn = conn.leerRegistros("Curso", query)
         for tplCurso in resconn:
-            print(tplCurso[0], tplCurso[1])
-        return idCurso
+            print(tplCurso['idcursos'], tplCurso['nombrecurso'])
+        c = cursos.cursos(tplCurso['idcursos'], tplCurso['nombrecurso'])
+        return c.toDic()
     except Exception as e:
         print("Debe ingresar un numero")
         print(e)
         sleep(2)
 
 #Modificar Curso   
-def modificarCurso(idCurso):
+def modificarCurso(dicCurso):
+    idCurso = input("Ingresar el nuevo id del curso:\n")
     Nombre = input("Ingrese el nuevo nombre del curso:\n")
-    consulta = query.ModificarCurso(Nombre, idCurso)
-    resconn = conn.ejecutarBDD(consulta)
+    """consulta = query.ModificarCurso(Nombre, idCurso)
+    resconn = conn.ejecutarBDD(consulta)"""
+    modiCurso = cursos.cursos(idCurso, Nombre)
+    resconn = conn.actualizarRegistro("Curso", dicCurso, modiCurso.toDic())
     if resconn:
         print("Se modifico correctamente")
     else:
@@ -286,10 +333,11 @@ def modificarCurso(idCurso):
 
 #Eliminar Curso
 def eliminarCurso(idCurso):
-    consulta = query.EliminarCurso(idCurso)
-    resconn = conn.ejecutarBDD(consulta)
+    """consulta = query.EliminarCurso(idCurso)
+    resconn = conn.ejecutarBDD(consulta)"""
+    resconn = conn.eliminarRegistro("Curso", idCurso)
     if resconn:
-        print(f"Se elimino el curso {idCurso}")
+        print("Se elimino el curso seleccionado")
     else:
         print("No fue posible eliminar el curso")
     input("Desea continuar")
@@ -306,10 +354,13 @@ def eliminarCurso(idCurso):
 #Ingresar Periodo
 def ingresarPeriodo():
     #Datos del Periodo
+    idPeriodo = input("Ingrese id del Periodo:\n")
     nombre = input("Ingrese Nombre del Periodo:\n")
     try:
-        consulta = query.InsertPeriodo(nombre)
-        resconn = conn.ejecutarBDD(consulta)
+        """consulta = query.InsertPeriodo(nombre)
+        resconn = conn.ejecutarBDD(consulta)"""
+        nuevoPeriodo = periodoEscolar.periodoEscolar(idPeriodo, nombre)
+        resconn = conn.insertarRegistro("Periodo Escolar", nuevoPeriodo.toDic())
         if resconn:
             print("Se agrego correctamente")
         else:
@@ -320,20 +371,27 @@ def ingresarPeriodo():
     
 #Listar Periodos
 def listarPeriodo():
-    consulta = query.ListarAllPeriodos()
-    resconn = conn.consultarBDD(consulta)
+    """consulta = query.ListarAllPeriodos()
+    resconn = conn.consultarBDD(consulta)"""
+    query = {}
+    resconn = conn.leerRegistros("Periodo Escolar", query)
     for tplPeriodo in resconn:
-        print(tplPeriodo[0], tplPeriodo[1])
+        print(tplPeriodo['idperiodoEscolar'], tplPeriodo['desperiodo'])
 
 #Buscar Periodo
 def buscarPeriodo():
     try:
-        idPeriodo = int(input("Ingrese el id del periodo que desea buscar:\n"))
-        consulta = query.BuscarPeriodo(idPeriodo)
-        resconn = conn.consultarBDD(consulta)
-        for tplPeriodo in resconn:
+        idPeriodo = input("Ingrese el id del periodo que desea buscar:\n")
+        """consulta = query.BuscarPeriodo(idPeriodo)
+        resconn = conn.consultarBDD(consulta)"""
+        query = {'idperiodoEscolar' : idPeriodo}
+        resconn = conn.leerRegistro("Periodo Escolar", query)
+        print(resconn['idperiodoEscolar'], resconn['desperiodo'])
+        pe = periodoEscolar.periodoEscolar(resconn['idperiodoEscolar'], resconn['desperiodo'])
+        return pe.toDic()
+        """for tplPeriodo in resconn:
             print(tplPeriodo[0], tplPeriodo[1])
-        return idPeriodo
+        return idPeriodo"""
     except Exception as e:
         print("Debe ingresar un numero")
         print(e)
@@ -434,9 +492,13 @@ def ingresarMatricula():
     #Datos Periodo
     listarPeriodo()
     IdPeriodo = buscarPeriodo()
+    #Id Matricula
+    IdMatricula = input("Ingrese id de matricula:\n")
     try:
-        consulta = query.InsertMatricula(IdAlumno, IdPeriodo)
-        resconn = conn.ejecutarBDD(consulta)
+        """consulta = query.InsertMatricula(IdAlumno, IdPeriodo)
+        resconn = conn.ejecutarBDD(consulta)"""
+        nuevaMatricula = matricula.matricula(IdMatricula, IdAlumno, IdPeriodo)
+        resconn = conn.insertarRegistro("Matricula", nuevaMatricula.toDic())
         if resconn:
             print("Se agrego correctamente")
         else:
@@ -447,10 +509,12 @@ def ingresarMatricula():
 
 def listarMatricula():
     try:
-        consulta = query.ListarAllMatricula()
-        resconn = conn.consultarBDD(consulta)   
+        """consulta = query.ListarAllMatricula()
+        resconn = conn.consultarBDD(consulta)   """
+        query = {}
+        resconn = conn.leerRegistros("Matricula", query)
         for tplMatricula in resconn:
-            print(tplMatricula[0], tplMatricula[1], tplMatricula[2], tplMatricula[3])
+            print(tplMatricula['idmatricula'], tplMatricula['alumno'], tplMatricula['periodo'])
         sleep(2)
     except Exception as e:
         print(e)
@@ -458,13 +522,22 @@ def listarMatricula():
 def buscarMatricula():
     try:
         idMatricula = input("Ingrese id de matricula:\n")
-        consulta = query.BuscarMatricula(idMatricula)
-        resconn = conn.consultarBDD(consulta)   
+        """consulta = query.BuscarMatricula(idMatricula)
+        resconn = conn.consultarBDD(consulta)  """ 
+        query = {'idmatricula' : idMatricula}
+        resconn = conn.leerRegistros("Matricula", query)
         for tplMatricula in resconn:
-            print(tplMatricula[0], tplMatricula[1], tplMatricula[2], tplMatricula[3])
+            print(tplMatricula['idmatricula'], tplMatricula['alumno'], tplMatricula['periodo'])
+        m = matricula.matricula(tplMatricula['idmatricula'], tplMatricula['alumno'], tplMatricula['periodo'])
         return idMatricula
     except Exception as e:
         print(e)
+
+#██████   ██████   ██████ ███████ ███    ██ ████████ ███████      ██████ ██    ██ ██████  ███████  ██████  
+#██   ██ ██    ██ ██      ██      ████   ██    ██    ██          ██      ██    ██ ██   ██ ██      ██    ██ 
+#██   ██ ██    ██ ██      █████   ██ ██  ██    ██    █████       ██      ██    ██ ██████  ███████ ██    ██ 
+#██   ██ ██    ██ ██      ██      ██  ██ ██    ██    ██          ██      ██    ██ ██   ██      ██ ██    ██ 
+#██████   ██████   ██████ ███████ ██   ████    ██    ███████      ██████  ██████  ██   ██ ███████  ██████  
 
 def docenteCurso():
     #Datos docente
@@ -476,9 +549,12 @@ def docenteCurso():
     #Datos Salon
     listarSalon()
     IdSalon = buscarSalon()
+    IdDocenteCurso = input("Ingresar id:\n")
     try:
-        consulta = query.InsertDocenteCurso(IdDocente, IdCurso, IdSalon)
-        resconn = conn.ejecutarBDD(consulta)
+        """consulta = query.InsertDocenteCurso(IdDocente, IdCurso, IdSalon)
+        resconn = conn.ejecutarBDD(consulta)"""
+        nuevoDocenteCurso = DocenteCurso.docenteCurso(IdDocenteCurso, IdDocente, IdCurso, IdSalon)
+        resconn = conn.insertarRegistro("Asigacion Docente Curso", nuevoDocenteCurso.toDic())
         if resconn:
             print("Se agrego correctamente")
         else:
@@ -487,6 +563,39 @@ def docenteCurso():
     except Exception as e:
         print(e)
 
+
+def listarDocenteCurso():
+    try:
+        """consulta = query.ListarDocenteCurso()
+        resconn = conn.consultarBDD(consulta)""" 
+        query = {}
+        resconn = conn.leerRegistros("Asigacion Docente Curso", query)  
+        for tplDocenteCurso in resconn:
+            print(tplDocenteCurso['IdAlumnoCurso'], tplDocenteCurso['Matricula'], tplDocenteCurso['Curso'])
+        sleep(2)
+    except Exception as e:
+        print(e)
+
+def buscarDocenteCurso():
+    try:
+        IdDocenteCurso = input("Ingrese id del docente para detalle:\n")
+        """consulta = query.BuscarDocenteCurso(IdDocenteCurso)
+        resconn = conn.consultarBDD(consulta)"""   
+        query = {'IdDocenteCurso' : IdDocenteCurso}
+        resconn = conn.leerRegistros("Asigacion Docente Curso", query)
+        for tplDocenteCurso in resconn:
+            print(tplDocenteCurso['IdAlumnoCurso'], tplDocenteCurso['Matricula'], tplDocenteCurso['Curso'])
+        sleep(2)
+    except Exception as e:
+        print(e)
+
+
+# █████  ██      ██    ██ ███    ███ ███    ██  ██████       ██████ ██    ██ ██████  ███████  ██████  
+#██   ██ ██      ██    ██ ████  ████ ████   ██ ██    ██     ██      ██    ██ ██   ██ ██      ██    ██ 
+#███████ ██      ██    ██ ██ ████ ██ ██ ██  ██ ██    ██     ██      ██    ██ ██████  ███████ ██    ██ 
+#██   ██ ██      ██    ██ ██  ██  ██ ██  ██ ██ ██    ██     ██      ██    ██ ██   ██      ██ ██    ██ 
+#██   ██ ███████  ██████  ██      ██ ██   ████  ██████       ██████  ██████  ██   ██ ███████  ██████  
+
 def alumnoCurso():
     #Datos alumno matriculado
     listarMatricula()
@@ -494,9 +603,12 @@ def alumnoCurso():
     #Datos Cursos
     listarCurso()
     IdCurso = buscarCurso()
+    IdAlumnoCurso = input("Ingresar id:\n")
     try:
-        consulta = query.InsertAlumnoCurso(IdMatricula, IdCurso)
-        resconn = conn.ejecutarBDD(consulta)
+        """consulta = query.InsertAlumnoCurso(IdMatricula, IdCurso)
+        resconn = conn.ejecutarBDD(consulta)"""
+        nuevoAlumnoCurso = AlumnoCurso.alumnoCurso(IdAlumnoCurso, IdMatricula, IdCurso)
+        resconn = conn.insertarRegistro("Asignacion Alumno Curso", nuevoAlumnoCurso.toDic())
         if resconn:
             print("Se agrego correctamente")
         else:
@@ -505,33 +617,14 @@ def alumnoCurso():
     except Exception as e:
         print(e)
 
-def listarDocenteCurso():
-    try:
-        consulta = query.ListarDocenteCurso()
-        resconn = conn.consultarBDD(consulta)   
-        for tplDocenteCurso in resconn:
-            print(tplDocenteCurso[0], tplDocenteCurso[1], tplDocenteCurso[2], tplDocenteCurso[3])
-        sleep(2)
-    except Exception as e:
-        print(e)
-
-def buscarDocenteCurso():
-    try:
-        IdDocenteCurso = input("Ingrese id del docente para detalle:\n")
-        consulta = query.BuscarDocenteCurso(IdDocenteCurso)
-        resconn = conn.consultarBDD(consulta)   
-        for tplDocenteCurso in resconn:
-            print(tplDocenteCurso[0], tplDocenteCurso[1], tplDocenteCurso[2], tplDocenteCurso[3])
-        sleep(2)
-    except Exception as e:
-        print(e)
-
 def listarAlumnoCurso():
     try:
-        consulta = query.ListarAllAlumnoCurso()
-        resconn = conn.consultarBDD(consulta)
+        """consulta = query.ListarAllAlumnoCurso()
+        resconn = conn.consultarBDD(consulta)"""
+        query = {}
+        resconn = conn.leerRegistros("Asignacion Alumno Curso", query)
         for tplAlumCurso in resconn:
-            print(tplAlumCurso[0], tplAlumCurso[1], tplAlumCurso[2], tplAlumCurso[3], tplAlumCurso[4], tplAlumCurso[5], tplAlumCurso[6])
+            print(tplAlumCurso['IdAlumnoCurso'], tplAlumCurso['Matricula'], tplAlumCurso['Curso'])
         sleep(2)
     except Exception as e:
         print(e)

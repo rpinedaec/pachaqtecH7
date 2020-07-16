@@ -34,13 +34,15 @@ class conexionBDD:
               
         elif(self.intBDD == 4):
             uri = 'mongodb://localhost:27017'
-            database = 'avellaneda'
+            database = 'Colegio'
             try:
                 conn = MongoClient(uri)
                 db = conn[str(f"{database}")]
                 return db
             except Exception as error:
                 return False
+
+                # db[<database-name>][<Alumno>].insert(<document>);
 
     def consultarBDD(self, query):
         try:
