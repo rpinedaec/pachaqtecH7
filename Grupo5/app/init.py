@@ -85,9 +85,9 @@ while True:
                     if intOptionSelect == 1: #Crear nota
                         crearNota()
                     elif intOptionSelect == 2: #Modificar nota
-                        pass
+                        modificarNota()
                     elif intOptionSelect == 3: #Eliminar nota
-                        pass
+                        eliminarNota()
                     else:
                         break
             elif intOptionSelect == 6:  # Mantenimiento Periodo Escolar

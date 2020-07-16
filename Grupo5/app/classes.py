@@ -55,3 +55,9 @@ class Cursos:
         self.cod_grado = cod_grado
         self.numero_notas = numero_notas
 
+class Notas:
+    def __init__(self, cod_matricula, cod_curso, nota):
+        self.cod_matricula = cod_matricula
+        self.cod_curso = cod_curso
+        self.nota = nota
+
