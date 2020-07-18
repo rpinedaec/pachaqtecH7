@@ -21,8 +21,7 @@ def set_up_curso():
         {'curso':'Ciencias','año academico': '2do'},
         {'curso':'Ciencias','año academico': '3ro'},
         {'curso':'Ciencias','año academico': '4to'},
-        {'curso':'Ciencias','año academico': '5to'},
-    
+        {'curso':'Ciencias','año academico': '5to'}    
     ]
     return curso_list
 

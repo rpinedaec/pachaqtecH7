@@ -47,3 +47,37 @@ class Mongo_DB:
     def delete(self,query):
         conexion=self.conecc()
         conexion.delete_one(query)
+
+
+
+
+    def leerRegistro(self, data):
+        conexion=self.conecc()
+        res = conexion.find_one(data)
+        return res
+
+    def leerRegistrosTotal(self): 
+        conexion=self.conecc()
+        res = conexion.find()
+        return res 
+
+    def leerRegistros(self, data):
+        conexion=self.conecc()
+        res = conexion.find(data)
+        return res
+
+    def insertarRegistro(self, data):
+        conexion=self.conecc()
+        res = conexion.insert_one(data).inserted_id
+        return res
+
+    def eliminarRegistro(self, eliminar):
+        conexion=self.conecc()
+        res = conexion.delete_one(eliminar)
+        return res
+
+    def actualizarRegistro(self, condicion, cambio): 
+        conexion=self.conecc()
+        res = conexion.update_one(condicion,{ '$set' : cambio } )
+        return res
+
