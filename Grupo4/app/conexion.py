@@ -52,6 +52,7 @@ class conexionBDD:
         elif(self.intBDD == 4):
             uri = 'mongodb://localhost:27017'
             database = 'colegio'
+            #database = 'DBColegio'
             try:
                 conn = MongoClient(uri)
                 db = conn[str(f"{database}")]

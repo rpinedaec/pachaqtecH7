@@ -3,6 +3,11 @@ import conexion
 import alumno
 import docente
 import salon
+import periodo
+import notas
+import promedio
+
+import curso
 log = utils.log("INIT")
 log.info("inicio del programa")
 # lstClientes = []
@@ -24,14 +29,17 @@ def mantenimento(resMenu):
         log.debug("escogio 2")  
         docente.docente.mantenimientodocente(intBDD)
     elif resMenu == 3:
-        log.debug("escogio 3")    
+        log.debug("escogio 3") 
+        curso.curso.mantenimientosalon(intBDD) 
     elif resMenu == 4:
         log.debug("escogio 4")
+        notas.notas.mantenimientonotas(intBDD)
     elif resMenu == 5:
         log.debug("escogio 5")
+        periodo.periodo.mantenimientoperiodo(intBDD)
     elif resMenu == 6:
         log.debug("escogio 6")
-        
+        promedio.promedio.mantenimientopromedio(intBDD)
     elif resMenu == 7:
         log.debug("escogio 7")
         salon.salon.mantenimientosalon(intBDD)     
@@ -47,8 +55,8 @@ def menuprincipal():
         if(resMenuInicio == 1):
             log.debug("Mostramos los Mantenimientos")
             dicMenuMantenimiento = {"\t- Alumnos": 1, "\t- Docentes": 2,
-                                    "\t - Curso": 1, "\t - Notas": 2,
-                                    "\t- Periodo": 3, "\t- Promedio": 4}
+                                    "\t - Curso": 3, "\t - Notas": 4,
+                                    "\t- Periodo": 5, "\t- Promedio": 6}
             menuMantenimiento = utils.Menu(
                 "Menu Mantenimiento", dicMenuMantenimiento)
             resMenuMantenimiento = menuMantenimiento.mostrarMenu()

@@ -119,4 +119,33 @@ class salon:
                     return False
 
         else:  # Si es dos entra a mongo
-            print("Se ejecuto correctamente")
+            dicMenuSalon = {"\t- Buscar Todos Los salone en mongodb": 1,
+                            "\t- Buscar salon por ID en mongodb": 2,
+                            "\t- Modificar salon Por Id en mongodb": 3,
+                            "\t- Crear salon en mongodb": 4,
+                            "\t- Borrar salon en mongodb": 5}
+            menuSalon = utils.Menu("Menu Salones de Clases", dicMenuSalon)
+            resMenuSalon = menuSalon.mostrarMenu()
+
+            if(resMenuSalon == 1):
+                try:
+                    log.debug("buscamos el salon")
+                    conn = conexion.conexionBDD(4)
+                    query = {}
+                    resConn = conn.leerRegistros("salon",query)
+                    
+                    print("\tIDSalon\t\tSalon")
+                    for row in resConn:
+                       print(f"\t{str(row['idsalon'])}\t\t{str(row['nombreSalon'])}")
+                    input("continuar???")
+                    print(resConn)
+                except Exception as error:
+                    return False    
+
+            # elif(resMenuSalon == 2):
+
+            # elif(resMenuSalon == 3):
+
+            # elif(resMenuSalon == 4):
+
+            # elif(resMenuSalon == 5)                
