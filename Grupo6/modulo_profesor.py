@@ -28,7 +28,7 @@ class Modulo_prof:
             record=self.conexion.find(query)
             print(record)
         elif(self.ans=='2'): #create
-            print("Ingrese los datos del porfesor: ")
+            print("Ingrese los datos del profesor: ")
             DNI=input("DNI: ")
             Nombre_profesor=input("Nombre: ")
             Apellido_profesor=input("Apellido: ")
