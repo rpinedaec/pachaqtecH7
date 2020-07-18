@@ -12,16 +12,15 @@ class color:
     BOLD = ''
     UNDERLINE = ''
     END = ''
-    
-#    INDICT = '\33[33m'
-#    HEADER = '\033[94m'
-#    OKGREEN = '\033[92m'
-#    WARNING = '\033[31m'
-#    FAIL = '\033[91m'
-#    ENDC = '\033[0m'
-#    BOLD = '\033[1m'
-#    UNDERLINE = '\033[4m'
-#    END = '\033[0m'
+    INDICT = '\33[33m'
+    HEADER = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[31m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    END = '\033[0m'
     
 
 class Menu:
