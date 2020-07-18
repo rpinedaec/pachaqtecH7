@@ -2,6 +2,9 @@
 import logging
 
 #Create and configure logger
+
+logging.basicConfig(filename="Logging_colegio.log", level=logging.DEBUG, format='%(asctime)s:%(levelname)s:%(message)s')
+# =======
 logging.basicConfig(
                     filename="Logging_colegio.log",
                     level=logging.DEBUG,
@@ -169,6 +172,7 @@ def validarDniAlumnoEnLista(ListaGeneral, mensaje):
             else:                
                 print("Valor no existente.")
     return strRetornar
+
 
 
 

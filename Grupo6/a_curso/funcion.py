@@ -35,12 +35,15 @@ def find_curso(curso):
     query={'curso':curso}
     return query
 
+def find_curso(curso):
+    query={'curso':curso}
+    return query
+
 # delete
 def delete_curso(curso,ano_academico):
     query={"curso":curso,"año academico":ano_academico}
     return query
 
-# update
 # update
 def update_input(nombre,ano_academico):
     query={'curso':nombre,'año academico':ano_academico}
