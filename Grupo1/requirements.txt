@@ -8,7 +8,7 @@ lazy-object-proxy==1.4.3
 mccabe==0.6.1
 prettyprinter==0.18.0
 pycodestyle==2.6.0
-Pygments==2.6.1
+Pygments==2.7.4
 pylint==2.5.3
 pymongo==3.10.1
 PySimpleGUI==4.24.0
